@@ -1,0 +1,38 @@
+# ----------- CONFIGURABLE START -----------
+title:            "loneyclown|jekyll blog|GitHub blog"
+description:      "愿你三冬暖，愿你春不寒；愿你天黑有灯，下雨有伞；愿你路上有两人相伴。愿你所以快乐，无需假装；愿你此生尽兴，赤诚善良。愿时光能缓，愿故人不散；愿有人陪你颠沛流离。愿你惦念的人能和你道早安，愿你独创的日子里不觉得孤单。愿你人间走一遭，圆满了三界六道，看透了是非善恶；从此福来心至，皆是逍遥。"
+url:              https://loneyclown.github.io # 域名
+signoff:          "loneyclown" # Your name
+facebook_appid:   #liberxue
+google_analytics: UA-101222464-1
+share:            true 
+# 分页
+paginate: 15
+paginate_path: "liberxuepage:num"
+gems: [jekyll-paginate]
+links:
+  - name:         首页
+    url:          /
+    external:     false
+  - name:         随笔
+    url:          /book
+    external:     false
+  # - name:         旅游
+  #   url:          /road
+  #   external:     false
+  - name:         归档
+    url:          /archives
+    external:     false
+  - name:         标签
+    url:          /tags
+    external:     false
+  - name:         关于
+    url:          /about
+    external:     false
+# ------------ CONFIGURABLE END ------------
+
+#permalink:        /:categories/:title.html
+permalink: /:year/:month/:day/:title.html
+defaults:
+  - values:
+      layout: "default"
