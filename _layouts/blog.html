@@ -12,7 +12,7 @@
 <body class="" gtools_scp_screen_capture_injected="true">
     <header id="header" class="header bg-white">
         <div class="navbar-container">
-            <a href="/?liberxue" title="访问 {{site.title }}" class="navbar-logo">
+            <a href="/" title="访问 {{site.title }}" class="navbar-logo">
                 <img src="{{ site.url }}/style/images/logo-liberxue.png" alt="{{ site.title }}"> </a>
             <div class="navbar-menu">
                 {% for link in site.links %}
@@ -48,7 +48,7 @@
                 <h1 class="post-title" itemprop="name headline">
                     {{ page.title }}</h1>
                 <div class="post-data">
-                    <time datetime="{{ page.date | date: '%F %H:%M:%S'}}" itemprop="datePublished">发布时间：{{ page.date | date: "%F %H:%M:%S"}}</time>
+                    <time datetime="{{ page.date | date: '%F %H:%M:%S'}}" itemprop="datePublished">发布时间：{{ page.date | date: "%Y-%m-%d"}}</time>
                     <a href="/tags#{{ page.category }}" title="访问 {{ page.category }}" data-hover="博客分类: {{ page.category }}">博客分类: {{ page.category }}</a>
                     <!-- <a href="#read"> 阅读次数: comments</a>  -->
                 </div>
@@ -98,7 +98,7 @@
             {{ content }}
             <p class="post-info">
                 本站文章除注明转载/出处外，均为作者原创，转载请注明出处。
-                <br>本文最后编辑时间为:{{ page.date | date: "%F %H:%M:%S"}}
+                <br>本文最后编辑时间为:{{ page.date | date: "%Y-%m-%d"}}
             </p>
                 <!-- 本文由
                 <a href="/">loneyclown</a> 创作，采用

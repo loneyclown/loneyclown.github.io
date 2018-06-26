@@ -8,14 +8,14 @@ google_analytics: UA-101222464-1
 share:            true 
 # 分页
 paginate: 15
-paginate_path: "liberxuepage:num"
+paginate_path: "page:num"
 gems: [jekyll-paginate]
 links:
   - name:         首页
     url:          /
     external:     false
   - name:         随笔
-    url:          /book
+    url:          /essays
     external:     false
   # - name:         旅游
   #   url:          /road
