@@ -1,6 +1,6 @@
 ---
 layout: blog
-# istop: true
+istop: true
 title: "Node 学习笔记"
 mark: 原创
 background-image: https://nodejs.org/static/images/logo.svg

@@ -50,7 +50,7 @@
                 <div class="post-data">
                     <time datetime="{{ page.date | date: '%F %H:%M:%S'}}" itemprop="datePublished">发布时间：{{ page.date | date: "%Y-%m-%d"}}</time>
                     <a href="/tags#{{ page.category }}" title="访问 {{ page.category }}" data-hover="博客分类: {{ page.category }}">博客分类: {{ page.category }}</a>
-                    <!-- <a href="#read"> 阅读次数: comments</a>  -->
+                    <!-- <a href="#read"> 阅读次数: {{ page.comments }}</a>  -->
                 </div>
                 <div class="post-tags">
                     {% unless page.tags == empty %} {% assign tags_list = page.tags %} {% if tags_list.first[0] == null %} {% for tag in tags_list
