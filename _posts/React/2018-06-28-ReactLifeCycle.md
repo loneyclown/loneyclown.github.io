@@ -4,9 +4,9 @@ layout: blog
 title: "React组件生命周期过程说明"
 mark: 转载
 # background-image: https://o243f9mnq.qnssl.com/2017/06/116099051.jpg
-background: blue
+background: react
 date:  2018-06-28
-category: React
+category: react
 tags:
 - React
 - 生命周期

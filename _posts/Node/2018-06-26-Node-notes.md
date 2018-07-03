@@ -4,7 +4,7 @@ istop: true
 title: "Node 学习笔记"
 mark: 原创
 background-image: https://nodejs.org/static/images/logo.svg
-# background: green
+# background: node
 date:  2018-06-08
 category: 学习笔记
 tags:

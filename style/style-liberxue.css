@@ -85,6 +85,7 @@ input:-ms-input-placeholder,textarea:-ms-input-placeholder{color:#5f5f5f;}
 .right{float:right;}
 .browsehappy{position:fixed;z-index:999;top:0;bottom:0;width:100%;height:40px;padding:10px;text-align:center;color:#8a1f11;background:#fbe3e4;}
 .browsehappy a{font-weight:700;text-decoration:underline;color:#8a1f11;}
+
 .bg-white{background-color:#fff!important;}
 .bg-grey{background-color:#fbfdff!important;}
 .bg-deepgrey{background-color:rgba(0,0,0,.5)!important;}
@@ -94,6 +95,15 @@ input:-ms-input-placeholder,textarea:-ms-input-placeholder{color:#5f5f5f;}
 .bg-yellow{background-color:#f9bb3c!important;}
 .bg-red{background-color:#e8583d!important;}
 .bg-orange{background-color:#f68e5f!important;}
+
+/* 自定义颜色 */
+.bg-git{background-color: #66CCFF}
+.bg-node{background-color: #46c47c}
+.bg-react{background-color: #3399CC}
+.bg-notes{background-color: #CC99CC}
+.bg-essays{background-color: #FF9999}
+.bg-pick{background-color: #CCFF99}
+
 .MathJax_Display{overflow-x:auto;overflow-y:hidden;}
 .MathJax{outline:0;}
 .MathJax span{font-size:15px;}

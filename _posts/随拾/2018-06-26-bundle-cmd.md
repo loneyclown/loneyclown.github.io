@@ -4,9 +4,9 @@ layout: blog
 title: "bundle 命令"
 mark: 转载
 # background-image: http://ot1cc1u9t.bkt.clouddn.com/17-7-15/43335546.jpg
-background: blue
+background: pick
 date: 2018-06-26
-category: Bundle
+category: 随拾
 tags:
 - Ruby
 - bundle
