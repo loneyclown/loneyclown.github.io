@@ -1,10 +1,10 @@
 # ----------- CONFIGURABLE START -----------
-title:            "loneyclown|jekyll blog|GitHub blog"
-description:      "愿你三冬暖，愿你春不寒；愿你天黑有灯，下雨有伞；愿你路上有两人相伴。愿你所以快乐，无需假装；愿你此生尽兴，赤诚善良。愿时光能缓，愿故人不散；愿有人陪你颠沛流离。愿你惦念的人能和你道早安，愿你独创的日子里不觉得孤单。愿你人间走一遭，圆满了三界六道，看透了是非善恶；从此福来心至，皆是逍遥。"
+title:            "Loneyclown - Jekyll blog - GitHub blog"
+description:      "小女子不才，承蒙公子厚爱了多时。公子之心，我皆明了。公子之苦，我亦尽尝。奈何世无常，终究与公子情深缘浅，不得长相厮守一生白头。望此后遇得良人，公子且将付我心，付与他人可。祝公子平安喜乐，一生顺遂。你我，自是不必再相见了。"
 url:              https://loneyclown.github.io # 域名
-signoff:          "loneyclown" # Your name
+signoff:          "Loneyclown" # Your name
 facebook_appid:   #liberxue
-google_analytics: UA-101222464-1
+# google_analytics: UA-101222464-1
 share:            true 
 # 分页
 paginate: 15
