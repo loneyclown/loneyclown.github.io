@@ -36,3 +36,6 @@ permalink: /:year/:month/:day/:title.html
 defaults:
   - values:
       layout: "default"
+
+####
+indicate: 本站文章除注明转载/出处外，均为作者原创，转载请注明出处。
