@@ -2,7 +2,9 @@
 layout: blog
 title: 关于
 description: ""
-data: 2018-06-26
+data: 2018-08-28
+indicate: ""
+hide_post_info: true
 tags: 
 - loneyclown
 - 简述

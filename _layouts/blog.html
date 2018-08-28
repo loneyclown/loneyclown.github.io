@@ -94,14 +94,18 @@
 						{% endfor %} {% endif %} {% assign tags_list = nil %} {% endunless %}
 					</p>
 					{{ content }}
-					<p class="post-info">
-						{% if page.indicate %}
-							{{ page.indicate }}
-						{% else %}
-							{{ site.indicate }}
-						{% endif %}
-						<br>本文最后编辑时间为:{{ page.date | date: "%Y-%m-%d"}}
-					</p>
+
+					{% if page.hide_post_info != true %}
+						<p class="post-info">
+							{% if page.indicate %}
+								{{ page.indicate }}
+							{% else %}
+								{{ site.indicate }}
+							{% endif %}
+							<br>
+							本文最后编辑时间为:{{ page.date | date: "%Y-%m-%d"}}
+						</p>
+					{% endif %}
 				</div>
 			</article>
 
