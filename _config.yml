@@ -8,7 +8,7 @@ subtitle: 沐甚雨，栉疾风
 description:
 keywords:
 author: Loneyclown
-language:
+language: zh-CN
 timezone:
 
 # URL
@@ -81,3 +81,10 @@ deploy:
   type: git
   repo: https://github.com/loneyclown/loneyclown.github.io.git
   branch: master
+
+# Hexo博客添加站内搜索
+search:
+  path: search.xml
+  field: post
+  format: html
+  limit: 10000
