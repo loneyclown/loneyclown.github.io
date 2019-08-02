@@ -6,7 +6,6 @@
   {%- endif %}
   <p class="site-author-name" itemprop="name">{{ author }}</p>
   <div class="site-description motion-element" itemprop="description">{{ description }}</div>
-  <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=298 height=52 src="//music.163.com/outchain/player?type=0&id=2912765047&auto=1&height=32"></iframe>
 </div>
 
 {%- if theme.site_state %}
