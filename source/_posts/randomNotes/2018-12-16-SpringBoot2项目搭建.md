@@ -6,7 +6,7 @@ mark: 原创
 # background-image: https://o243f9mnq.qnssl.com/2017/06/116099051.jpg
 background: notes
 date:  2018-12-16
-category: 学习笔记
+category: 随拾
 tags:
 - java
 - SSM
@@ -17,24 +17,24 @@ tags:
 ## Spring Boot 项目搭建
 开发环境：IntelliJ IEDA
 ### 1.新建项目
-![][01]
+![01][]
 这里直接next
 
-![][02]
+![02][]
 设置group和artifact
 
-![][03]
+![03][]
 DevTools顾名思义是开发工具，热更新等，lombok都知道，validation是表单验证或者说参数检查工具
 
-![][04]
+![04][]
 点击完成
 
 ### 2.配置项目
 等待IDEA自动下载完成依赖后就可以开始配置项目了，项目目录结构：
-![][05]
+![05][]
 
 _这里我将另一个项目的截图贴出来_
-![][06]
+![06][]
 目录结构
 
 将`application.properties`文件改名为`application.yml`，写入配置：
