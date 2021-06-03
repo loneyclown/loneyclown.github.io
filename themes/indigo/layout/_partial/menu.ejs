@@ -18,8 +18,8 @@
       <ul class="nav">
         <%
           var menuItem, isActive = function(item) {
-              var pageUrl = url_for(page.path)
-              return item.url === '/' ? pageUrl === url_for(item.url + 'index.html') : _.startsWith(pageUrl, url_for(item.url))
+              var pageUrl = url_for(page.path) || '';
+              return item.url === '/' ? pageUrl === url_for(item.url + 'index.html') : pageUrl.startsWith(url_for(item.url));
           };
           for (var i in theme.menu) {
             menuItem = theme.menu[i];

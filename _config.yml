@@ -4,8 +4,8 @@
 
 # Site
 title: Loneyclown
-subtitle: 沐甚雨，栉疾风
-description:
+subtitle: 能可爱，绝不狗带
+description: 
 keywords:
 author: Loneyclown
 language: zh-CN
@@ -88,3 +88,8 @@ search:
   field: post
   format: html
   limit: 10000
+
+prism_plugin:
+  mode: 'preprocess' # realtime/preprocess
+  theme: 'default'
+  line_number: false # default false

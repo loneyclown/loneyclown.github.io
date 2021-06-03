@@ -31,11 +31,11 @@ menu:
   #   url: /custom
 
 # 你的头像url
-avatar: https://i.postimg.cc/B64j4hb6/avatar.jpg
+# avatar: https://i.postimg.cc/B64j4hb6/avatar.jpg
+avatar: //static.loneyclown.vip/avatar.jpg
 # avatar link
-avatar_link: /
 # 头像背景图
-brand: https://i.postimg.cc/RFcMBp5W/QQ20191210-0.png
+brand: //static.loneyclown.vip/avatar.jpg
 # favicon
 favicon: /favicon.ico
 
