@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>传统web项目配置babel@7自动兼容ES6语法 | Loneyclown | 能可爱，绝不狗带</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="js,babel">
+    <meta name="description" content="安装babel@712npm install --save-dev @babel&#x2F;core @babel&#x2F;cli @babel&#x2F;preset-envnpm install --save @babel&#x2F;polyfill  在项目的根目录下创建一个命名为 babel.config.js 的配置文件默认配置： 123456789101112131415const presets &#x3D; [  [    &quot;@">
+<meta property="og:type" content="article">
+<meta property="og:title" content="传统web项目配置babel@7自动兼容ES6语法">
+<meta property="og:url" content="https://loneyclown.github.io/2019/08/12/studyNotes/2019-08-12-notes/index.html">
+<meta property="og:site_name" content="Loneyclown">
+<meta property="og:description" content="安装babel@712npm install --save-dev @babel&#x2F;core @babel&#x2F;cli @babel&#x2F;preset-envnpm install --save @babel&#x2F;polyfill  在项目的根目录下创建一个命名为 babel.config.js 的配置文件默认配置： 123456789101112131415const presets &#x3D; [  [    &quot;@">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2019-08-11T16:00:00.000Z">
+<meta property="article:modified_time" content="2021-09-26T06:36:32.090Z">
+<meta property="article:author" content="Loneyclown">
+<meta property="article:tag" content="js">
+<meta property="article:tag" content="babel">
+<meta name="twitter:card" content="summary">
+    
+        <link rel="alternate" type="application/atom+xml" title="Loneyclown" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+<meta name="generator" content="Hexo 4.2.1"><link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(//static.loneyclown.vip/avatar.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="//static.loneyclown.vip/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Loneyclown</h5>
+          <a href="mailto:loneyclown@outlook.com" title="loneyclown@outlook.com" class="mail">loneyclown@outlook.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                文章
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                分类
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://nav.loneyclown.vip/" target="_blank" >
+                <i class="icon icon-lg icon-bookmark"></i>
+                导航站
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">传统web项目配置babel@7自动兼容ES6语法</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">传统web项目配置babel@7自动兼容ES6语法</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-08-11T16:00:00.000Z" itemprop="datePublished" class="page-time">
+  2019-08-12
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#安装babel-7"><span class="post-toc-number">1.</span> <span class="post-toc-text">安装babel@7</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#在项目的根目录下创建一个命名为-babel-config-js-的配置文件"><span class="post-toc-number">2.</span> <span class="post-toc-text">在项目的根目录下创建一个命名为 babel.config.js 的配置文件</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#监听转化"><span class="post-toc-number">3.</span> <span class="post-toc-text">监听转化</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="blog-studyNotes/2019-08-12-notes"
+  class="post-article article-type-blog fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">传统web项目配置babel@7自动兼容ES6语法</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-08-12 00:00:00" datetime="2019-08-11T16:00:00.000Z"  itemprop="datePublished">2019-08-12</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a></li></ul>
+
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h3 id="安装babel-7"><a href="#安装babel-7" class="headerlink" title="安装babel@7"></a>安装babel@7</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install --save-dev @babel/core @babel/cli @babel/preset-env</span><br><span class="line">npm install --save @babel/polyfill</span><br></pre></td></tr></table></figure>
+
+<h3 id="在项目的根目录下创建一个命名为-babel-config-js-的配置文件"><a href="#在项目的根目录下创建一个命名为-babel-config-js-的配置文件" class="headerlink" title="在项目的根目录下创建一个命名为 babel.config.js 的配置文件"></a>在项目的根目录下创建一个命名为 babel.config.js 的配置文件</h3><p>默认配置：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> presets = [</span><br><span class="line">  [</span><br><span class="line">    <span class="string">"@babel/env"</span>,</span><br><span class="line">    &#123;</span><br><span class="line">      targets: &#123;</span><br><span class="line">        edge: <span class="string">"17"</span>,</span><br><span class="line">        firefox: <span class="string">"60"</span>,</span><br><span class="line">        chrome: <span class="string">"67"</span>,</span><br><span class="line">        safari: <span class="string">"11.1"</span>,</span><br><span class="line">      &#125;,</span><br><span class="line">      useBuiltIns: <span class="string">"usage"</span>,</span><br><span class="line">    &#125;,</span><br><span class="line">  ],</span><br><span class="line">];</span><br><span class="line"><span class="built_in">module</span>.exports = &#123; presets &#125;;</span><br></pre></td></tr></table></figure>
+<p>支持市场份额超过5%的浏览器：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"targets"</span>: &#123;</span><br><span class="line">  <span class="string">"browsers"</span>: <span class="string">"&gt; 5%"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>支持最后两个版本的浏览器以及IE7+：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"targets"</span>: &#123;</span><br><span class="line">   <span class="string">"browsers"</span>: [<span class="string">"last 2 versions"</span>, <span class="string">"ie &gt;= 7"</span>]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="监听转化"><a href="#监听转化" class="headerlink" title="监听转化"></a>监听转化</h3><p>在需要转化的文件目录执行：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npx babel --presets=@babel/env --root-mode upward shangpu_list_map.js --watch --out-file shangpu_list_map.min.js</span><br></pre></td></tr></table></figure>
+<p><em>PS：若提示命令不存在，请全局安装babel-cli</em></p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <footer>
+        <a href="https://loneyclown.github.io">
+            <img src="//static.loneyclown.vip/avatar.jpg" alt="Loneyclown">
+            Loneyclown
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/babel/" rel="tag">babel</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/" rel="tag">js</a></li></ul>
+
+
+            
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2019/08/30/studyNotes/2019-08-30-notes/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">无序json排序</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2019/08/06/studyNotes-vue/%E8%B5%B7%E6%AD%A5/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Vue学习笔记——起步</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Loneyclown &copy; 2021</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<!-- <script src="//cdn.bootcdn.net/ajax/libs/lodash.js/4.17.21/lodash.core.min.js"></script> -->
+<!-- <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script> -->
+<script>
+var BLOG = { ROOT: '/', SHARE: false, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '死鬼去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

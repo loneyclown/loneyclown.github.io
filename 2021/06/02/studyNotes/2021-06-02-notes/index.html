@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>Jupyter Notebook 安装以支持js | Loneyclown | 能可爱，绝不狗带</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="jupyter">
+    <meta name="description" content="安装 jupyterjupyter 官网先决条件：Python(Python的3.3或更高版本，或Python 2.7)   12pip3 install --upgrade pippip3 install jupyter 运行jupyter notebook，一切正常就可进行下一步。如果提示jupyter不存在，则需要手动设置环境变量。  MacOS手动设置环境变量编辑PATH配置文件：vim">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Jupyter Notebook 安装以支持js">
+<meta property="og:url" content="https://loneyclown.github.io/2021/06/02/studyNotes/2021-06-02-notes/index.html">
+<meta property="og:site_name" content="Loneyclown">
+<meta property="og:description" content="安装 jupyterjupyter 官网先决条件：Python(Python的3.3或更高版本，或Python 2.7)   12pip3 install --upgrade pippip3 install jupyter 运行jupyter notebook，一切正常就可进行下一步。如果提示jupyter不存在，则需要手动设置环境变量。  MacOS手动设置环境变量编辑PATH配置文件：vim">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-06-01T16:00:00.000Z">
+<meta property="article:modified_time" content="2021-09-26T06:36:32.090Z">
+<meta property="article:author" content="Loneyclown">
+<meta property="article:tag" content="jupyter">
+<meta name="twitter:card" content="summary">
+    
+        <link rel="alternate" type="application/atom+xml" title="Loneyclown" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+<meta name="generator" content="Hexo 4.2.1"><link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(//static.loneyclown.vip/avatar.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="//static.loneyclown.vip/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Loneyclown</h5>
+          <a href="mailto:loneyclown@outlook.com" title="loneyclown@outlook.com" class="mail">loneyclown@outlook.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                文章
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                分类
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://nav.loneyclown.vip/" target="_blank" >
+                <i class="icon icon-lg icon-bookmark"></i>
+                导航站
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Jupyter Notebook 安装以支持js</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">Jupyter Notebook 安装以支持js</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2021-06-01T16:00:00.000Z" itemprop="datePublished" class="page-time">
+  2021-06-02
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#安装-jupyter"><span class="post-toc-number">1.</span> <span class="post-toc-text">安装 jupyter</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#安装-IJavascript"><span class="post-toc-number">2.</span> <span class="post-toc-text">安装 IJavascript</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#MacOS"><span class="post-toc-number">2.0.0.0.1.</span> <span class="post-toc-text">MacOS</span></a></li></ol></li></ol></li></ol></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="blog-studyNotes/2021-06-02-notes"
+  class="post-article article-type-blog fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Jupyter Notebook 安装以支持js</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2021-06-02 00:00:00" datetime="2021-06-01T16:00:00.000Z"  itemprop="datePublished">2021-06-02</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a></li></ul>
+
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="安装-jupyter"><a href="#安装-jupyter" class="headerlink" title="安装 jupyter"></a>安装 jupyter</h1><p><a href="https://jupyter.readthedocs.io/en/latest/content-quickstart.html" target="_blank" rel="noopener">jupyter 官网</a><br>先决条件：Python(Python的3.3或更高版本，或Python 2.7)  </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pip3 install --upgrade pip</span><br><span class="line">pip3 install jupyter</span><br></pre></td></tr></table></figure>
+<p>运行<code>jupyter notebook</code>，一切正常就可进行下一步。如果提示jupyter不存在，则需要手动设置环境变量。</p>
+<blockquote>
+<p>MacOS手动设置环境变量<br>编辑PATH配置文件：<code>vim ~/.bash_profile</code><br>末尾添加：<code>export PATH=$PATH:/Library/Frameworks/Python.framework/Versions/3.8/bin</code><br>PS: 具体的python bin目录可根据安装方式自行查找</p>
+</blockquote>
+<h1 id="安装-IJavascript"><a href="#安装-IJavascript" class="headerlink" title="安装 IJavascript"></a>安装 IJavascript</h1><p>IJavascript github： <a href="https://github.com/n-riesco/ijavascript" target="_blank" rel="noopener">https://github.com/n-riesco/ijavascript</a>  </p>
+<h5 id="MacOS"><a href="#MacOS" class="headerlink" title="MacOS"></a>MacOS</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">ruby -e <span class="string">"<span class="variable">$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)</span>"</span></span><br><span class="line">brew install pkg-config node zeromq</span><br><span class="line">sudo easy_install pip</span><br><span class="line">pip install --upgrade pyzmq jupyter</span><br><span class="line">npm install -g ijavascript</span><br><span class="line">ijsinstall</span><br></pre></td></tr></table></figure>
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <footer>
+        <a href="https://loneyclown.github.io">
+            <img src="//static.loneyclown.vip/avatar.jpg" alt="Loneyclown">
+            Loneyclown
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jupyter/" rel="tag">jupyter</a></li></ul>
+
+
+            
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2020/04/29/studyNotes/2020-04-29-notes/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">三维立体坐标点，在x轴，y轴相同的情况下，取出z轴最大的坐标点</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Loneyclown &copy; 2021</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<!-- <script src="//cdn.bootcdn.net/ajax/libs/lodash.js/4.17.21/lodash.core.min.js"></script> -->
+<!-- <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script> -->
+<script>
+var BLOG = { ROOT: '/', SHARE: false, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '死鬼去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

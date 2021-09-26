@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>Git Bash 操作 | Loneyclown | 能可爱，绝不狗带</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="Git Bash">
+    <meta name="description" content="Git Bash 操作Git基本常用命令如下：1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859mkdir：         XX (创建一个空目录 XX指目录名)pwd：          显示当前目录的路径。git init">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Git Bash 操作">
+<meta property="og:url" content="https://loneyclown.github.io/2018/06/08/Git/2018-06-26-Git-Bash/index.html">
+<meta property="og:site_name" content="Loneyclown">
+<meta property="og:description" content="Git Bash 操作Git基本常用命令如下：1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859mkdir：         XX (创建一个空目录 XX指目录名)pwd：          显示当前目录的路径。git init">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://www.admin10000.com/UploadFiles/Document/201410/27/20141027155323753352.PNG">
+<meta property="og:image" content="http://www.admin10000.com/UploadFiles/Document/201410/27/20141027155323355322.PNG">
+<meta property="og:image" content="http://www.admin10000.com/UploadFiles/Document/201410/27/20141027155323592489.PNG">
+<meta property="og:image" content="http://www.admin10000.com/UploadFiles/Document/201410/27/20141027155323213968.PNG">
+<meta property="og:image" content="http://www.admin10000.com/UploadFiles/Document/201410/27/20141027155323934746.PNG">
+<meta property="og:image" content="http://www.admin10000.com/UploadFiles/Document/201410/27/20141027155323816495.PNG">
+<meta property="og:image" content="http://www.admin10000.com/UploadFiles/Document/201410/27/20141027155323652630.PNG">
+<meta property="og:image" content="http://www.admin10000.com/UploadFiles/Document/201410/27/20141027155323066741.PNG">
+<meta property="og:image" content="http://www.admin10000.com/UploadFiles/Document/201410/27/20141027155323087143.PNG">
+<meta property="og:image" content="http://www.admin10000.com/UploadFiles/Document/201410/27/20141027155323653601.PNG">
+<meta property="og:image" content="http://www.admin10000.com/UploadFiles/Document/201410/27/20141027155323810970.PNG">
+<meta property="article:published_time" content="2018-06-07T16:00:00.000Z">
+<meta property="article:modified_time" content="2021-09-26T06:36:32.084Z">
+<meta property="article:author" content="Loneyclown">
+<meta property="article:tag" content="Git Bash">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://www.admin10000.com/UploadFiles/Document/201410/27/20141027155323753352.PNG">
+    
+        <link rel="alternate" type="application/atom+xml" title="Loneyclown" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+<meta name="generator" content="Hexo 4.2.1"><link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(//static.loneyclown.vip/avatar.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="//static.loneyclown.vip/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Loneyclown</h5>
+          <a href="mailto:loneyclown@outlook.com" title="loneyclown@outlook.com" class="mail">loneyclown@outlook.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                文章
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                分类
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://nav.loneyclown.vip/" target="_blank" >
+                <i class="icon icon-lg icon-bookmark"></i>
+                导航站
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Git Bash 操作</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">Git Bash 操作</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-06-07T16:00:00.000Z" itemprop="datePublished" class="page-time">
+  2018-06-08
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Git-Bash-操作"><span class="post-toc-number">1.</span> <span class="post-toc-text">Git Bash 操作</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Git基本常用命令如下："><span class="post-toc-number">1.1.</span> <span class="post-toc-text">Git基本常用命令如下：</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#初始化项目"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">初始化项目</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Clone-项目"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">Clone 项目</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#提交项目"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">提交项目</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#远程仓库"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">远程仓库</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="blog-Git/2018-06-26-Git-Bash"
+  class="post-article article-type-blog fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Git Bash 操作</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018-06-08 00:00:00" datetime="2018-06-07T16:00:00.000Z"  itemprop="datePublished">2018-06-08</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a></li></ul>
+
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="Git-Bash-操作"><a href="#Git-Bash-操作" class="headerlink" title="Git Bash 操作"></a>Git Bash 操作</h1><h2 id="Git基本常用命令如下："><a href="#Git基本常用命令如下：" class="headerlink" title="Git基本常用命令如下："></a>Git基本常用命令如下：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line">mkdir：         XX (创建一个空目录 XX指目录名)</span><br><span class="line"></span><br><span class="line">pwd：          显示当前目录的路径。</span><br><span class="line"></span><br><span class="line">git init          把当前的目录变成可以管理的git仓库，生成隐藏.git文件。</span><br><span class="line"></span><br><span class="line">git add XX       把xx文件添加到暂存区去。</span><br><span class="line"></span><br><span class="line">git commit –m “XX”  提交文件 –m 后面的是注释。</span><br><span class="line"></span><br><span class="line">git status        查看仓库状态</span><br><span class="line"></span><br><span class="line">git diff  XX      查看XX文件修改了那些内容</span><br><span class="line"></span><br><span class="line">git log          查看历史记录</span><br><span class="line"></span><br><span class="line">git reset  --hard HEAD^ 或者 git reset  --hard HEAD~ 回退到上一个版本 &#x2F;&#x2F; (如果想回退到100个版本，使用git reset –hard HEAD~100 )</span><br><span class="line"></span><br><span class="line">cat XX         查看XX文件内容</span><br><span class="line"></span><br><span class="line">git reflog       查看历史记录的版本号id</span><br><span class="line"></span><br><span class="line">git checkout -- XX  把XX文件在工作区的修改全部撤销。</span><br><span class="line"></span><br><span class="line">git rm XX          删除XX文件</span><br><span class="line"></span><br><span class="line">git remote add origin &lt;https:&#x2F;&#x2F;github.com&#x2F;tugenhua0707&#x2F;testgit&gt; 关联一个远程库</span><br><span class="line"></span><br><span class="line">git push –u(第一次要用-u 以后不需要) origin master 把当前master分支推送到远程库</span><br><span class="line"></span><br><span class="line">git clone &lt;https:&#x2F;&#x2F;github.com&#x2F;tugenhua0707&#x2F;testgit&gt;  从远程库中克隆</span><br><span class="line"></span><br><span class="line">git checkout –b dev  创建dev分支 并切换到dev分支上</span><br><span class="line"></span><br><span class="line">git branch  查看当前所有的分支</span><br><span class="line"></span><br><span class="line">git checkout master 切换回master分支</span><br><span class="line"></span><br><span class="line">git merge dev    在当前的分支上合并dev分支</span><br><span class="line"></span><br><span class="line">git branch –d dev 删除dev分支</span><br><span class="line"></span><br><span class="line">git branch name  创建分支</span><br><span class="line"></span><br><span class="line">git stash 把当前的工作隐藏起来 等以后恢复现场后继续工作</span><br><span class="line"></span><br><span class="line">git stash list 查看所有被隐藏的文件列表</span><br><span class="line"></span><br><span class="line">git stash apply 恢复被隐藏的文件，但是内容不删除</span><br><span class="line"></span><br><span class="line">git stash drop 删除文件</span><br><span class="line"></span><br><span class="line">git stash pop 恢复文件的同时 也删除文件</span><br><span class="line"></span><br><span class="line">git remote 查看远程库的信息</span><br><span class="line"></span><br><span class="line">git remote –v 查看远程库的详细信息</span><br><span class="line"></span><br><span class="line">git push origin master  Git会把master分支推送到远程库对应的远程分支上</span><br></pre></td></tr></table></figure>
+
+<h2 id="初始化项目"><a href="#初始化项目" class="headerlink" title="初始化项目"></a>初始化项目</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br><span class="line"></span><br><span class="line">git git add [文件名] &#x2F;&#x2F; 添加文件到暂存区，提交当前目录全部文件文件名填&quot;.&quot;</span><br><span class="line"></span><br><span class="line">git commit -m &#39;内容&#39; &#x2F;&#x2F; 提交内容， 加[-m &#39;内容&#39;]为为当次提交添加注释</span><br><span class="line"></span><br><span class="line">git status &#x2F;&#x2F; 查看是否还有文件未提交</span><br><span class="line"></span><br><span class="line">git diff [文件名]&#x2F;&#x2F; 比较差异</span><br><span class="line"></span><br><span class="line">git log &#x2F;&#x2F;查看日志 (git log –pretty&#x3D;oneline, &#39;单行显示日志&#39;)</span><br><span class="line"></span><br><span class="line">git reset  --hard HEAD^ &#x2F;&#x2F; 回退到上一个版本,如果要回退到上上个版本只需把HEAD^ 改成 HEAD^^ 以此类推,(git reset  --hard HEAD~100 , &#39;回退到前100个版本&#39;)</span><br><span class="line"></span><br><span class="line">git reset  --hard [版本号] &#x2F;&#x2F; 回退到指定版本 (git reflog, &#39;获取版本号&#39;)</span><br></pre></td></tr></table></figure>
+
+<h2 id="Clone-项目"><a href="#Clone-项目" class="headerlink" title="Clone 项目"></a>Clone 项目</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone git@git.oschina.net:ifengye&#x2F;test.git &#x2F;&#x2F;SSH地址</span><br></pre></td></tr></table></figure>
+
+<h2 id="提交项目"><a href="#提交项目" class="headerlink" title="提交项目"></a>提交项目</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git pull origin master</span><br><span class="line">git add .</span><br><span class="line">git commit -m &#39;init&#39; &#x2F;&#x2F;init为说明文字</span><br><span class="line">git commit --amend &#x2F;&#x2F;查看当前log</span><br><span class="line">git push origin master</span><br></pre></td></tr></table></figure>
+
+<h2 id="远程仓库"><a href="#远程仓库" class="headerlink" title="远程仓库"></a>远程仓库</h2><p>在了解之前，先注册github账号，由于你的本地Git仓库和github仓库之间的传输是通过SSH加密的，所以需要一点设置：<br>第一步：创建SSH Key。在用户主目录下，看看有没有.ssh目录，如果有，再看看这个目录下有没有id_rsa和id_rsa.pub这两个文件，如果有的话，直接跳过此如下命令，如果没有的话，打开命令行，输入如下命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen  -t rsa –C “youremail@example.com”</span><br></pre></td></tr></table></figure>
+<p>,由于我本地此前运行过一次，所以本地有，如下所示：<br><img src="http://www.admin10000.com/UploadFiles/Document/201410/27/20141027155323753352.PNG" alt="avatar"><br>id_rsa是私钥，不能泄露出去，id_rsa.pub是公钥，可以放心地告诉任何人。<br>第二步：登录github,打开” settings”中的SSH Keys页面，然后点击“Add SSH Key”,填上任意title，在Key文本框里黏贴id_rsa.pub文件的内容。<br><img src="http://www.admin10000.com/UploadFiles/Document/201410/27/20141027155323355322.PNG" alt="avatar"><br>点击 Add Key，你就应该可以看到已经添加的key。<br><img src="http://www.admin10000.com/UploadFiles/Document/201410/27/20141027155323592489.PNG" alt="avatar"></p>
+<ol>
+<li><p>如何添加远程库？<br>现在的情景是：我们已经在本地创建了一个Git仓库后，又想在github创建一个Git仓库，并且希望这两个仓库进行远程同步，这样github的仓库可以作为备份，又可以其他人通过该仓库来协作。<br>首先，登录github上，然后在右上角找到“create a new repo”创建一个新的仓库。如下：<br><img src="http://www.admin10000.com/UploadFiles/Document/201410/27/20141027155323213968.PNG" alt="avatar"><br>在Repository name填入testgit，其他保持默认设置，点击“Create repository”按钮，就成功地创建了一个新的Git仓库：<br><img src="http://www.admin10000.com/UploadFiles/Document/201410/27/20141027155323934746.PNG" alt="avatar"><br>目前，在GitHub上的这个testgit仓库还是空的，GitHub告诉我们，可以从这个仓库克隆出新的仓库，也可以把一个已有的本地仓库与之关联，然后，把本地仓库的内容推送到GitHub仓库。<br>现在，我们根据GitHub的提示，在本地的testgit仓库下运行命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote add origin &lt;https:&#x2F;&#x2F;github.com&#x2F;tugenhua0707&#x2F;testgit.git&gt;</span><br></pre></td></tr></table></figure>
+<p>所有的如下：<br><img src="http://www.admin10000.com/UploadFiles/Document/201410/27/20141027155323816495.PNG" alt="avatar"><br>把本地库的内容推送到远程，使用 git push命令，实际上是把当前分支master推送到远程。<br>由于远程库是空的，我们第一次推送master分支时，加上了 –u参数，Git不但会把本地的master分支内容推送的远程新的master分支，还会把本地的master分支和远程的master分支关联起来，在以后的推送或者拉取时就可以简化命令。推送成功后，可以立刻在github页面中看到远程库的内容已经和本地一模一样了，上面的要输入github的用户名和密码如下所示：   <img src="http://www.admin10000.com/UploadFiles/Document/201410/27/20141027155323652630.PNG" alt="avatar"><br>从现在起，只要本地作了提交，就可以通过如下命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push origin master</span><br></pre></td></tr></table></figure>
+<p>把本地master分支的最新修改推送到github上了，现在你就拥有了真正的分布式版本库了。</p>
+</li>
+<li><p>如何从远程库克隆？<br>上面我们了解了先有本地库，后有远程库时候，如何关联远程库。<br>现在我们想，假如远程库有新的内容了，我想克隆到本地来 如何克隆呢？<br>首先，登录github，创建一个新的仓库，名字叫testgit2.如下：  <img src="http://www.admin10000.com/UploadFiles/Document/201410/27/20141027155323066741.PNG" alt="avatar"><br>如下，我们看到：<br><img src="http://www.admin10000.com/UploadFiles/Document/201410/27/20141027155323087143.PNG" alt="avatar"><br>现在，远程库已经准备好了，下一步是使用命令git clone克隆一个本地库了。如下所示：<br><img src="http://www.admin10000.com/UploadFiles/Document/201410/27/20141027155323653601.PNG" alt="avatar"><br>接着在我本地目录下 生成testgit2目录了，如下所示：<br><img src="http://www.admin10000.com/UploadFiles/Document/201410/27/20141027155323810970.PNG" alt="avatar"></p>
+</li>
+</ol>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <footer>
+        <a href="https://loneyclown.github.io">
+            <img src="//static.loneyclown.vip/avatar.jpg" alt="Loneyclown">
+            Loneyclown
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git-Bash/" rel="tag">Git Bash</a></li></ul>
+
+
+            
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2018/06/26/randomNotes/2018-06-26-bundle-cmd/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">bundle 命令</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2018/06/08/Node/2018-06-26-Node-notes/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Node 学习笔记</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Loneyclown &copy; 2021</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<!-- <script src="//cdn.bootcdn.net/ajax/libs/lodash.js/4.17.21/lodash.core.min.js"></script> -->
+<!-- <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script> -->
+<script>
+var BLOG = { ROOT: '/', SHARE: false, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '死鬼去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
