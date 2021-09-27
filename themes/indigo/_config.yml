@@ -20,6 +20,10 @@ menu:
   th-list:
     text: 分类
     url: /categories
+  bookmark:
+    text: 导航站
+    url: https://nav.loneyclown.vip/
+    target: _blank
   # github:
   #   url: https://github.com/yscoder
   #   target: _blank

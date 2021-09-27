@@ -1,13 +1,17 @@
 <%
-if(type === 'categories' || type === 'tags'){ %>
+if(type === 'categories' || type === 'tags' || type === 'nav'){ %>
 <div class="tabs-bar container">
     <nav class="tags-list">
         <a href="<%= url_for('/' + type) %>" style="-webkit-order:-1;order:-1" class="tags-list-item waves-effect waves-button waves-light
             <% if(path === type + '/index.html'){%> active<%}%>"><%= __('tag.all') %></a>
         <%
             var options = [];
+            var list = site.tags;
+            if (type === 'categories') {
+                list = site.categories;
+            }
 
-            (type === 'tags' ? site.tags : site.categories).each(function(o) {
+            list.each(function(o) {
                 if(o.posts.length) {
                     options.push(o)
                 }

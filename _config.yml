@@ -79,7 +79,7 @@ theme: indigo
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: https://github.com/loneyclown/loneyclown.github.io.git
+  repo: git@github.com:loneyclown/loneyclown.github.io.git
   branch: master
 
 # Hexo博客添加站内搜索
