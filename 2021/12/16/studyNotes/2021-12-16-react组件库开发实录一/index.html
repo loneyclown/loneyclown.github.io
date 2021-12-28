@@ -21,17 +21,17 @@
     
     
     <meta name="keywords" content="react">
-    <meta name="description" content="准备工作创建项目123mkdir react-erpcd react-erpnpm init -y  安装相关依赖123456npm i react react-dom -Snpm i webpack webpack-dev-server webpack-cli -D# loadernpm i babel-loader @babel&#x2F;core @babel&#x2F;preset-env style-loa">
+    <meta name="description" content="准备工作创建项目123mkdir react-erpcd react-erpnpm init -y  安装相关依赖123456npm i react react-dom -Snpm i webpack webpack-dev-server webpack-cli -D# typescript &amp; loadernpm i typescript babel-loader @babel&#x2F;core">
 <meta property="og:type" content="article">
 <meta property="og:title" content="react组件库开发实录·一 项目搭建">
 <meta property="og:url" content="https://loneyclown.github.io/2021/12/16/studyNotes/2021-12-16-react%E7%BB%84%E4%BB%B6%E5%BA%93%E5%BC%80%E5%8F%91%E5%AE%9E%E5%BD%95%E4%B8%80/index.html">
 <meta property="og:site_name" content="Loneyclown">
-<meta property="og:description" content="准备工作创建项目123mkdir react-erpcd react-erpnpm init -y  安装相关依赖123456npm i react react-dom -Snpm i webpack webpack-dev-server webpack-cli -D# loadernpm i babel-loader @babel&#x2F;core @babel&#x2F;preset-env style-loa">
+<meta property="og:description" content="准备工作创建项目123mkdir react-erpcd react-erpnpm init -y  安装相关依赖123456npm i react react-dom -Snpm i webpack webpack-dev-server webpack-cli -D# typescript &amp; loadernpm i typescript babel-loader @babel&#x2F;core">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://static.loneyclown.vip/blog/2021-12-16/313B6BFD-F086-45B7-8B19-781E41AB6EF2.png">
 <meta property="og:image" content="https://static.loneyclown.vip/blog/2021-12-16/CEC87DCD-B636-400B-993A-67E55ADCD0B2.png">
 <meta property="article:published_time" content="2021-12-15T16:00:00.000Z">
-<meta property="article:modified_time" content="2021-12-16T10:29:36.797Z">
+<meta property="article:modified_time" content="2021-12-28T02:47:14.227Z">
 <meta property="article:author" content="Loneyclown">
 <meta property="article:tag" content="react">
 <meta name="twitter:card" content="summary">
@@ -183,7 +183,7 @@
         <div class="post-content" id="post-content" itemprop="postContent">
             <h1 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h1><h3 id="创建项目"><a href="#创建项目" class="headerlink" title="创建项目"></a>创建项目</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mkdir react-erp</span><br><span class="line"><span class="built_in">cd</span> react-erp</span><br><span class="line">npm init -y</span><br></pre></td></tr></table></figure>
 
-<h3 id="安装相关依赖"><a href="#安装相关依赖" class="headerlink" title="安装相关依赖"></a>安装相关依赖</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">npm i react react-dom -S</span><br><span class="line">npm i webpack webpack-dev-server webpack-cli -D</span><br><span class="line"><span class="comment"># loader</span></span><br><span class="line">npm i babel-loader @babel/core @babel/preset-env style-loader css-loader ts-loader -D</span><br><span class="line"><span class="comment"># HtmlWebpackPlugin</span></span><br><span class="line">npm install html-webpack-plugin -D</span><br></pre></td></tr></table></figure>
+<h3 id="安装相关依赖"><a href="#安装相关依赖" class="headerlink" title="安装相关依赖"></a>安装相关依赖</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">npm i react react-dom -S</span><br><span class="line">npm i webpack webpack-dev-server webpack-cli -D</span><br><span class="line"><span class="comment"># typescript &amp; loader</span></span><br><span class="line">npm i typescript babel-loader @babel/core @babel/preset-env style-loader css-loader ts-loader -D</span><br><span class="line"><span class="comment"># HtmlWebpackPlugin</span></span><br><span class="line">npm install html-webpack-plugin -D</span><br></pre></td></tr></table></figure>
 
 <h3 id="搭建目录结构"><a href="#搭建目录结构" class="headerlink" title="搭建目录结构"></a>搭建目录结构</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir src src/components src/types src/utils src/hooks src/servers src/doc</span><br></pre></td></tr></table></figure>
 <p><img src="https://static.loneyclown.vip/blog/2021-12-16/313B6BFD-F086-45B7-8B19-781E41AB6EF2.png" alt="目录结构"></p>
@@ -242,7 +242,7 @@
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/2021/12/16/studyNotes/2021-12-20-react%E7%BB%84%E4%BB%B6%E5%BA%93%E5%BC%80%E5%8F%91%E5%AE%9E%E5%BD%95%E4%BA%8C/" id="post-prev" class="post-nav-link">
+      <a href="/2021/12/20/studyNotes/2021-12-20-react%E7%BB%84%E4%BB%B6%E5%BA%93%E5%BC%80%E5%8F%91%E5%AE%9E%E5%BD%95%E4%BA%8C/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
         <h4 class="title">react组件库开发实录·二 添加less，使用mdx编写项目文档</h4>
       </a>
