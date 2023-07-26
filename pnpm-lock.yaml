@@ -1,13 +1,16 @@
 lockfileVersion: '6.1'
 
 settings:
-  autoInstallPeers: true
+  autoInstallPeers: false
   excludeLinksFromLockfile: false
 
 dependencies:
   hexo:
     specifier: ^6.3.0
     version: 6.3.0
+  hexo-deployer-git:
+    specifier: ^4.0.0
+    version: 4.0.0
   hexo-generator-archive:
     specifier: ^2.0.0
     version: 2.0.0
@@ -588,6 +591,20 @@ packages:
       tildify: 2.0.0
     dev: false
 
+  /hexo-deployer-git@4.0.0:
+    resolution: {integrity: sha512-28t1Q+4taB/UaBAP52W3mD/wcCwa2y2zBieUfBJFBZudbmVgiKJB5YedYILeyI5QByaUKAOwoupmdTbocdQ+CQ==}
+    engines: {node: '>=14'}
+    dependencies:
+      bluebird: 3.7.2
+      hexo-fs: 4.1.1
+      hexo-util: 2.7.0
+      luxon: 3.3.0
+      nunjucks: 3.2.4
+      picocolors: 1.0.0
+    transitivePeerDependencies:
+      - chokidar
+    dev: false
+
   /hexo-front-matter@3.0.0:
     resolution: {integrity: sha512-hSQTPUmB/BCe1BFYmXRkPyLk8rqbBqHCQq+rjwwOJuEfOADrFaVK2VPZb90tJzPyXE1xSxpgCxE/AZq0CyTVwg==}
     engines: {node: '>=12.13.0'}
@@ -972,6 +989,11 @@ packages:
     resolution: {integrity: sha512-7fm3l3NAF9WfN6W3JOmf5drwpVqX78JtoGJ3A6W0a6ZnldM41w2fV5D490psKFTpMds8TJse/eHLFFsNHHjHgg==}
     dependencies:
       tslib: 2.6.0
+    dev: false
+
+  /luxon@3.3.0:
+    resolution: {integrity: sha512-An0UCfG/rSiqtAIiBPO0Y9/zAnHUZxAMiCpTd5h2smgsj7GGmcenvrvww2cqNA8/4A5ZrD1gJpHN2mIHZQF+Mg==}
+    engines: {node: '>=12'}
     dev: false
 
   /marked@4.3.0:

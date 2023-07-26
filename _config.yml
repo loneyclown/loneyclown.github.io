@@ -3,9 +3,9 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Loneyclown
+title: 晓梦未央-林雨霞
 subtitle: ''
-description: ''
+description: '总有人间一缕风，填我十万秋水长。'
 keywords:
 author: loneyclown
 language: zh
@@ -13,7 +13,7 @@ timezone: ''
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: http://example.com
+url: https://loneyclown.github.io/
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 pretty_urls:
@@ -102,7 +102,9 @@ theme: particlex
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
-  type: ''
+  type: git
+  repo: git@github.com:loneyclown/loneyclown.github.io.git
+  branch: master
 
 archive_generator:
   enabled: true
