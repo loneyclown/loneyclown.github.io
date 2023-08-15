@@ -1,0 +1,185 @@
+---
+layout: blog
+# istop: true
+title: "Spring Boot 项目搭建"
+mark: 原创
+# background-image: https://o243f9mnq.qnssl.com/2017/06/116099051.jpg
+background: notes
+date:  2018-12-16
+category: 随拾
+tags:
+- java
+- SSM
+- Spring
+- Spring Boot
+---
+
+## Spring Boot 项目搭建
+开发环境：IntelliJ IEDA
+### 1.新建项目
+![01][]
+这里直接next
+
+![02][]
+设置group和artifact
+
+![03][]
+DevTools顾名思义是开发工具，热更新等，lombok都知道，validation是表单验证或者说参数检查工具
+
+![04][]
+点击完成
+
+### 2.配置项目
+等待IDEA自动下载完成依赖后就可以开始配置项目了，项目目录结构：
+![05][]
+
+_这里我将另一个项目的截图贴出来_
+![06][]
+目录结构
+
+将`application.properties`文件改名为`application.yml`，写入配置：
+```yml
+server:
+  port: 8080
+spring:
+  http:
+    encoding:
+      enabled: true
+      charset: UTF-8
+      force: true
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/design?useUnicode=true&characterEncoding=UTF8&serverTimezone=GMT
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+mybatis:
+  type-aliases-package: com.clown.design.entity
+  mapper-locations: classpath:mapper/*.xml
+```
+
+项目名+Application SpringBoot主类：
+```java
+package com.clown.design;
+
+import org.mybatis.spring.annotation.MapperScan;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@MapperScan(basePackages = "com.clown.design.dao")
+@SpringBootApplication
+public class DesignApplication {
+
+    public static void main(String[] args) {
+        SpringApplication.run(DesignApplication.class, args);
+    }
+
+}
+```
+
+Role:
+```java
+package com.clown.design.entity;
+import lombok.Data;
+@Data
+public class Role {
+    private Integer id;
+    private String roleName;
+    private String passWord;
+    private Integer roleType;
+}
+```
+
+IRoleDao：
+```java
+package com.clown.design.dao;
+import com.clown.design.entity.Role;
+public interface IRoleDao {
+    Role selectRoleById(Integer id);
+}
+```
+
+RoleDaoMapper：
+```xml
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.clown.design.dao.IRoleDao">
+    <resultMap id="roleResult" type="com.clown.design.entity.Role">
+        <id column="id" property="id"/>
+        <result column="roleName" property="roleName"/>
+        <result column="passWord" property="passWord"/>
+        <result column="roleType" property="roleType"/>
+    </resultMap>
+
+    <select id="selectRoleById" parameterType="Integer" resultType="com.clown.design.entity.Role">
+        SELECT * FROM role WHERE id = #{id}
+    </select>
+
+</mapper>
+```
+
+IRoleSerivce：
+```java
+package com.clown.design.service;
+import com.clown.design.entity.Role;
+public interface IRoleSerivce {
+    Role getRoleById(Integer id);
+}
+```
+
+RoleServiceImpl：
+```java
+package com.clown.design.service.impl;
+import com.clown.design.dao.IRoleDao;
+import com.clown.design.entity.Role;
+import com.clown.design.service.IRoleSerivce;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+@Service
+public class RoleServiceImpl implements IRoleSerivce {
+    @Autowired
+    private IRoleDao roleDao;
+    @Override
+    public Role getRoleById(Integer id) {
+        return this.roleDao.selectRoleById(id);
+    }
+}
+```
+
+RoleController：
+```java
+package com.clown.design.controller;
+import com.clown.design.entity.Role;
+import com.clown.design.service.IRoleSerivce;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
+@CrossOrigin
+@RestController
+@RequestMapping("/role")
+public class RoleController {
+    @Autowired
+    private IRoleSerivce roleSerivce;
+    @RequestMapping(value = "/getRoleById", method = RequestMethod.GET)
+    public Map<String, Object> getRoleById(HttpServletRequest request, HttpServletResponse response, Role role) throws IOException {
+        Map<String, Object> map = new HashMap<>();
+        map.put("data", this.roleSerivce.getRoleById(role.getId()));
+        return map;
+    }
+}
+```
+
+[01]: https://i.postimg.cc/c1jdc9Wn/2018-12-16-img-01.png
+[02]: https://i.postimg.cc/6qDw53c0/2018-12-16-img-02.png
+[03]: https://i.postimg.cc/9fW2fsdv/2018-12-16-img-03.png
+[04]: https://i.postimg.cc/9F7CgdXN/2018-12-16-img-04.png
+[05]: https://i.postimg.cc/Jz3mMRkN/2018-12-16-img-05.png
+[06]: https://i.postimg.cc/MpJxCnvZ/2018-12-16-img-06.png
