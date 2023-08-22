@@ -1,0 +1,182 @@
+<!DOCTYPE html><html lang="zh" theme-mode="dark"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>SVN命令行相关操作 | 晓梦未央-林雨霞</title><link rel="icon" type="image/x-icon" href="/favicon.ico"><script>var config = {"root":"/","search":{"preload":false,"activeHolder":"Enter here","blurHolder":"Search","noResult":"Data \"$0\" not found"},"code":{"codeInfo":"$0 - $1 lines","copy":"code.copy","copyFinish":"code.copyFinish","expand":"code.expand"}}</script><script src="//unpkg.com/mermaid@9.2.2/dist/mermaid.min.js"></script><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lightgallery.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-zoom.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-thumbnail.css"><link type="text/css" rel="stylesheet" href="/lib/fontawesome/css/all.min.css"><link rel="stylesheet" href="/css/arknights.css"><script>if (window.localStorage.getItem('theme-mode') === 'light')
+ document.documentElement.setAttribute('theme-mode', 'light')
+if (window.localStorage.getItem('theme-mode') === 'dark')
+ document.documentElement.setAttribute('theme-mode', 'dark')</script><style>@font-face {
+ font-family: Bender;
+ src: local('Bender'), url("/font/Bender.ttf"), url("/font/Bender.otf");
+}
+@font-face {
+ font-family: BenderLight;
+ src: local('BenderLight'), url("/font/BenderLight.ttf");
+}
+@font-face {
+ font-family: 'JetBrains Mono';
+ src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
+}</style><style>:root {
+  --dark-background: url('https://ak.hypergryph.com/assets/index/images/ak/pc/bk.jpg');
+  --light-background: url('/img/bk.jpg');
+}</style><meta name="generator" content="Hexo 6.3.0"><style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"] > svg a {
+  fill: blue;
+  stroke: blue;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style></head><body><div class="loading" style="opacity: 0;"><div class="loadingBar left"></div><div class="loadingBar right"></div></div><main><header class="closed"><div class="navBtn"><i class="navBtnIcon"><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span></i></div><nav><div class="navItem" id="search-header"><span class="navItemTitle"><input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="Search" spellcheck="false" maxlength="50" type="text" id="search-input"></span></div><div class="navItem" id="search-holder"></div><div class="search-popup"><div id="search-result"></div></div><ol class="navContent"><li class="navItem"><a class="navBlock" href="/"><span class="navItemTitle">Home</span></a></li><li class="navItem" matchdata="categories,tags"><a class="navBlock" href="/archives/"><span class="navItemTitle">Archives</span></a></li></ol></nav></header><article><div id="post-bg"><div id="post-title"><h1>SVN命令行相关操作</h1><div id="post-info"><span>First Post: <div class="control"><time datetime="2019-10-11T16:00:00.000Z" id="date"> 2019-10-12</time></div></span><br><span>Last Update: <div class="control"><time datetime="2023-08-22T02:25:15.356Z" id="updated"> 2023-08-22</time></div></span></div></div><hr><div id="post-content"><h2 id="基础操作"><a href="#基础操作" class="headerlink" title="基础操作"></a>基础操作</h2><h3 id="将数据导入存储库"><a href="#将数据导入存储库" class="headerlink" title="将数据导入存储库"></a>将数据导入存储库</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">svn import https://svn.example.com/repos/MyRepo/MyProject/trunk -m <span class="hljs-string">&quot;Initial project import&quot;</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="签出工作副本"><a href="#签出工作副本" class="headerlink" title="签出工作副本"></a>签出工作副本</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">svn checkout https://svn.example.com/repos/MyRepo/MyProject/trunk MyWorkingCopy<br></code></pre></td></tr></table></figure>
+
+<h3 id="更新工作副本"><a href="#更新工作副本" class="headerlink" title="更新工作副本"></a>更新工作副本</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">svn update<br></code></pre></td></tr></table></figure>
+
+<h3 id="在本地工作副本中进行更改"><a href="#在本地工作副本中进行更改" class="headerlink" title="在本地工作副本中进行更改"></a>在本地工作副本中进行更改</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">svn commit -m <span class="hljs-string">&quot;My Descriptive Log Message&quot;</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="执行文件和目录操作"><a href="#执行文件和目录操作" class="headerlink" title="执行文件和目录操作"></a>执行文件和目录操作</h3><h4 id="添加新文件和目录"><a href="#添加新文件和目录" class="headerlink" title="添加新文件和目录"></a>添加新文件和目录</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 添加新文件到版本库</span><br>svn add filename<br><br><span class="hljs-comment"># 添加当前目录下所有php文件</span><br>svn add *.php<br><br><span class="hljs-comment"># 递归添加当前目录下的所有新文件</span><br>svn add . --no-ignore --force<br></code></pre></td></tr></table></figure>
+<h4 id="复制文件和目录"><a href="#复制文件和目录" class="headerlink" title="复制文件和目录"></a>复制文件和目录</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">svn copy foo.cs bar.cs<br></code></pre></td></tr></table></figure>
+<h4 id="删除文件和目录"><a href="#删除文件和目录" class="headerlink" title="删除文件和目录"></a>删除文件和目录</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">svn delete foo.cs<br></code></pre></td></tr></table></figure>
+<h4 id="恢复或放弃本地更改"><a href="#恢复或放弃本地更改" class="headerlink" title="恢复或放弃本地更改"></a>恢复或放弃本地更改</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 撤销本地文件的修改（还没提交的）</span><br>svn revert test.php<br>svn revert -r 目录名<br><br><span class="hljs-comment"># 撤销目录下所有本地修改</span><br>svn revert --recursive 目录名<br></code></pre></td></tr></table></figure>
+
+<h3 id="查看日志和改动"><a href="#查看日志和改动" class="headerlink" title="查看日志和改动"></a>查看日志和改动</h3><h4 id="查看日志"><a href="#查看日志" class="headerlink" title="查看日志"></a>查看日志</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 查看指定文件的所有日志</span><br>svn <span class="hljs-built_in">log</span> test.php<br><br><span class="hljs-comment"># 查看指定版本号的日志</span><br>svn <span class="hljs-built_in">log</span> -r 100<br></code></pre></td></tr></table></figure>
+
+<h4 id="查看改动"><a href="#查看改动" class="headerlink" title="查看改动"></a>查看改动</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 查看当前工作区的所有改动</span><br>svn diff<br><br><span class="hljs-comment"># 查看当前工作区test.php文件与最新版本的差异</span><br>svn diff test.php  <br><br><span class="hljs-comment"># 指定版本号比较差异</span><br>svn diff -r 200:201 test.php<br><br><span class="hljs-comment"># 查看当前工作区和版本301中bin目录的差异</span><br>svn diff -r 301 bin<br><br><span class="hljs-comment"># 显示文件的每一行最后是谁修改的（出了BUG，经常用来查这段代码是谁改的）</span><br>svn blame filename.php<br></code></pre></td></tr></table></figure>
+
+<h3 id="查看版本库信息"><a href="#查看版本库信息" class="headerlink" title="查看版本库信息"></a>查看版本库信息</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 查看当前工作区的状态</span><br>svn status<br><br><span class="hljs-comment"># 查看svn信息</span><br>svn info<br><br><span class="hljs-comment"># 查看文件列表，可以指定-r查看，查看指定版本号的文件列表</span><br>svn <span class="hljs-built_in">ls</span> <br>svn <span class="hljs-built_in">ls</span> -r 100<br><br><span class="hljs-comment"># 查看指定版本的文件内容，不加版本号就是查看最新版本的</span><br>svn <span class="hljs-built_in">cat</span> test.py -r 2<br></code></pre></td></tr></table></figure>
+
+<h3 id="清理"><a href="#清理" class="headerlink" title="清理"></a>清理</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 清理</span><br>svn cleanup<br></code></pre></td></tr></table></figure>
+
+
+<h3 id="分支和标记"><a href="#分支和标记" class="headerlink" title="分支和标记"></a>分支和标记</h3><p>您应该使用<code>svn copy</code>命令创建分支和标签。当您希望项目与历史记录相关时，这是用于复制项目和存储库中项目的命令。<br><code>svn copy</code>命令用于分支，因为从技术上讲branch是复制源的副本。但是，它不是在本地文件系统上复制文件时所熟悉的普通副本。Subversion存储库中的分支称为“便宜副本”，类似于符号链接。因此，创建新分支将花费最少的时间来完成，并且在Subversion存储库中几乎不占用空间。您可以创建分支并将其用于所需的任何更改，而不考虑更改的大小和范围。</p>
+<h4 id="使用直接URL到URL复制创建分支"><a href="#使用直接URL到URL复制创建分支" class="headerlink" title="使用直接URL到URL复制创建分支"></a>使用直接URL到URL复制创建分支</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">svn copy https://example.com/MyRepo/trunk https://example.com/MyRepo/branches/MyNewBranch -m <span class="hljs-string">&quot;Creating a new branch&quot;</span><br></code></pre></td></tr></table></figure>
+<h4 id="创建分支"><a href="#创建分支" class="headerlink" title="创建分支"></a>创建分支</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 创建分支，从主干创建一个分支保存到branches/online1.0</span><br>svn <span class="hljs-built_in">cp</span> -m <span class="hljs-string">&quot;描述内容&quot;</span> http://svnbucket.com/repos/trunk http://svnbucket.com/repos/branches/online1.0<br><br><span class="hljs-comment"># 合并主干上的最新代码到分支上</span><br><span class="hljs-built_in">cd</span> branches/online1.0<br>svn merge http://svnbucket.com/repos/trunk <br><br><span class="hljs-comment"># 分支合并到主干</span><br>svn merge --reintegrate http://svnbucket.com/repos/branches/online1.0<br></code></pre></td></tr></table></figure>
+<h4 id="切换分支"><a href="#切换分支" class="headerlink" title="切换分支"></a>切换分支</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 切换当前项目到指定分支。服务器上更新新版本我们经常就用这个命令来把当前代码切换到新的分支</span><br>svn switch svn://svnbucket.com/test/branches/online1.0<br><br><span class="hljs-comment"># 重定向仓库地址到新地址</span><br>svn switch --relocate 原svn地址 新svn地址<br></code></pre></td></tr></table></figure>
+<h4 id="删除分支"><a href="#删除分支" class="headerlink" title="删除分支"></a>删除分支</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 删除分支</span><br>svn <span class="hljs-built_in">rm</span> http://svnbucket.com/repos/branches/online1.0<br></code></pre></td></tr></table></figure>
+
+<h4 id="帮助"><a href="#帮助" class="headerlink" title="帮助"></a>帮助</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 查看SVN帮助</span><br>svn <span class="hljs-built_in">help</span><br><br><span class="hljs-comment"># 查看指定命令的帮助信息</span><br>svn <span class="hljs-built_in">help</span> commit<br></code></pre></td></tr></table></figure>
+<hr>
+<p><em>参阅官方文档：<a target="_blank" rel="noopener" href="http://subversion.apache.org/quick-start">http://subversion.apache.org/quick-start</a></em><br><em>参阅掘金长者文章：<a target="_blank" rel="noopener" href="https://juejin.im/post/6844903599630188552">https://juejin.im/post/6844903599630188552</a></em></p>
+<div id="paginator"></div></div><div id="post-footer"><div id="pages"><div class="footer-link" style="width: 50%;text-align:right;border-right:1px #fe2 solid"><a href="/2019/11/27/randomNotes/2019-11-27-%E5%85%B3%E4%BA%8EMAC%E7%B3%BB%E7%BB%9F%E4%B8%8A%E5%90%91%E6%97%A5%E8%91%B5%E7%AD%89%E2%80%9C%E6%B5%81%E6%B0%93%E2%80%9D%E8%BD%AF%E4%BB%B6%E7%9A%84%E5%BC%80%E6%9C%BA%E8%87%AA%E5%90%AFdis/">← Next 关于MAC系统上向日葵等“流氓”软件的开机自启dis</a></div><div class="footer-link" style="width: 50%;right:1px;border-left:1px #fe2 solid"><a href="/2019/08/30/studyNotes/2019-08-30-notes/">无序json排序 Prev →</a></div></div></div></div><div class="bottom-btn"><div><a class="i-top" id="to-top" onClick="scrolls.scrolltop();" title="To Top" style="opacity: 0; display: none;">∧ </a><a class="i-index" id="to-index" href="#toc-div" title="To Catalog">≡</a><a class="i-color" id="color-mode" onClick="colorMode.change()" title="Change Theme"></a></div></div></article><aside><div id="about"><a href="/" id="logo"><img src="https://ak.hypergryph.com/assets/index/images/ak/pc/faction/1.png" alt="Logo"></a><h1 id="Dr"><a href="/">loneyclown</a></h1><div id="description"><p>总有人间一缕风，填我十万秋水长。</p></div></div><div id="aside-block"><div id="toc-div"><h1>Catalog</h1><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80%E6%93%8D%E4%BD%9C"><span class="toc-number">1.</span> <span class="toc-text">基础操作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B0%86%E6%95%B0%E6%8D%AE%E5%AF%BC%E5%85%A5%E5%AD%98%E5%82%A8%E5%BA%93"><span class="toc-number">1.1.</span> <span class="toc-text">将数据导入存储库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AD%BE%E5%87%BA%E5%B7%A5%E4%BD%9C%E5%89%AF%E6%9C%AC"><span class="toc-number">1.2.</span> <span class="toc-text">签出工作副本</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9B%B4%E6%96%B0%E5%B7%A5%E4%BD%9C%E5%89%AF%E6%9C%AC"><span class="toc-number">1.3.</span> <span class="toc-text">更新工作副本</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9C%A8%E6%9C%AC%E5%9C%B0%E5%B7%A5%E4%BD%9C%E5%89%AF%E6%9C%AC%E4%B8%AD%E8%BF%9B%E8%A1%8C%E6%9B%B4%E6%94%B9"><span class="toc-number">1.4.</span> <span class="toc-text">在本地工作副本中进行更改</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%89%A7%E8%A1%8C%E6%96%87%E4%BB%B6%E5%92%8C%E7%9B%AE%E5%BD%95%E6%93%8D%E4%BD%9C"><span class="toc-number">1.5.</span> <span class="toc-text">执行文件和目录操作</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0%E6%96%B0%E6%96%87%E4%BB%B6%E5%92%8C%E7%9B%AE%E5%BD%95"><span class="toc-number">1.5.1.</span> <span class="toc-text">添加新文件和目录</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A4%8D%E5%88%B6%E6%96%87%E4%BB%B6%E5%92%8C%E7%9B%AE%E5%BD%95"><span class="toc-number">1.5.2.</span> <span class="toc-text">复制文件和目录</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%A0%E9%99%A4%E6%96%87%E4%BB%B6%E5%92%8C%E7%9B%AE%E5%BD%95"><span class="toc-number">1.5.3.</span> <span class="toc-text">删除文件和目录</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%81%A2%E5%A4%8D%E6%88%96%E6%94%BE%E5%BC%83%E6%9C%AC%E5%9C%B0%E6%9B%B4%E6%94%B9"><span class="toc-number">1.5.4.</span> <span class="toc-text">恢复或放弃本地更改</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E6%97%A5%E5%BF%97%E5%92%8C%E6%94%B9%E5%8A%A8"><span class="toc-number">1.6.</span> <span class="toc-text">查看日志和改动</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E6%97%A5%E5%BF%97"><span class="toc-number">1.6.1.</span> <span class="toc-text">查看日志</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E6%94%B9%E5%8A%A8"><span class="toc-number">1.6.2.</span> <span class="toc-text">查看改动</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E7%89%88%E6%9C%AC%E5%BA%93%E4%BF%A1%E6%81%AF"><span class="toc-number">1.7.</span> <span class="toc-text">查看版本库信息</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B8%85%E7%90%86"><span class="toc-number">1.8.</span> <span class="toc-text">清理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%86%E6%94%AF%E5%92%8C%E6%A0%87%E8%AE%B0"><span class="toc-number">1.9.</span> <span class="toc-text">分支和标记</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E7%9B%B4%E6%8E%A5URL%E5%88%B0URL%E5%A4%8D%E5%88%B6%E5%88%9B%E5%BB%BA%E5%88%86%E6%94%AF"><span class="toc-number">1.9.1.</span> <span class="toc-text">使用直接URL到URL复制创建分支</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E5%88%86%E6%94%AF"><span class="toc-number">1.9.2.</span> <span class="toc-text">创建分支</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%87%E6%8D%A2%E5%88%86%E6%94%AF"><span class="toc-number">1.9.3.</span> <span class="toc-text">切换分支</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%A0%E9%99%A4%E5%88%86%E6%94%AF"><span class="toc-number">1.9.4.</span> <span class="toc-text">删除分支</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B8%AE%E5%8A%A9"><span class="toc-number">1.9.5.</span> <span class="toc-text">帮助</span></a></li></ol></li></ol></li></ol></div></div><footer><nobr>Published with <a target="_blank" rel="noopener" href="http://hexo.io">Hexo</a></nobr><wbr><nobr> Theme <a target="_blank" rel="noopener" href="https://github.com/Yue-plus/hexo-theme-arknights">Arknights</a></nobr><wbr><nobr> by <a target="_blank" rel="noopener" href="https://github.com/Yue-plus">Yue_plus</a></nobr></footer></aside></main><canvas id="canvas-dust"></canvas><script src="/js/search.js"></script><script src="/js/arknights.js"></script><script src="//unpkg.com/lightgallery@2.7.1/lightgallery.min.js"></script><script src="//unpkg.com/lightgallery@2.7.1/plugins/zoom/lg-zoom.min.js"></script><script src="//unpkg.com/lightgallery@2.7.1/plugins/thumbnail/lg-thumbnail.min.js"></script><script src="/js/pjax.js"></script><script class="pjax-js">reset= () => {document.querySelector('.lg-container')?.remove()
+lightGallery(document.getElementById('post-bg'), {
+  plugins: [lgZoom,lgThumbnail],
+  selector: '.item-img'})}</script><script>window.addEventListener("load",() => {pjax = new Pjax({
+ cacheBust: false,
+ selectors: ['title','article','#aside-block','.pjax-js'],
+ switches: {'article': Pjax.switches.sideBySide},
+ switchesOptions: {
+   'article': {
+     classNames: {
+       remove: "pjax-out",
+       add: "pjax-in"
+     }
+   }
+ }
+});
+document.addEventListener("pjax:complete", reset);reset()})</script></body></html>

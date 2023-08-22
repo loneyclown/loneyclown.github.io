@@ -1,0 +1,163 @@
+<!DOCTYPE html><html lang="zh" theme-mode="dark"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>CSS3径向渐变radial-gradient实现波浪边框和内倒角 | 晓梦未央-林雨霞</title><link rel="icon" type="image/x-icon" href="/favicon.ico"><script>var config = {"root":"/","search":{"preload":false,"activeHolder":"Enter here","blurHolder":"Search","noResult":"Data \"$0\" not found"},"code":{"codeInfo":"$0 - $1 lines","copy":"code.copy","copyFinish":"code.copyFinish","expand":"code.expand"}}</script><script src="//unpkg.com/mermaid@9.2.2/dist/mermaid.min.js"></script><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lightgallery.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-zoom.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-thumbnail.css"><link type="text/css" rel="stylesheet" href="/lib/fontawesome/css/all.min.css"><link rel="stylesheet" href="/css/arknights.css"><script>if (window.localStorage.getItem('theme-mode') === 'light')
+ document.documentElement.setAttribute('theme-mode', 'light')
+if (window.localStorage.getItem('theme-mode') === 'dark')
+ document.documentElement.setAttribute('theme-mode', 'dark')</script><style>@font-face {
+ font-family: Bender;
+ src: local('Bender'), url("/font/Bender.ttf"), url("/font/Bender.otf");
+}
+@font-face {
+ font-family: BenderLight;
+ src: local('BenderLight'), url("/font/BenderLight.ttf");
+}
+@font-face {
+ font-family: 'JetBrains Mono';
+ src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
+}</style><style>:root {
+  --dark-background: url('https://ak.hypergryph.com/assets/index/images/ak/pc/bk.jpg');
+  --light-background: url('/img/bk.jpg');
+}</style><meta name="generator" content="Hexo 6.3.0"><style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"] > svg a {
+  fill: blue;
+  stroke: blue;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style></head><body><div class="loading" style="opacity: 0;"><div class="loadingBar left"></div><div class="loadingBar right"></div></div><main><header class="closed"><div class="navBtn"><i class="navBtnIcon"><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span></i></div><nav><div class="navItem" id="search-header"><span class="navItemTitle"><input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="Search" spellcheck="false" maxlength="50" type="text" id="search-input"></span></div><div class="navItem" id="search-holder"></div><div class="search-popup"><div id="search-result"></div></div><ol class="navContent"><li class="navItem"><a class="navBlock" href="/"><span class="navItemTitle">Home</span></a></li><li class="navItem" matchdata="categories,tags"><a class="navBlock" href="/archives/"><span class="navItemTitle">Archives</span></a></li></ol></nav></header><article><div id="post-bg"><div id="post-title"><h1>CSS3径向渐变radial-gradient实现波浪边框和内倒角</h1><div id="post-info"><span>First Post: <div class="control"><time datetime="2023-07-26T16:00:00.000Z" id="date"> 2023-07-27</time></div></span><br><span>Last Update: <div class="control"><time datetime="2023-08-22T02:25:15.356Z" id="updated"> 2023-08-22</time></div></span></div></div><hr><div id="post-content"><h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>实现效果：<br class='item-img' data-src='/2023/07/27/randomNotes/2023-07-27-CSS3%E5%BE%84%E5%90%91%E6%B8%90%E5%8F%98radial-gradient%E5%AE%9E%E7%8E%B0%E6%B3%A2%E6%B5%AA%E8%BE%B9%E6%A1%86%E5%92%8C%E5%86%85%E5%80%92%E8%A7%92/2183010305-5c6666d312031_fix732.webp'><img src="/2023/07/27/randomNotes/2023-07-27-CSS3%E5%BE%84%E5%90%91%E6%B8%90%E5%8F%98radial-gradient%E5%AE%9E%E7%8E%B0%E6%B3%A2%E6%B5%AA%E8%BE%B9%E6%A1%86%E5%92%8C%E5%86%85%E5%80%92%E8%A7%92/2183010305-5c6666d312031_fix732.webp"></p>
+<h3 id="实现内倒角"><a href="#实现内倒角" class="headerlink" title="实现内倒角"></a>实现内倒角</h3><p>上代码，然后解释代码</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;radial-gradient&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="language-css"></span><br><span class="language-css"><span class="hljs-selector-class">.radial-gradient</span> &#123;</span><br><span class="language-css">    <span class="hljs-attribute">width</span>: <span class="hljs-number">200px</span>;</span><br><span class="language-css">    <span class="hljs-attribute">height</span>: <span class="hljs-number">100px</span>;</span><br><span class="language-css">    <span class="hljs-attribute">position</span>: relative;</span><br><span class="language-css">    <span class="hljs-attribute">background-image</span>: <span class="hljs-built_in">radial-gradient</span>(circle at right top, <span class="hljs-number">#fff</span>, <span class="hljs-number">#fff</span> <span class="hljs-number">10px</span>, transparent <span class="hljs-number">11px</span>),</span><br><span class="language-css">           <span class="hljs-built_in">radial-gradient</span>(circle at right bottom, <span class="hljs-number">#fff</span>, <span class="hljs-number">#fff</span> <span class="hljs-number">10px</span>, transparent <span class="hljs-number">11px</span>);</span><br><span class="language-css">    <span class="hljs-attribute">background-color</span>: red;</span><br><span class="language-css">&#125;</span><br><span class="language-css"></span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>重点解释radial-gradient(circle at right top, #fff, #fff 10px, transparent 11px)这个样式是干嘛的。<br>circle表示圆形渐变，说的简单点就是画一个圆。画圆就要知道原点。<br>circle at right top 中的right top就是原点位置。这里原点位置是相对于容器的坐标。right表示容器最右边，top表示容器最上边，换言之就是右上角。<br>circle at right top 后面的#fff, #fff 10px, transparent 11px就是从原点开始各种颜色渐变的长度。<br>代码#fff, #fff 10px, transparent 11px中第一个#fff表示原点处为#fff颜色，#fff 10px表示距离原点半径10px这段距离都是#fff颜色，transparent 11px表示距离原点10px到11px都是transparent颜色，由于没有设置其他颜色，所以距离原点11px以后都是transparent颜色。<br class='item-img' data-src='/2023/07/27/randomNotes/2023-07-27-CSS3%E5%BE%84%E5%90%91%E6%B8%90%E5%8F%98radial-gradient%E5%AE%9E%E7%8E%B0%E6%B3%A2%E6%B5%AA%E8%BE%B9%E6%A1%86%E5%92%8C%E5%86%85%E5%80%92%E8%A7%92/2032995592-5c666dc1b0674_fix732.webp'><img src="/2023/07/27/randomNotes/2023-07-27-CSS3%E5%BE%84%E5%90%91%E6%B8%90%E5%8F%98radial-gradient%E5%AE%9E%E7%8E%B0%E6%B3%A2%E6%B5%AA%E8%BE%B9%E6%A1%86%E5%92%8C%E5%86%85%E5%80%92%E8%A7%92/2032995592-5c666dc1b0674_fix732.webp">  </p>
+<p>总结radial-gradient(circle at right top, #fff, #fff 10px, transparent 11px),就是以容器的右上角为原点画圆，半径10px范围内是#fff颜色，半径大于10px范围内都是transparent颜色。<br>这样在右上角就形成了内倒角<br>同理 radial-gradient(circle at right bottom, #fff, #fff 10px, transparent 11px); 就不解释了。  </p>
+<h3 id="实现波浪边框"><a href="#实现波浪边框" class="headerlink" title="实现波浪边框"></a>实现波浪边框</h3><p>上代码，增加一个css样式即可</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="language-css"></span><br><span class="language-css"><span class="hljs-selector-class">.radial-gradient</span><span class="hljs-selector-pseudo">:after</span> &#123;</span><br><span class="language-css">    <span class="hljs-attribute">content</span>: <span class="hljs-string">&#x27;&#x27;</span>;</span><br><span class="language-css">    <span class="hljs-attribute">position</span>: absolute;</span><br><span class="language-css">    <span class="hljs-attribute">top</span>: <span class="hljs-number">0px</span>;</span><br><span class="language-css">    <span class="hljs-attribute">bottom</span>: <span class="hljs-number">0px</span>;</span><br><span class="language-css">    <span class="hljs-attribute">left</span>: -<span class="hljs-number">5px</span>;</span><br><span class="language-css">    <span class="hljs-attribute">width</span>: <span class="hljs-number">10px</span>;</span><br><span class="language-css">    <span class="hljs-attribute">height</span>: <span class="hljs-number">100%</span>;</span><br><span class="language-css">    <span class="hljs-attribute">background</span>: <span class="hljs-built_in">radial-gradient</span>(circle, <span class="hljs-number">#fff</span>, <span class="hljs-number">#fff</span> <span class="hljs-number">4px</span>, transparent <span class="hljs-number">5px</span>);</span><br><span class="language-css">    <span class="hljs-attribute">background-size</span>: <span class="hljs-number">10px</span> <span class="hljs-number">10px</span>;</span><br><span class="language-css">&#125;</span><br><span class="language-css"></span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>background: radial-gradient(circle, #fff, #fff 4px, transparent 5px); 此处没有 at right top字样，表示原点在容器中心位置，#fff, #fff 4px, transparent 5px，表示半径4px范围内是#fff颜色，半径4px到5px范围内是transparent颜色，半径大于5px是transparent颜色。这样就有一个直径为8px的#fff颜色的圆位于容器(这里的容器是:after)中心。<br class='item-img' data-src='/2023/07/27/randomNotes/2023-07-27-CSS3%E5%BE%84%E5%90%91%E6%B8%90%E5%8F%98radial-gradient%E5%AE%9E%E7%8E%B0%E6%B3%A2%E6%B5%AA%E8%BE%B9%E6%A1%86%E5%92%8C%E5%86%85%E5%80%92%E8%A7%92/1746955718-5c6672295123b_fix732.webp'><img src="/2023/07/27/randomNotes/2023-07-27-CSS3%E5%BE%84%E5%90%91%E6%B8%90%E5%8F%98radial-gradient%E5%AE%9E%E7%8E%B0%E6%B3%A2%E6%B5%AA%E8%BE%B9%E6%A1%86%E5%92%8C%E5%86%85%E5%80%92%E8%A7%92/1746955718-5c6672295123b_fix732.webp"><br>(背景蓝色是为了演示效果)<br>再加上background-size: 10px 10px;设置背景大小为宽10px高10px，这样就能实现多个直径为8px的#fff颜色的圆。<br class='item-img' data-src='/2023/07/27/randomNotes/2023-07-27-CSS3%E5%BE%84%E5%90%91%E6%B8%90%E5%8F%98radial-gradient%E5%AE%9E%E7%8E%B0%E6%B3%A2%E6%B5%AA%E8%BE%B9%E6%A1%86%E5%92%8C%E5%86%85%E5%80%92%E8%A7%92/1784758529-5c6672491c31c_fix732.webp'><img src="/2023/07/27/randomNotes/2023-07-27-CSS3%E5%BE%84%E5%90%91%E6%B8%90%E5%8F%98radial-gradient%E5%AE%9E%E7%8E%B0%E6%B3%A2%E6%B5%AA%E8%BE%B9%E6%A1%86%E5%92%8C%E5%86%85%E5%80%92%E8%A7%92/1784758529-5c6672491c31c_fix732.webp"><br>(背景蓝色是为了演示效果)<br>left: -5px; 向左偏移 5px，使:after只有一半在.radial-gradient容器内<br>最后附上效果图<br class='item-img' data-src='/2023/07/27/randomNotes/2023-07-27-CSS3%E5%BE%84%E5%90%91%E6%B8%90%E5%8F%98radial-gradient%E5%AE%9E%E7%8E%B0%E6%B3%A2%E6%B5%AA%E8%BE%B9%E6%A1%86%E5%92%8C%E5%86%85%E5%80%92%E8%A7%92/3166636803-5c6670b633318_fix732.webp'><img src="/2023/07/27/randomNotes/2023-07-27-CSS3%E5%BE%84%E5%90%91%E6%B8%90%E5%8F%98radial-gradient%E5%AE%9E%E7%8E%B0%E6%B3%A2%E6%B5%AA%E8%BE%B9%E6%A1%86%E5%92%8C%E5%86%85%E5%80%92%E8%A7%92/3166636803-5c6670b633318_fix732.webp"></p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p><strong>实现内倒角其实是画一个#fff颜色的圆，圆只有四分之一在容器内</strong><br><strong>实现波浪边框其实是画多个#fff颜色的圆，圆只有一半在容器内</strong></p>
+<p>原文地址: <a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000018166421">https://segmentfault.com/a/1190000018166421</a></p>
+<div id="paginator"></div></div><div id="post-footer"><div id="pages"><div class="footer-link" style="width: 50%;text-align:right;border-right:1px #fe2 solid"><a href="/2023/08/22/randomNotes/2023-08-22-windows11%E5%AE%B6%E5%BA%AD%E7%89%88%E5%8D%87%E7%BA%A7%E4%B8%93%E4%B8%9A%E7%89%88%E6%8E%92%E5%9D%91%E8%AE%B0/">← Next windows11家庭版升级专业版排坑记</a></div><div class="footer-link" style="width: 50%;right:1px;border-left:1px #fe2 solid"><a href="/2023/07/26/randomNotes/2023-07-26-hexo%20deploy%E5%90%8E%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%9F%E5%90%8D%E6%B6%88%E5%A4%B1/">hexo deploy后自定义域名消失 Prev →</a></div></div></div></div><div class="bottom-btn"><div><a class="i-top" id="to-top" onClick="scrolls.scrolltop();" title="To Top" style="opacity: 0; display: none;">∧ </a><a class="i-index" id="to-index" href="#toc-div" title="To Catalog">≡</a><a class="i-color" id="color-mode" onClick="colorMode.change()" title="Change Theme"></a></div></div></article><aside><div id="about"><a href="/" id="logo"><img src="https://ak.hypergryph.com/assets/index/images/ak/pc/faction/1.png" alt="Logo"></a><h1 id="Dr"><a href="/">loneyclown</a></h1><div id="description"><p>总有人间一缕风，填我十万秋水长。</p></div></div><div id="aside-block"><div id="toc-div"><h1>Catalog</h1><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E7%8E%B0%E5%86%85%E5%80%92%E8%A7%92"><span class="toc-number">2.</span> <span class="toc-text">实现内倒角</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E7%8E%B0%E6%B3%A2%E6%B5%AA%E8%BE%B9%E6%A1%86"><span class="toc-number">3.</span> <span class="toc-text">实现波浪边框</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-number">4.</span> <span class="toc-text">总结</span></a></li></ol></div></div><footer><nobr>Published with <a target="_blank" rel="noopener" href="http://hexo.io">Hexo</a></nobr><wbr><nobr> Theme <a target="_blank" rel="noopener" href="https://github.com/Yue-plus/hexo-theme-arknights">Arknights</a></nobr><wbr><nobr> by <a target="_blank" rel="noopener" href="https://github.com/Yue-plus">Yue_plus</a></nobr></footer></aside></main><canvas id="canvas-dust"></canvas><script src="/js/search.js"></script><script src="/js/arknights.js"></script><script src="//unpkg.com/lightgallery@2.7.1/lightgallery.min.js"></script><script src="//unpkg.com/lightgallery@2.7.1/plugins/zoom/lg-zoom.min.js"></script><script src="//unpkg.com/lightgallery@2.7.1/plugins/thumbnail/lg-thumbnail.min.js"></script><script src="/js/pjax.js"></script><script class="pjax-js">reset= () => {document.querySelector('.lg-container')?.remove()
+lightGallery(document.getElementById('post-bg'), {
+  plugins: [lgZoom,lgThumbnail],
+  selector: '.item-img'})}</script><script>window.addEventListener("load",() => {pjax = new Pjax({
+ cacheBust: false,
+ selectors: ['title','article','#aside-block','.pjax-js'],
+ switches: {'article': Pjax.switches.sideBySide},
+ switchesOptions: {
+   'article': {
+     classNames: {
+       remove: "pjax-out",
+       add: "pjax-in"
+     }
+   }
+ }
+});
+document.addEventListener("pjax:complete", reset);reset()})</script></body></html>

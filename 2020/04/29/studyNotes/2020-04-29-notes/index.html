@@ -1,0 +1,155 @@
+<!DOCTYPE html><html lang="zh" theme-mode="dark"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>三维立体坐标点，在x轴，y轴相同的情况下，取出z轴最大的坐标点 | 晓梦未央-林雨霞</title><link rel="icon" type="image/x-icon" href="/favicon.ico"><script>var config = {"root":"/","search":{"preload":false,"activeHolder":"Enter here","blurHolder":"Search","noResult":"Data \"$0\" not found"},"code":{"codeInfo":"$0 - $1 lines","copy":"code.copy","copyFinish":"code.copyFinish","expand":"code.expand"}}</script><script src="//unpkg.com/mermaid@9.2.2/dist/mermaid.min.js"></script><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lightgallery.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-zoom.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-thumbnail.css"><link type="text/css" rel="stylesheet" href="/lib/fontawesome/css/all.min.css"><link rel="stylesheet" href="/css/arknights.css"><script>if (window.localStorage.getItem('theme-mode') === 'light')
+ document.documentElement.setAttribute('theme-mode', 'light')
+if (window.localStorage.getItem('theme-mode') === 'dark')
+ document.documentElement.setAttribute('theme-mode', 'dark')</script><style>@font-face {
+ font-family: Bender;
+ src: local('Bender'), url("/font/Bender.ttf"), url("/font/Bender.otf");
+}
+@font-face {
+ font-family: BenderLight;
+ src: local('BenderLight'), url("/font/BenderLight.ttf");
+}
+@font-face {
+ font-family: 'JetBrains Mono';
+ src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
+}</style><style>:root {
+  --dark-background: url('https://ak.hypergryph.com/assets/index/images/ak/pc/bk.jpg');
+  --light-background: url('/img/bk.jpg');
+}</style><meta name="generator" content="Hexo 6.3.0"><style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"] > svg a {
+  fill: blue;
+  stroke: blue;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style></head><body><div class="loading" style="opacity: 0;"><div class="loadingBar left"></div><div class="loadingBar right"></div></div><main><header class="closed"><div class="navBtn"><i class="navBtnIcon"><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span></i></div><nav><div class="navItem" id="search-header"><span class="navItemTitle"><input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="Search" spellcheck="false" maxlength="50" type="text" id="search-input"></span></div><div class="navItem" id="search-holder"></div><div class="search-popup"><div id="search-result"></div></div><ol class="navContent"><li class="navItem"><a class="navBlock" href="/"><span class="navItemTitle">Home</span></a></li><li class="navItem" matchdata="categories,tags"><a class="navBlock" href="/archives/"><span class="navItemTitle">Archives</span></a></li></ol></nav></header><article><div id="post-bg"><div id="post-title"><h1>三维立体坐标点，在x轴，y轴相同的情况下，取出z轴最大的坐标点</h1><div id="post-info"><span>First Post: <div class="control"><time datetime="2020-04-28T16:00:00.000Z" id="date"> 2020-04-29</time></div></span><br><span>Last Update: <div class="control"><time datetime="2023-08-22T02:25:15.358Z" id="updated"> 2023-08-22</time></div></span></div></div><hr><div id="post-content"><h4 id="题记"><a href="#题记" class="headerlink" title="题记"></a>题记</h4><p>最近朋友遇到一个问题，一组三维立体坐标点，在x轴，y轴相同的情况下，要取出z轴最大的那个的坐标点。</p>
+<h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> testArr = [<br>  [<span class="hljs-number">45757.22541737171</span>, <span class="hljs-number">226532.12132301644</span>, <span class="hljs-number">52.45700027465815</span>],<br>  [<span class="hljs-number">45757.22541737171</span>, <span class="hljs-number">226532.12132301644</span>, <span class="hljs-number">162.45700027465816</span>],<br>  [<span class="hljs-number">45757.22541737171</span>, <span class="hljs-number">226532.12132301644</span>, <span class="hljs-number">72.45700027465816</span>],<br>  [<span class="hljs-number">45757.22541737171</span>, <span class="hljs-number">226532.12132301644</span>, <span class="hljs-number">82.45700027465816</span>],<br>  [<span class="hljs-number">45757.22541737171</span>, <span class="hljs-number">226532.12132301644</span>, <span class="hljs-number">92.45700027465816</span>],<br>  [<span class="hljs-number">45757.22541737171</span>, <span class="hljs-number">226532.12132301644</span>, <span class="hljs-number">102.45700027465816</span>],<br>  [<span class="hljs-number">45757.22541737171</span>, <span class="hljs-number">226532.12132301644</span>, <span class="hljs-number">112.45700027465816</span>],<br>  [<span class="hljs-number">45757.22541737171</span>, <span class="hljs-number">226532.12132301644</span>, <span class="hljs-number">122.45700027465816</span>],<br>  [<span class="hljs-number">45757.22541737171</span>, <span class="hljs-number">226532.12132301644</span>, <span class="hljs-number">132.45700027465816</span>],<br>  [<span class="hljs-number">45757.22541737171</span>, <span class="hljs-number">226532.12132301644</span>, <span class="hljs-number">142.45700027465816</span>],<br>  [<span class="hljs-number">45756.43914293511</span>, <span class="hljs-number">226562.64343069226</span>, <span class="hljs-number">52.457000274658206</span>],<br>  [<span class="hljs-number">45756.43914293511</span>, <span class="hljs-number">226562.64343069226</span>, <span class="hljs-number">62.457000274658206</span>],<br>  [<span class="hljs-number">45756.43914293511</span>, <span class="hljs-number">226562.64343069226</span>, <span class="hljs-number">72.45700027465821</span>],<br>  [<span class="hljs-number">45756.43914293511</span>, <span class="hljs-number">226562.64343069226</span>, <span class="hljs-number">82.45700027465821</span>],<br>  [<span class="hljs-number">45756.43914293511</span>, <span class="hljs-number">226562.64343069226</span>, <span class="hljs-number">92.45700027465821</span>],<br>  [<span class="hljs-number">45756.43914293511</span>, <span class="hljs-number">226562.64343069226</span>, <span class="hljs-number">102.45700027465821</span>],<br>  [<span class="hljs-number">45756.43914293511</span>, <span class="hljs-number">226562.64343069226</span>, <span class="hljs-number">112.45700027465821</span>],<br>  [<span class="hljs-number">45791.873784629126</span>, <span class="hljs-number">226560.04881890872</span>, <span class="hljs-number">52.457000274658206</span>],<br>  [<span class="hljs-number">45791.873784629126</span>, <span class="hljs-number">226560.04881890872</span>, <span class="hljs-number">172.4570002746582</span>],<br>  [<span class="hljs-number">45791.873784629126</span>, <span class="hljs-number">226560.04881890872</span>, <span class="hljs-number">162.4570002746582</span>],<br>  [<span class="hljs-number">45791.873784629126</span>, <span class="hljs-number">226560.04881890872</span>, <span class="hljs-number">142.4570002746582</span>],<br>  [<span class="hljs-number">45791.873784629126</span>, <span class="hljs-number">226560.04881890872</span>, <span class="hljs-number">92.45700027465821</span>],<br>  [<span class="hljs-number">45791.873784629126</span>, <span class="hljs-number">226560.04881890872</span>, <span class="hljs-number">102.45700027465821</span>],<br>  [<span class="hljs-number">45791.873784629126</span>, <span class="hljs-number">226560.04881890872</span>, <span class="hljs-number">112.45700027465821</span>],<br>  [<span class="hljs-number">45791.873784629126</span>, <span class="hljs-number">226560.04881890872</span>, <span class="hljs-number">122.45700027465821</span>],<br>  [<span class="hljs-number">45791.873784629126</span>, <span class="hljs-number">226560.04881890872</span>, <span class="hljs-number">132.4570002746582</span>],<br>  [<span class="hljs-number">45796.25954354428</span>, <span class="hljs-number">226532.31399971253</span>, <span class="hljs-number">52.45700027465815</span>],<br>  [<span class="hljs-number">45796.25954354428</span>, <span class="hljs-number">226532.31399971253</span>, <span class="hljs-number">182.45700027465816</span>],<br>  [<span class="hljs-number">45796.25954354428</span>, <span class="hljs-number">226532.31399971253</span>, <span class="hljs-number">162.45700027465816</span>],<br>  [<span class="hljs-number">45796.25954354428</span>, <span class="hljs-number">226532.31399971253</span>, <span class="hljs-number">82.45700027465816</span>],<br>  [<span class="hljs-number">45796.25954354428</span>, <span class="hljs-number">226532.31399971253</span>, <span class="hljs-number">92.45700027465816</span>],<br>  [<span class="hljs-number">45796.25954354428</span>, <span class="hljs-number">226532.31399971253</span>, <span class="hljs-number">102.45700027465816</span>],<br>  [<span class="hljs-number">45796.25954354428</span>, <span class="hljs-number">226532.31399971253</span>, <span class="hljs-number">112.45700027465816</span>],<br>  [<span class="hljs-number">45796.25954354428</span>, <span class="hljs-number">226532.31399971253</span>, <span class="hljs-number">122.45700027465816</span>],<br>  [<span class="hljs-number">45796.25954354428</span>, <span class="hljs-number">226532.31399971253</span>, <span class="hljs-number">132.45700027465816</span>],<br>  [<span class="hljs-number">45796.25954354428</span>, <span class="hljs-number">226532.31399971253</span>, <span class="hljs-number">142.45700027465816</span>],<br>  [<span class="hljs-number">45796.25954354428</span>, <span class="hljs-number">226532.31399971253</span>, <span class="hljs-number">152.45700027465816</span>],<br>  [<span class="hljs-number">45796.25954354428</span>, <span class="hljs-number">226532.31399971253</span>, <span class="hljs-number">162.45700027465816</span>],<br>  [<span class="hljs-number">45796.25954354428</span>, <span class="hljs-number">226532.31399971253</span>, <span class="hljs-number">182.45700027465816</span>],<br>  [<span class="hljs-number">45796.25954354428</span>, <span class="hljs-number">226532.31399971253</span>, <span class="hljs-number">182.45700027465816</span>],<br>  [<span class="hljs-number">45791.873784629126</span>, <span class="hljs-number">226560.04881890872</span>, <span class="hljs-number">142.4570002746582</span>],<br>  [<span class="hljs-number">45791.873784629126</span>, <span class="hljs-number">226560.04881890872</span>, <span class="hljs-number">152.4570002746582</span>],<br>  [<span class="hljs-number">45791.873784629126</span>, <span class="hljs-number">226560.04881890872</span>, <span class="hljs-number">162.4570002746582</span>],<br>  [<span class="hljs-number">45791.873784629126</span>, <span class="hljs-number">226560.04881890872</span>, <span class="hljs-number">172.4570002746582</span>],<br>  [<span class="hljs-number">45757.22541737171</span>, <span class="hljs-number">226532.12132301644</span>, <span class="hljs-number">162.45700027465816</span>],<br>  [<span class="hljs-number">45757.22541737171</span>, <span class="hljs-number">226532.12132301644</span>, <span class="hljs-number">162.45700027465816</span>]<br>];<br><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">getZcoordMax</span> (sourceArr) &#123;<br>  <span class="hljs-keyword">const</span> res = sourceArr.<span class="hljs-title function_">reduce</span>(<span class="hljs-function">(<span class="hljs-params">acc, curr</span>) =&gt;</span> &#123;<br>    <span class="hljs-keyword">let</span> key = curr.<span class="hljs-title function_">slice</span>(<span class="hljs-number">0</span>, <span class="hljs-number">2</span>).<span class="hljs-title function_">join</span>(<span class="hljs-string">&#x27;,&#x27;</span>), arr, z = curr[<span class="hljs-number">2</span>];<br>    acc[key] = acc[key] || &#123;&#125;;<br>    acc[key].<span class="hljs-property">max</span> = acc[key].<span class="hljs-property">max</span> || [<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>];<br>    arr = acc[key].<span class="hljs-property">arr</span>;<br>    <span class="hljs-keyword">if</span> (arr) &#123;<br>      arr.<span class="hljs-title function_">push</span>(z);<br>      <span class="hljs-keyword">if</span> (acc[key].<span class="hljs-property">max</span>[<span class="hljs-number">2</span>] &lt;= z) acc[key].<span class="hljs-property">max</span> = curr;<br>    &#125; <span class="hljs-keyword">else</span> &#123;<br>      acc[key].<span class="hljs-property">arr</span> = [z];<br>    &#125;<br>    <span class="hljs-keyword">return</span> acc<br>  &#125;, &#123;&#125;);<br>  <span class="hljs-keyword">return</span> <span class="hljs-title class_">Object</span>.<span class="hljs-title function_">keys</span>(res).<span class="hljs-title function_">map</span>(<span class="hljs-function"><span class="hljs-params">x</span> =&gt;</span> res[x].<span class="hljs-property">max</span>);<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>输出结果：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs js">[<br>  [ <span class="hljs-number">45757.22541737171</span>, <span class="hljs-number">226532.12132301644</span>, <span class="hljs-number">162.45700027465816</span> ],<br>  [ <span class="hljs-number">45756.43914293511</span>, <span class="hljs-number">226562.64343069226</span>, <span class="hljs-number">112.45700027465821</span> ],<br>  [ <span class="hljs-number">45791.873784629126</span>, <span class="hljs-number">226560.04881890872</span>, <span class="hljs-number">172.4570002746582</span> ],<br>  [ <span class="hljs-number">45796.25954354428</span>, <span class="hljs-number">226532.31399971253</span>, <span class="hljs-number">182.45700027465816</span> ]<br>]<br></code></pre></td></tr></table></figure><div id="paginator"></div></div><div id="post-footer"><div id="pages"><div class="footer-link" style="width: 50%;text-align:right;border-right:1px #fe2 solid"><a href="/2021/06/02/studyNotes/2021-06-02-notes/">← Next Jupyter Notebook 安装以支持js</a></div><div class="footer-link" style="width: 50%;right:1px;border-left:1px #fe2 solid"><a href="/2020/02/26/randomNotes/2020-02-26-%E6%9C%BA%E5%86%85%E7%A0%81%E8%BD%AC%E5%8C%BA%E5%86%85%E7%A0%81/">机内码转区内码 Prev →</a></div></div></div></div><div class="bottom-btn"><div><a class="i-top" id="to-top" onClick="scrolls.scrolltop();" title="To Top" style="opacity: 0; display: none;">∧ </a><a class="i-index" id="to-index" href="#toc-div" title="To Catalog">≡</a><a class="i-color" id="color-mode" onClick="colorMode.change()" title="Change Theme"></a></div></div></article><aside><div id="about"><a href="/" id="logo"><img src="https://ak.hypergryph.com/assets/index/images/ak/pc/faction/1.png" alt="Logo"></a><h1 id="Dr"><a href="/">loneyclown</a></h1><div id="description"><p>总有人间一缕风，填我十万秋水长。</p></div></div><div id="aside-block"><div id="toc-div"><h1>Catalog</h1><ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%A2%98%E8%AE%B0"><span class="toc-number">1.</span> <span class="toc-text">题记</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81"><span class="toc-number">2.</span> <span class="toc-text">代码</span></a></li></ol></div></div><footer><nobr>Published with <a target="_blank" rel="noopener" href="http://hexo.io">Hexo</a></nobr><wbr><nobr> Theme <a target="_blank" rel="noopener" href="https://github.com/Yue-plus/hexo-theme-arknights">Arknights</a></nobr><wbr><nobr> by <a target="_blank" rel="noopener" href="https://github.com/Yue-plus">Yue_plus</a></nobr></footer></aside></main><canvas id="canvas-dust"></canvas><script src="/js/search.js"></script><script src="/js/arknights.js"></script><script src="//unpkg.com/lightgallery@2.7.1/lightgallery.min.js"></script><script src="//unpkg.com/lightgallery@2.7.1/plugins/zoom/lg-zoom.min.js"></script><script src="//unpkg.com/lightgallery@2.7.1/plugins/thumbnail/lg-thumbnail.min.js"></script><script src="/js/pjax.js"></script><script class="pjax-js">reset= () => {document.querySelector('.lg-container')?.remove()
+lightGallery(document.getElementById('post-bg'), {
+  plugins: [lgZoom,lgThumbnail],
+  selector: '.item-img'})}</script><script>window.addEventListener("load",() => {pjax = new Pjax({
+ cacheBust: false,
+ selectors: ['title','article','#aside-block','.pjax-js'],
+ switches: {'article': Pjax.switches.sideBySide},
+ switchesOptions: {
+   'article': {
+     classNames: {
+       remove: "pjax-out",
+       add: "pjax-in"
+     }
+   }
+ }
+});
+document.addEventListener("pjax:complete", reset);reset()})</script></body></html>

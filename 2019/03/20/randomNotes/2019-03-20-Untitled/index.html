@@ -1,0 +1,493 @@
+<!DOCTYPE html><html lang="zh" theme-mode="dark"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>chrome和安卓手机浏览器不显示input radio样式的解决办法 | 晓梦未央-林雨霞</title><link rel="icon" type="image/x-icon" href="/favicon.ico"><script>var config = {"root":"/","search":{"preload":false,"activeHolder":"Enter here","blurHolder":"Search","noResult":"Data \"$0\" not found"},"code":{"codeInfo":"$0 - $1 lines","copy":"code.copy","copyFinish":"code.copyFinish","expand":"code.expand"}}</script><script src="//unpkg.com/mermaid@9.2.2/dist/mermaid.min.js"></script><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lightgallery.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-zoom.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-thumbnail.css"><link type="text/css" rel="stylesheet" href="/lib/fontawesome/css/all.min.css"><link rel="stylesheet" href="/css/arknights.css"><script>if (window.localStorage.getItem('theme-mode') === 'light')
+ document.documentElement.setAttribute('theme-mode', 'light')
+if (window.localStorage.getItem('theme-mode') === 'dark')
+ document.documentElement.setAttribute('theme-mode', 'dark')</script><style>@font-face {
+ font-family: Bender;
+ src: local('Bender'), url("/font/Bender.ttf"), url("/font/Bender.otf");
+}
+@font-face {
+ font-family: BenderLight;
+ src: local('BenderLight'), url("/font/BenderLight.ttf");
+}
+@font-face {
+ font-family: 'JetBrains Mono';
+ src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
+}</style><style>:root {
+  --dark-background: url('https://ak.hypergryph.com/assets/index/images/ak/pc/bk.jpg');
+  --light-background: url('/img/bk.jpg');
+}</style><meta name="generator" content="Hexo 6.3.0"><style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"] > svg a {
+  fill: blue;
+  stroke: blue;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style></head><body><div class="loading" style="opacity: 0;"><div class="loadingBar left"></div><div class="loadingBar right"></div></div><main><header class="closed"><div class="navBtn"><i class="navBtnIcon"><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span></i></div><nav><div class="navItem" id="search-header"><span class="navItemTitle"><input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="Search" spellcheck="false" maxlength="50" type="text" id="search-input"></span></div><div class="navItem" id="search-holder"></div><div class="search-popup"><div id="search-result"></div></div><ol class="navContent"><li class="navItem"><a class="navBlock" href="/"><span class="navItemTitle">Home</span></a></li><li class="navItem" matchdata="categories,tags"><a class="navBlock" href="/archives/"><span class="navItemTitle">Archives</span></a></li></ol></nav></header><article><div id="post-bg"><div id="post-title"><h1>chrome和安卓手机浏览器不显示input radio样式的解决办法</h1><div id="post-info"><span>First Post: <div class="control"><time datetime="2019-03-19T16:00:00.000Z" id="date"> 2019-03-20</time></div></span><br><span>Last Update: <div class="control"><time datetime="2023-08-22T02:25:15.356Z" id="updated"> 2023-08-22</time></div></span></div></div><hr><div id="post-content"><h1 id="chrome和安卓手机浏览器不显示input-radio样式的解决办法"><a href="#chrome和安卓手机浏览器不显示input-radio样式的解决办法" class="headerlink" title="chrome和安卓手机浏览器不显示input radio样式的解决办法"></a>chrome和安卓手机浏览器不显示input radio样式的解决办法</h1><p>input radio单选在安卓手机浏览器和chrome上不显示，无法点击、选中。<br>这是由于webkit浏览器的input默认样式导致的。找到关于input的相关css，注释掉：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-tag">input</span> &#123; -webkit-appearance:none &#125;<br></code></pre></td></tr></table></figure>
+<h2 id="关于-webkit-appearance，相关wiki是这么说的"><a href="#关于-webkit-appearance，相关wiki是这么说的" class="headerlink" title="关于-webkit-appearance，相关wiki是这么说的"></a>关于<code>-webkit-appearance</code>，相关wiki是这么说的</h2><h3 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h3><p>改变按钮和其他控件的外观，使其类似于原生控件。</p>
+<ul>
+<li>-webkit-appearance 是一个 不规范的属性（unsupported WebKit property），它没有出现在 CSS 规范草案中。</li>
+<li>此属性非标准且渲染效果在不同浏览器下不同，有些属性值甚至不支持|，请慎用。</li>
+</ul>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">-webkit-appearance：none | button | button-bevel ....<br></code></pre></td></tr></table></figure>
+<p>默认值：none</p>
+<h3 id="兼容性"><a href="#兼容性" class="headerlink" title="兼容性"></a>兼容性</h3><p>对应的firefox可以使用 -moz-appearance属性iOS 2.0及更高版本的Safari浏览器可用Android尚不明确</p>
+<h3 id="取值"><a href="#取值" class="headerlink" title="取值"></a>取值</h3><table>
+<thead>
+<tr>
+<th>-webkit-appearance取值</th>
+<th>介绍</th>
+<th>Chrome</th>
+<th>Safari</th>
+<th>iOS Safari</th>
+<th>Android Browser</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>none</td>
+<td>去除系统默认appearance的样式,<strong>常用于IOS下移除原生样式</strong></td>
+<td>支持</td>
+<td>支持</td>
+<td>支持</td>
+<td>支持</td>
+</tr>
+<tr>
+<td>button</td>
+<td>渲染成button的风格</td>
+<td>支持</td>
+<td>支持</td>
+<td>支持</td>
+<td>支持</td>
+</tr>
+<tr>
+<td>button-bevel</td>
+<td>渲染成button-bevel的风格</td>
+<td>支持</td>
+<td>支持</td>
+<td>不支持</td>
+<td>不支持</td>
+</tr>
+<tr>
+<td>caret</td>
+<td>渲染成caret的风格</td>
+<td>支持</td>
+<td>支持</td>
+<td>不支持</td>
+<td>不支持</td>
+</tr>
+<tr>
+<td>checkbox</td>
+<td>渲染input:checkbox样式的复选框按钮</td>
+<td>支持</td>
+<td>支持</td>
+<td>支持</td>
+<td>支持</td>
+</tr>
+<tr>
+<td>listbox</td>
+<td>渲染为listbox样式的复选框按钮</td>
+<td>支持</td>
+<td>支持</td>
+<td>支持</td>
+<td>支持</td>
+</tr>
+<tr>
+<td>listitem</td>
+<td>渲染成listitem的风格</td>
+<td>支持</td>
+<td>支持</td>
+<td>不支持</td>
+<td>不支持</td>
+</tr>
+<tr>
+<td>media-fullscreen-button</td>
+<td>渲染成media-fullscreen-button的风格</td>
+<td>不支持</td>
+<td>不支持</td>
+<td>不支持</td>
+<td>不支持</td>
+</tr>
+<tr>
+<td>media-mute-button</td>
+<td>渲染成media-mute-button的风格</td>
+<td>支持</td>
+<td>支持</td>
+<td>不支持</td>
+<td>不支持</td>
+</tr>
+<tr>
+<td>media-seek-back-button</td>
+<td>渲染成media-seek-back-button的风格</td>
+<td>不支持</td>
+<td>支持</td>
+<td>不支持</td>
+<td>不支持</td>
+</tr>
+<tr>
+<td>media-seek-forward-button</td>
+<td>渲染成media-seek-forward-button的风格</td>
+<td>不支持</td>
+<td>支持</td>
+<td>不支持</td>
+<td>不支持</td>
+</tr>
+<tr>
+<td>media-slider</td>
+<td>渲染成media-slider的风格</td>
+<td>支持</td>
+<td>支持</td>
+<td>不支持</td>
+<td>不支持</td>
+</tr>
+<tr>
+<td>media-sliderthumb</td>
+<td>渲染成media-sliderthumb的风格</td>
+<td>支持</td>
+<td>支持</td>
+<td>不支持</td>
+<td>不支持</td>
+</tr>
+<tr>
+<td>menulist</td>
+<td>渲染成menulist的风格</td>
+<td>支持</td>
+<td>支持</td>
+<td>不支持</td>
+<td>不支持</td>
+</tr>
+<tr>
+<td>menulist-button</td>
+<td>渲染成menulist-button的风格</td>
+<td>支持</td>
+<td>支持</td>
+<td>支持</td>
+<td>不支持</td>
+</tr>
+<tr>
+<td>menulist-text</td>
+<td>渲染成menulist-text的风格</td>
+<td>支持</td>
+<td>支持</td>
+<td>不支持</td>
+<td>不支持</td>
+</tr>
+<tr>
+<td>menulist-textfield</td>
+<td>渲染成menulist-textfield的风格</td>
+<td>支持</td>
+<td>支持</td>
+<td>不支持</td>
+<td>不支持</td>
+</tr>
+<tr>
+<td>push-button</td>
+<td>渲染成push-button的风格</td>
+<td>支持</td>
+<td>支持</td>
+<td>支持</td>
+<td>支持</td>
+</tr>
+<tr>
+<td>radio</td>
+<td>渲染成radio的风格</td>
+<td>支持</td>
+<td>支持</td>
+<td>支持</td>
+<td>支持</td>
+</tr>
+<tr>
+<td>searchfield</td>
+<td>渲染成searchfield的风格</td>
+<td>支持</td>
+<td>支持</td>
+<td>不支持</td>
+<td>支持</td>
+</tr>
+<tr>
+<td>searchfield-cancel-button</td>
+<td>渲染成searchfield-cancel-button的风格</td>
+<td>支持</td>
+<td>支持</td>
+<td>不支持</td>
+<td>支持</td>
+</tr>
+<tr>
+<td>searchfield-decoration</td>
+<td>渲染成searchfield-decoration的风格</td>
+<td>支持</td>
+<td>支持</td>
+<td>不支持</td>
+<td>不支持</td>
+</tr>
+<tr>
+<td>searchfield-results-button</td>
+<td>渲染成searchfield-results-button的风格</td>
+<td>不支持</td>
+<td>支持</td>
+<td>不支持</td>
+<td>不支持</td>
+</tr>
+<tr>
+<td>searchfield-results-decoration</td>
+<td>渲染成searchfield-results-decoration的风格</td>
+<td>不支持</td>
+<td>支持</td>
+<td>不支持</td>
+<td>不支持</td>
+</tr>
+<tr>
+<td>slider-horizontal</td>
+<td>渲染成slider-horizontal的风格</td>
+<td>支持</td>
+<td>支持</td>
+<td>支持</td>
+<td>支持</td>
+</tr>
+<tr>
+<td>slider-vertical</td>
+<td>渲染成slider-horizontal的风格</td>
+<td>支持</td>
+<td>支持</td>
+<td>支持</td>
+<td>支持</td>
+</tr>
+<tr>
+<td>sliderthumb-horizontal</td>
+<td>渲染成sliderthumb-horizontal的风格</td>
+<td>支持</td>
+<td>支持</td>
+<td>支持</td>
+<td>支持</td>
+</tr>
+<tr>
+<td>sliderthumb-vertical</td>
+<td>渲染成sliderthumb-vertical的风格</td>
+<td>支持</td>
+<td>支持</td>
+<td>支持</td>
+<td>支持</td>
+</tr>
+<tr>
+<td>square-button</td>
+<td>渲染成square-button的风格</td>
+<td>支持</td>
+<td>支持</td>
+<td>支持</td>
+<td>支持</td>
+</tr>
+<tr>
+<td>textarea</td>
+<td>渲染成textarea的风格</td>
+<td>支持</td>
+<td>支持</td>
+<td>不支持</td>
+<td>支持</td>
+</tr>
+<tr>
+<td>textfield</td>
+<td>渲染成textfield的风格</td>
+<td>支持</td>
+<td>支持</td>
+<td>不支持</td>
+<td>支持</td>
+</tr>
+<tr>
+<td>scrollbarbutton-down</td>
+<td>渲染成scrollbarbutton-down的风格</td>
+<td>不支持</td>
+<td>不支持</td>
+<td>不支持</td>
+<td>不支持</td>
+</tr>
+<tr>
+<td>scrollbarbutton-left</td>
+<td>渲染成scrollbarbutton-left的风格</td>
+<td>不支持</td>
+<td>不支持</td>
+<td>不支持</td>
+<td>不支持</td>
+</tr>
+<tr>
+<td>scrollbarbutton-right</td>
+<td>渲染成scrollbarbutton-right的风格</td>
+<td>不支持</td>
+<td>不支持</td>
+<td>不支持</td>
+<td>不支持</td>
+</tr>
+<tr>
+<td>scrollbargripper-horizontal</td>
+<td>渲染成scrollbargripper-horizontal的风格</td>
+<td>不支持</td>
+<td>不支持</td>
+<td>不支持</td>
+<td>不支持</td>
+</tr>
+<tr>
+<td>scrollbargripper-vertical</td>
+<td>渲染成scrollbargripper-vertical的风格</td>
+<td>不支持</td>
+<td>不支持</td>
+<td>不支持</td>
+<td>不支持</td>
+</tr>
+<tr>
+<td>scrollbarthumb-horizontal</td>
+<td>渲染成scrollbarthumb-horizontal的风格</td>
+<td>不支持</td>
+<td>不支持</td>
+<td>不支持</td>
+<td>不支持</td>
+</tr>
+<tr>
+<td>scrollbarthumb-vertical</td>
+<td>渲染成scrollbarthumb-vertical的风格</td>
+<td>不支持</td>
+<td>不支持</td>
+<td>不支持</td>
+<td>不支持</td>
+</tr>
+<tr>
+<td>scrollbartrack-horizontal</td>
+<td>渲染成scrollbartrack-horizontal的风格</td>
+<td>不支持</td>
+<td>不支持</td>
+<td>不支持</td>
+<td>不支持</td>
+</tr>
+<tr>
+<td>scrollbartrack-vertical</td>
+<td>渲染成scrollbartrack-horizontal的风格</td>
+<td>不支持</td>
+<td>不支持</td>
+<td>不支持</td>
+<td>不支持</td>
+</tr>
+</tbody></table>
+<div id="paginator"></div></div><div id="post-footer"><div id="pages"><div class="footer-link" style="width: 50%;text-align:right;border-right:1px #fe2 solid"><a href="/2019/08/06/studyNotes-vue/%E8%B5%B7%E6%AD%A5/">← Next Vue学习笔记——起步</a></div><div class="footer-link" style="width: 50%;right:1px;border-left:1px #fe2 solid"><a href="/2019/02/14/studyNotes/2019-02-14-notes/">苹果手机和安卓手机对于new Date()处理的一个小bug Prev →</a></div></div></div></div><div class="bottom-btn"><div><a class="i-top" id="to-top" onClick="scrolls.scrolltop();" title="To Top" style="opacity: 0; display: none;">∧ </a><a class="i-index" id="to-index" href="#toc-div" title="To Catalog">≡</a><a class="i-color" id="color-mode" onClick="colorMode.change()" title="Change Theme"></a></div></div></article><aside><div id="about"><a href="/" id="logo"><img src="https://ak.hypergryph.com/assets/index/images/ak/pc/faction/1.png" alt="Logo"></a><h1 id="Dr"><a href="/">loneyclown</a></h1><div id="description"><p>总有人间一缕风，填我十万秋水长。</p></div></div><div id="aside-block"><div id="toc-div"><h1>Catalog</h1><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#chrome%E5%92%8C%E5%AE%89%E5%8D%93%E6%89%8B%E6%9C%BA%E6%B5%8F%E8%A7%88%E5%99%A8%E4%B8%8D%E6%98%BE%E7%A4%BAinput-radio%E6%A0%B7%E5%BC%8F%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95"><span class="toc-number">1.</span> <span class="toc-text">chrome和安卓手机浏览器不显示input radio样式的解决办法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B3%E4%BA%8E-webkit-appearance%EF%BC%8C%E7%9B%B8%E5%85%B3wiki%E6%98%AF%E8%BF%99%E4%B9%88%E8%AF%B4%E7%9A%84"><span class="toc-number">1.1.</span> <span class="toc-text">关于-webkit-appearance，相关wiki是这么说的</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%B4%E6%98%8E"><span class="toc-number">1.1.1.</span> <span class="toc-text">说明</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%AD%E6%B3%95"><span class="toc-number">1.1.2.</span> <span class="toc-text">语法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%BC%E5%AE%B9%E6%80%A7"><span class="toc-number">1.1.3.</span> <span class="toc-text">兼容性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%96%E5%80%BC"><span class="toc-number">1.1.4.</span> <span class="toc-text">取值</span></a></li></ol></li></ol></li></ol></div></div><footer><nobr>Published with <a target="_blank" rel="noopener" href="http://hexo.io">Hexo</a></nobr><wbr><nobr> Theme <a target="_blank" rel="noopener" href="https://github.com/Yue-plus/hexo-theme-arknights">Arknights</a></nobr><wbr><nobr> by <a target="_blank" rel="noopener" href="https://github.com/Yue-plus">Yue_plus</a></nobr></footer></aside></main><canvas id="canvas-dust"></canvas><script src="/js/search.js"></script><script src="/js/arknights.js"></script><script src="//unpkg.com/lightgallery@2.7.1/lightgallery.min.js"></script><script src="//unpkg.com/lightgallery@2.7.1/plugins/zoom/lg-zoom.min.js"></script><script src="//unpkg.com/lightgallery@2.7.1/plugins/thumbnail/lg-thumbnail.min.js"></script><script src="/js/pjax.js"></script><script class="pjax-js">reset= () => {document.querySelector('.lg-container')?.remove()
+lightGallery(document.getElementById('post-bg'), {
+  plugins: [lgZoom,lgThumbnail],
+  selector: '.item-img'})}</script><script>window.addEventListener("load",() => {pjax = new Pjax({
+ cacheBust: false,
+ selectors: ['title','article','#aside-block','.pjax-js'],
+ switches: {'article': Pjax.switches.sideBySide},
+ switchesOptions: {
+   'article': {
+     classNames: {
+       remove: "pjax-out",
+       add: "pjax-in"
+     }
+   }
+ }
+});
+document.addEventListener("pjax:complete", reset);reset()})</script></body></html>

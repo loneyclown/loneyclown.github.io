@@ -1,0 +1,172 @@
+<!DOCTYPE html><html lang="zh" theme-mode="dark"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Git Bash 操作 | 晓梦未央-林雨霞</title><link rel="icon" type="image/x-icon" href="/favicon.ico"><script>var config = {"root":"/","search":{"preload":false,"activeHolder":"Enter here","blurHolder":"Search","noResult":"Data \"$0\" not found"},"code":{"codeInfo":"$0 - $1 lines","copy":"code.copy","copyFinish":"code.copyFinish","expand":"code.expand"}}</script><script src="//unpkg.com/mermaid@9.2.2/dist/mermaid.min.js"></script><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lightgallery.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-zoom.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-thumbnail.css"><link type="text/css" rel="stylesheet" href="/lib/fontawesome/css/all.min.css"><link rel="stylesheet" href="/css/arknights.css"><script>if (window.localStorage.getItem('theme-mode') === 'light')
+ document.documentElement.setAttribute('theme-mode', 'light')
+if (window.localStorage.getItem('theme-mode') === 'dark')
+ document.documentElement.setAttribute('theme-mode', 'dark')</script><style>@font-face {
+ font-family: Bender;
+ src: local('Bender'), url("/font/Bender.ttf"), url("/font/Bender.otf");
+}
+@font-face {
+ font-family: BenderLight;
+ src: local('BenderLight'), url("/font/BenderLight.ttf");
+}
+@font-face {
+ font-family: 'JetBrains Mono';
+ src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
+}</style><style>:root {
+  --dark-background: url('https://ak.hypergryph.com/assets/index/images/ak/pc/bk.jpg');
+  --light-background: url('/img/bk.jpg');
+}</style><meta name="generator" content="Hexo 6.3.0"><style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"] > svg a {
+  fill: blue;
+  stroke: blue;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style></head><body><div class="loading" style="opacity: 0;"><div class="loadingBar left"></div><div class="loadingBar right"></div></div><main><header class="closed"><div class="navBtn"><i class="navBtnIcon"><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span></i></div><nav><div class="navItem" id="search-header"><span class="navItemTitle"><input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="Search" spellcheck="false" maxlength="50" type="text" id="search-input"></span></div><div class="navItem" id="search-holder"></div><div class="search-popup"><div id="search-result"></div></div><ol class="navContent"><li class="navItem"><a class="navBlock" href="/"><span class="navItemTitle">Home</span></a></li><li class="navItem" matchdata="categories,tags"><a class="navBlock" href="/archives/"><span class="navItemTitle">Archives</span></a></li></ol></nav></header><article><div id="post-bg"><div id="post-title"><h1>Git Bash 操作</h1><div id="post-info"><span>First Post: <div class="control"><time datetime="2018-06-07T16:00:00.000Z" id="date"> 2018-06-08</time></div></span><br><span>Last Update: <div class="control"><time datetime="2023-08-22T02:25:15.354Z" id="updated"> 2023-08-22</time></div></span></div></div><hr><div id="post-content"><h1 id="Git-Bash-操作"><a href="#Git-Bash-操作" class="headerlink" title="Git Bash 操作"></a>Git Bash 操作</h1><h2 id="Git基本常用命令如下："><a href="#Git基本常用命令如下：" class="headerlink" title="Git基本常用命令如下："></a>Git基本常用命令如下：</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">mkdir：         XX (创建一个空目录 XX指目录名)<br><br>pwd：          显示当前目录的路径。<br><br>git init          把当前的目录变成可以管理的git仓库，生成隐藏.git文件。<br><br>git add XX       把xx文件添加到暂存区去。<br><br>git commit –m “XX”  提交文件 –m 后面的是注释。<br><br>git status        查看仓库状态<br><br>git diff  XX      查看XX文件修改了那些内容<br><br>git log          查看历史记录<br><br>git reset  --hard HEAD^ 或者 git reset  --hard HEAD~ 回退到上一个版本 // (如果想回退到100个版本，使用git reset –hard HEAD~100 )<br><br>cat XX         查看XX文件内容<br><br>git reflog       查看历史记录的版本号id<br><br>git checkout -- XX  把XX文件在工作区的修改全部撤销。<br><br>git rm XX          删除XX文件<br><br>git remote add origin &lt;https://github.com/tugenhua0707/testgit&gt; 关联一个远程库<br><br>git push –u(第一次要用-u 以后不需要) origin master 把当前master分支推送到远程库<br><br>git clone &lt;https://github.com/tugenhua0707/testgit&gt;  从远程库中克隆<br><br>git checkout –b dev  创建dev分支 并切换到dev分支上<br><br>git branch  查看当前所有的分支<br><br>git checkout master 切换回master分支<br><br>git merge dev    在当前的分支上合并dev分支<br><br>git branch –d dev 删除dev分支<br><br>git branch name  创建分支<br><br>git stash 把当前的工作隐藏起来 等以后恢复现场后继续工作<br><br>git stash list 查看所有被隐藏的文件列表<br><br>git stash apply 恢复被隐藏的文件，但是内容不删除<br><br>git stash drop 删除文件<br><br>git stash pop 恢复文件的同时 也删除文件<br><br>git remote 查看远程库的信息<br><br>git remote –v 查看远程库的详细信息<br><br>git push origin master  Git会把master分支推送到远程库对应的远程分支上<br></code></pre></td></tr></table></figure>
+
+<h2 id="初始化项目"><a href="#初始化项目" class="headerlink" title="初始化项目"></a>初始化项目</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">git init<br><br>git git add [文件名] // 添加文件到暂存区，提交当前目录全部文件文件名填&quot;.&quot;<br><br>git commit -m &#x27;内容&#x27; // 提交内容， 加[-m &#x27;内容&#x27;]为为当次提交添加注释<br><br>git status // 查看是否还有文件未提交<br><br>git diff [文件名]// 比较差异<br><br>git log //查看日志 (git log –pretty=oneline, &#x27;单行显示日志&#x27;)<br><br>git reset  --hard HEAD^ // 回退到上一个版本,如果要回退到上上个版本只需把HEAD^ 改成 HEAD^^ 以此类推,(git reset  --hard HEAD~100 , &#x27;回退到前100个版本&#x27;)<br><br>git reset  --hard [版本号] // 回退到指定版本 (git reflog, &#x27;获取版本号&#x27;)<br></code></pre></td></tr></table></figure>
+
+<h2 id="Clone-项目"><a href="#Clone-项目" class="headerlink" title="Clone 项目"></a>Clone 项目</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">git clone git@git.oschina.net:ifengye/test.git //SSH地址<br></code></pre></td></tr></table></figure>
+
+<h2 id="提交项目"><a href="#提交项目" class="headerlink" title="提交项目"></a>提交项目</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">git pull origin master<br>git add .<br>git commit -m &#x27;init&#x27; //init为说明文字<br>git commit --amend //查看当前log<br>git push origin master<br></code></pre></td></tr></table></figure>
+
+<h2 id="远程仓库"><a href="#远程仓库" class="headerlink" title="远程仓库"></a>远程仓库</h2><p>在了解之前，先注册github账号，由于你的本地Git仓库和github仓库之间的传输是通过SSH加密的，所以需要一点设置：<br>第一步：创建SSH Key。在用户主目录下，看看有没有.ssh目录，如果有，再看看这个目录下有没有id_rsa和id_rsa.pub这两个文件，如果有的话，直接跳过此如下命令，如果没有的话，打开命令行，输入如下命令：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">ssh-keygen  -t rsa –C “youremail@example.com”<br></code></pre></td></tr></table></figure>
+<p>,由于我本地此前运行过一次，所以本地有，如下所示：<br class='item-img' data-src='http://www.admin10000.com/UploadFiles/Document/201410/27/20141027155323753352.PNG'><img src="http://www.admin10000.com/UploadFiles/Document/201410/27/20141027155323753352.PNG" alt="avatar"><br>id_rsa是私钥，不能泄露出去，id_rsa.pub是公钥，可以放心地告诉任何人。<br>第二步：登录github,打开” settings”中的SSH Keys页面，然后点击“Add SSH Key”,填上任意title，在Key文本框里黏贴id_rsa.pub文件的内容。<br class='item-img' data-src='http://www.admin10000.com/UploadFiles/Document/201410/27/20141027155323355322.PNG'><img src="http://www.admin10000.com/UploadFiles/Document/201410/27/20141027155323355322.PNG" alt="avatar"><br>点击 Add Key，你就应该可以看到已经添加的key。<br class='item-img' data-src='http://www.admin10000.com/UploadFiles/Document/201410/27/20141027155323592489.PNG'><img src="http://www.admin10000.com/UploadFiles/Document/201410/27/20141027155323592489.PNG" alt="avatar"></p>
+<ol>
+<li><p>如何添加远程库？<br>现在的情景是：我们已经在本地创建了一个Git仓库后，又想在github创建一个Git仓库，并且希望这两个仓库进行远程同步，这样github的仓库可以作为备份，又可以其他人通过该仓库来协作。<br>首先，登录github上，然后在右上角找到“create a new repo”创建一个新的仓库。如下：<br class='item-img' data-src='http://www.admin10000.com/UploadFiles/Document/201410/27/20141027155323213968.PNG'><img src="http://www.admin10000.com/UploadFiles/Document/201410/27/20141027155323213968.PNG" alt="avatar"><br>在Repository name填入testgit，其他保持默认设置，点击“Create repository”按钮，就成功地创建了一个新的Git仓库：<br class='item-img' data-src='http://www.admin10000.com/UploadFiles/Document/201410/27/20141027155323934746.PNG'><img src="http://www.admin10000.com/UploadFiles/Document/201410/27/20141027155323934746.PNG" alt="avatar"><br>目前，在GitHub上的这个testgit仓库还是空的，GitHub告诉我们，可以从这个仓库克隆出新的仓库，也可以把一个已有的本地仓库与之关联，然后，把本地仓库的内容推送到GitHub仓库。<br>现在，我们根据GitHub的提示，在本地的testgit仓库下运行命令：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">git remote add origin &lt;https://github.com/tugenhua0707/testgit.git&gt;<br></code></pre></td></tr></table></figure>
+<p>所有的如下：<br class='item-img' data-src='http://www.admin10000.com/UploadFiles/Document/201410/27/20141027155323816495.PNG'><img src="http://www.admin10000.com/UploadFiles/Document/201410/27/20141027155323816495.PNG" alt="avatar"><br>把本地库的内容推送到远程，使用 git push命令，实际上是把当前分支master推送到远程。<br>由于远程库是空的，我们第一次推送master分支时，加上了 –u参数，Git不但会把本地的master分支内容推送的远程新的master分支，还会把本地的master分支和远程的master分支关联起来，在以后的推送或者拉取时就可以简化命令。推送成功后，可以立刻在github页面中看到远程库的内容已经和本地一模一样了，上面的要输入github的用户名和密码如下所示：   <img src="http://www.admin10000.com/UploadFiles/Document/201410/27/20141027155323652630.PNG" alt="avatar"><br>从现在起，只要本地作了提交，就可以通过如下命令：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">git push origin master<br></code></pre></td></tr></table></figure>
+<p>把本地master分支的最新修改推送到github上了，现在你就拥有了真正的分布式版本库了。</p>
+</li>
+<li><p>如何从远程库克隆？<br>上面我们了解了先有本地库，后有远程库时候，如何关联远程库。<br>现在我们想，假如远程库有新的内容了，我想克隆到本地来 如何克隆呢？<br>首先，登录github，创建一个新的仓库，名字叫testgit2.如下：  <img src="http://www.admin10000.com/UploadFiles/Document/201410/27/20141027155323066741.PNG" alt="avatar"><br>如下，我们看到：<br class='item-img' data-src='http://www.admin10000.com/UploadFiles/Document/201410/27/20141027155323087143.PNG'><img src="http://www.admin10000.com/UploadFiles/Document/201410/27/20141027155323087143.PNG" alt="avatar"><br>现在，远程库已经准备好了，下一步是使用命令git clone克隆一个本地库了。如下所示：<br class='item-img' data-src='http://www.admin10000.com/UploadFiles/Document/201410/27/20141027155323653601.PNG'><img src="http://www.admin10000.com/UploadFiles/Document/201410/27/20141027155323653601.PNG" alt="avatar"><br>接着在我本地目录下 生成testgit2目录了，如下所示：<br class='item-img' data-src='http://www.admin10000.com/UploadFiles/Document/201410/27/20141027155323810970.PNG'><img src="http://www.admin10000.com/UploadFiles/Document/201410/27/20141027155323810970.PNG" alt="avatar"></p>
+</li>
+</ol>
+<div id="paginator"></div></div><div id="post-footer"><div id="pages"><div class="footer-link" style="width: 50%;text-align:right;border-right:1px #fe2 solid"><a href="/2018/06/08/Node/2018-06-26-Node-notes/">← Next Node 学习笔记</a></div><div class="footer-link" style="width: 50%;right:1px;border-left:1px #fe2 solid"><a href="/2018/06/08/studyNotes/2018-06-08-notes/">CSS小知识以及mongod.conf相关配置 Prev →</a></div></div></div></div><div class="bottom-btn"><div><a class="i-top" id="to-top" onClick="scrolls.scrolltop();" title="To Top" style="opacity: 0; display: none;">∧ </a><a class="i-index" id="to-index" href="#toc-div" title="To Catalog">≡</a><a class="i-color" id="color-mode" onClick="colorMode.change()" title="Change Theme"></a></div></div></article><aside><div id="about"><a href="/" id="logo"><img src="https://ak.hypergryph.com/assets/index/images/ak/pc/faction/1.png" alt="Logo"></a><h1 id="Dr"><a href="/">loneyclown</a></h1><div id="description"><p>总有人间一缕风，填我十万秋水长。</p></div></div><div id="aside-block"><div id="toc-div"><h1>Catalog</h1><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Git-Bash-%E6%93%8D%E4%BD%9C"><span class="toc-number">1.</span> <span class="toc-text">Git Bash 操作</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Git%E5%9F%BA%E6%9C%AC%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E5%A6%82%E4%B8%8B%EF%BC%9A"><span class="toc-number">1.1.</span> <span class="toc-text">Git基本常用命令如下：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9D%E5%A7%8B%E5%8C%96%E9%A1%B9%E7%9B%AE"><span class="toc-number">1.2.</span> <span class="toc-text">初始化项目</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Clone-%E9%A1%B9%E7%9B%AE"><span class="toc-number">1.3.</span> <span class="toc-text">Clone 项目</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8F%90%E4%BA%A4%E9%A1%B9%E7%9B%AE"><span class="toc-number">1.4.</span> <span class="toc-text">提交项目</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93"><span class="toc-number">1.5.</span> <span class="toc-text">远程仓库</span></a></li></ol></li></ol></div></div><footer><nobr>Published with <a target="_blank" rel="noopener" href="http://hexo.io">Hexo</a></nobr><wbr><nobr> Theme <a target="_blank" rel="noopener" href="https://github.com/Yue-plus/hexo-theme-arknights">Arknights</a></nobr><wbr><nobr> by <a target="_blank" rel="noopener" href="https://github.com/Yue-plus">Yue_plus</a></nobr></footer></aside></main><canvas id="canvas-dust"></canvas><script src="/js/search.js"></script><script src="/js/arknights.js"></script><script src="//unpkg.com/lightgallery@2.7.1/lightgallery.min.js"></script><script src="//unpkg.com/lightgallery@2.7.1/plugins/zoom/lg-zoom.min.js"></script><script src="//unpkg.com/lightgallery@2.7.1/plugins/thumbnail/lg-thumbnail.min.js"></script><script src="/js/pjax.js"></script><script class="pjax-js">reset= () => {document.querySelector('.lg-container')?.remove()
+lightGallery(document.getElementById('post-bg'), {
+  plugins: [lgZoom,lgThumbnail],
+  selector: '.item-img'})}</script><script>window.addEventListener("load",() => {pjax = new Pjax({
+ cacheBust: false,
+ selectors: ['title','article','#aside-block','.pjax-js'],
+ switches: {'article': Pjax.switches.sideBySide},
+ switchesOptions: {
+   'article': {
+     classNames: {
+       remove: "pjax-out",
+       add: "pjax-in"
+     }
+   }
+ }
+});
+document.addEventListener("pjax:complete", reset);reset()})</script></body></html>
