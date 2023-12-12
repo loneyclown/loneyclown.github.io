@@ -21,9 +21,9 @@ background_image:
 # 导航栏
 menu:
   Home: ""
-  # About: about/
+  About: about/
   # Contact: contact/
-  Archives: archives/
+  # Archives: archives/
 
 # 侧边栏
 aside:
@@ -37,7 +37,7 @@ aside:
 # 格式：链接 || 图标
 # 所有可用图标参考：https://fontawesome.com/icons
 social:
-  # GitHub: https://github.com/yourname || fab fa-github
+  GitHub: https://github.com/loneyclown || fab fa-github
   # E-Mail: mailto:yourname@gmail.com || fa fa-envelope
   # BiliBili: https://space.bilibili.com/0000000 || fa-brands fa-bilibili
   # Weibo: https://weibo.com/yourname || fab fa-weibo
