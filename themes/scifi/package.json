@@ -1,0 +1,19 @@
+{
+  "name": "hexo-theme-scifi",
+  "version": "1.0.0",
+  "description": "简约科幻风格的 Hexo 主题",
+  "author": "loneyclown",
+  "license": "MIT",
+  "keywords": [
+    "hexo",
+    "theme",
+    "scifi",
+    "cyber",
+    "minimal"
+  ],
+  "repository": {
+    "type": "git",
+    "url": ""
+  }
+}
+

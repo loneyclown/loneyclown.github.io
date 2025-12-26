@@ -1,0 +1,130 @@
+@import 'variables'
+
+// 文章页面样式
+.post
+  max-width $content-width
+  margin 0 auto
+  padding $spacing-unit
+
+.post-header
+  margin-bottom ($spacing-unit * 2)
+  padding-bottom $spacing-unit
+  border-bottom 1px solid $border-color
+
+.post-title
+  font-size 2.5rem
+  margin-bottom $spacing-unit
+  background linear-gradient(135deg, $accent-cyan, $accent-purple)
+  -webkit-background-clip text
+  -webkit-text-fill-color transparent
+  background-clip text
+
+.post-meta
+  display flex
+  flex-wrap wrap
+  gap $spacing-unit
+  color $text-secondary
+  font-size 0.9rem
+
+.post-date, .post-updated, .post-wordcount, .post-reading-time
+  &::before
+    content '•'
+    margin-right 8px
+    color $accent-cyan
+
+// 目录样式
+.post-toc
+  background $bg-card
+  border 1px solid $border-color
+  border-radius 8px
+  padding $spacing-unit
+  margin-bottom ($spacing-unit * 2)
+  
+  h3
+    margin-bottom ($spacing-unit / 2)
+    color $accent-cyan
+    font-size 1.2rem
+  
+  ul
+    list-style none
+    margin 0
+    
+  li
+    margin ($spacing-unit / 4) 0
+    
+  a
+    color $text-secondary
+    transition all $transition
+    
+    &:hover
+      color $accent-cyan
+      padding-left 4px
+
+// 文章内容样式
+.post-content
+  line-height 1.8
+  color $text-primary
+  
+  p
+    margin-bottom $spacing-unit
+  
+  // 代码块增强
+  pre
+    position relative
+    
+    &::before
+      content ''
+      position absolute
+      top 0
+      left 0
+      right 0
+      height 2px
+      background linear-gradient(90deg, $accent-cyan, $accent-purple)
+      border-radius 8px 8px 0 0
+  
+  // 链接增强
+  a
+    position relative
+    
+    &::after
+      content ''
+      position absolute
+      bottom 0
+      left 0
+      width 0
+      height 1px
+      background $accent-cyan
+      transition width $transition
+    
+    &:hover::after
+      width 100%
+
+.post-footer
+  margin-top ($spacing-unit * 3)
+  padding-top $spacing-unit
+  border-top 1px solid $border-color
+
+.post-nav
+  display flex
+  justify-content space-between
+  gap $spacing-unit
+  margin-top ($spacing-unit * 2)
+
+.post-nav-link
+  flex 1
+  padding $spacing-unit
+  background $bg-card
+  border 1px solid $border-color
+  border-radius 8px
+  transition all $transition
+  
+  &:hover
+    border-color $accent-cyan
+    box-shadow 0 0 20px rgba(0, 217, 255, 0.2)
+  
+  &.prev
+    text-align left
+  
+  &.next
+    text-align right
+

@@ -1,0 +1,48 @@
+// 科幻主题主样式文件
+@import 'variables'
+@import 'base'
+@import 'background'
+@import 'layout'
+@import 'components'
+@import 'post'
+@import 'categories-tags'
+@import 'responsive'
+
+// 全局动画
+@keyframes glow
+  0%, 100%
+    opacity 1
+  50%
+    opacity 0.7
+
+@keyframes slideIn
+  from
+    opacity 0
+    transform translateY(20px)
+  to
+    opacity 1
+    transform translateY(0)
+
+// 应用动画
+.post-card, .archive-item
+  animation slideIn 0.5s ease-out
+
+// 滚动条样式
+::-webkit-scrollbar
+  width 8px
+
+::-webkit-scrollbar-track
+  background $bg-secondary
+
+::-webkit-scrollbar-thumb
+  background $accent-cyan
+  border-radius 4px
+  
+  &:hover
+    background $accent-blue
+
+// 选择文本样式
+::selection
+  background rgba(0, 217, 255, 0.3)
+  color $text-primary
+

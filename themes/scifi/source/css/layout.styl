@@ -1,0 +1,99 @@
+@import 'variables'
+
+// 主容器
+#app
+  min-height 100vh
+  display flex
+  flex-direction column
+
+// 头部样式
+#header
+  background $bg-secondary
+  border-bottom 1px solid $border-color
+  box-shadow 0 2px 20px rgba(0, 217, 255, 0.1)
+  position sticky
+  top 0
+  z-index 1000
+  backdrop-filter blur(10px)
+
+.header-container
+  max-width $container-width
+  margin 0 auto
+  padding $spacing-unit
+  display flex
+  justify-content space-between
+  align-items center
+  flex-wrap wrap
+
+.logo
+  font-size 1.5rem
+  font-weight 700
+  
+  a
+    color $accent-cyan
+    text-shadow 0 0 10px rgba(0, 217, 255, 0.5)
+    transition all $transition
+    
+    &:hover
+      text-shadow 0 0 20px rgba(0, 217, 255, 0.8)
+
+.nav
+  .nav-list
+    display flex
+    list-style none
+    margin 0
+    gap $spacing-unit
+    
+  .nav-item
+    margin 0
+    
+  .nav-link
+    padding ($spacing-unit / 2) $spacing-unit
+    border-radius 4px
+    transition all $transition
+    position relative
+    
+    &::before
+      content ''
+      position absolute
+      bottom 0
+      left 0
+      width 0
+      height 2px
+      background $accent-cyan
+      transition width $transition
+    
+    &:hover, &.active
+      color $accent-cyan
+      background rgba(0, 217, 255, 0.1)
+      
+      &::before
+        width 100%
+
+// 主内容区
+#main
+  flex 1
+  max-width $container-width
+  width 100%
+  margin 0 auto
+  padding $spacing-unit
+
+// 页脚样式
+#footer
+  background $bg-secondary
+  border-top 1px solid $border-color
+  margin-top ($spacing-unit * 3)
+  padding ($spacing-unit * 2) 0
+
+.footer-content
+  max-width $container-width
+  margin 0 auto
+  padding 0 $spacing-unit
+  text-align center
+  color $text-secondary
+  font-size 0.9rem
+  
+  a
+    color $accent-cyan
+    margin 0 4px
+

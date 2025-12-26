@@ -1,0 +1,21 @@
+extends includes/layout.pug
+
+block content
+  .category-container
+    header.category-header
+      h1.category-title= __('category.title') + ': ' + page.category
+      if page.total
+        p.category-count= __('category.total').replace('%s', page.total)
+    
+    .category-posts
+      each post in page.posts.toArray()
+        article.post-card
+          .post-header
+            h2.post-title
+              a(href=url_for(post.path))= post.title
+            time.post-date(datetime=post.date.toISOString())
+              = date(post.date, 'YYYY-MM-DD')
+          if post.excerpt
+            .post-excerpt
+              != post.excerpt
+

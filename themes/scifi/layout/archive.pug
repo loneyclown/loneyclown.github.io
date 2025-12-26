@@ -1,0 +1,21 @@
+extends includes/layout.pug
+
+block content
+  .archive-container
+    header.archive-header
+      h1.archive-title= __('archive.title')
+      if page.total
+        p.archive-count= __('archive.total').replace('%s', page.total)
+    
+    .archive-list
+      - let lastYear = 0
+      each post in page.posts.toArray()
+        - const year = post.date.year()
+        if lastYear !== year
+          - lastYear = year
+          h2.archive-year= year
+        article.archive-item
+          time.archive-date(datetime=post.date.toISOString())
+            = date(post.date, 'MM-DD')
+          a.archive-link(href=url_for(post.path))= post.title
+

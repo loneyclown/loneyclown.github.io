@@ -1,0 +1,15 @@
+extends includes/layout.pug
+
+block content
+  .categories-container
+    header.categories-header
+      h1.categories-title= __('category.title')
+    
+    .categories-list
+      - const categoriesList = list_categories({show_count: true})
+      if categoriesList
+        != categoriesList
+      else
+        .empty-state
+          p 暂无分类
+

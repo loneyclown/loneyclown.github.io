@@ -1,0 +1,66 @@
+# 科幻主题配置文件
+
+# 站点信息（这些信息会从主配置文件继承，这里可以覆盖）
+site:
+  title: "晓梦未央-林雨霞"
+  subtitle: ""
+  description: "总有人间一缕风，填我十万秋水长。"
+  author: "loneyclown"
+  logo: ""
+
+# 导航菜单
+menu:
+  Home: /
+  Archives: /archives/
+  Categories: /categories/
+  Tags: /tags/
+  # About: /about/
+
+# 社交链接
+social:
+  GitHub: https://github.com/loneyclown || fab fa-github
+  # Email: mailto:your@email.com || fa fa-envelope
+
+# 文章配置
+post:
+  date: true
+  updated: true
+  excerpt: true
+  wordcount: false
+  reading_time: false
+
+# 目录配置
+toc:
+  enable: true
+  list_number: true
+  max_depth: 6
+
+# 搜索配置
+search:
+  enable: true
+  path: search.json
+
+# 代码高亮
+highlight:
+  enable: true
+  line_number: true
+  theme: "github-dark"
+
+# 数学公式
+mathjax:
+  enable: false
+
+# 评论系统
+comments:
+  enable: false
+  # gitalk, valine, waline 等
+
+# 动画效果
+animation:
+  enable: true
+  particles: false  # 粒子背景（可选）
+
+# 自定义样式和脚本
+custom_css: []
+custom_js: []
+

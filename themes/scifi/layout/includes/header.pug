@@ -1,0 +1,21 @@
+header#header
+  .header-container
+    .logo
+      a(href=url_for('/'))
+        if theme.site && theme.site.logo
+          img(src=url_for(theme.site.logo), alt=config.title)
+        else
+          = config.title
+    
+    nav.nav
+      ul.nav-list
+        if theme.menu
+          each url, label in theme.menu
+            li.nav-item
+              a.nav-link(href=url_for(url), class={active: is_current(url)})
+                = label
+    
+    if theme.search && theme.search.enable
+      .search-box
+        input#search-input(type='text', placeholder=__('search.placeholder') || '搜索...')
+        #search-result

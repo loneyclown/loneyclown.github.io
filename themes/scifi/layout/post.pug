@@ -1,0 +1,50 @@
+extends includes/layout.pug
+
+block content
+  article.post
+    header.post-header
+      h1.post-title= page.title
+      
+      .post-meta
+        if theme.post.date
+          time.post-date(datetime=page.date.toISOString())
+            = __('post.posted') + ' ' + date(page.date, 'YYYY-MM-DD')
+        if theme.post.updated && page.updated
+          time.post-updated(datetime=page.updated.toISOString())
+            = __('post.edited') + ' ' + date(page.updated, 'YYYY-MM-DD')
+        if theme.post.wordcount
+          span.post-wordcount= __('post.wordcount') + ': ' + (page.wordcount || 'N/A')
+        if theme.post.reading_time
+          span.post-reading-time= __('post.reading_time') + ': ' + (page.reading_time || 'N/A')
+    
+    if theme.toc && theme.toc.enable && page.toc
+      .post-toc
+        h3 目录
+        != toc(page.content, {list_number: theme.toc.list_number, max_depth: theme.toc.max_depth})
+    
+    .post-content
+      != page.content
+    
+    footer.post-footer
+      if page.categories && page.categories.length > 0
+        .post-categories
+          span 分类：
+          each category in page.categories.toArray()
+            a.category-tag(href=url_for(category.path))= category.name
+      
+      if page.tags && page.tags.length > 0
+        .post-tags
+          span 标签：
+          each tag in page.tags.toArray()
+            a.tag(href=url_for(tag.path))= tag.name
+      
+      .post-nav
+        if page.prev
+          a.post-nav-link.prev(href=url_for(page.prev.path))
+            span ← #{__('post.prev')}
+            = page.prev.title
+        if page.next
+          a.post-nav-link.next(href=url_for(page.next.path))
+            = page.next.title
+            span #{__('post.next')} →
+

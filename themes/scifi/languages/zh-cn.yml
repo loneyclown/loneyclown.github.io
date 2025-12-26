@@ -1,0 +1,37 @@
+site:
+  title: "晓梦未央-林雨霞"
+  subtitle: ""
+  description: "总有人间一缕风，填我十万秋水长。"
+  author: "loneyclown"
+
+menu:
+  home: "首页"
+  archives: "归档"
+  categories: "分类"
+  tags: "标签"
+  about: "关于"
+
+post:
+  posted: "发布于"
+  edited: "更新于"
+  wordcount: "字数"
+  reading_time: "阅读时长"
+  prev: "上一篇"
+  next: "下一篇"
+
+archive:
+  title: "归档"
+  total: "共 %s 篇文章"
+
+category:
+  title: "分类"
+  total: "共 %s 个分类"
+
+tag:
+  title: "标签"
+  total: "共 %s 个标签"
+
+search:
+  placeholder: "搜索..."
+  no_result: "未找到相关结果"
+

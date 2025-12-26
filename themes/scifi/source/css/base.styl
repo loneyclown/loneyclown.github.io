@@ -1,0 +1,126 @@
+@import 'variables'
+
+// 重置样式
+*
+  margin 0
+  padding 0
+  box-sizing border-box
+
+html
+  font-size 16px
+  scroll-behavior smooth
+
+body
+  font-family $font-family
+  background-color $bg-primary
+  color $text-primary
+  line-height 1.6
+  overflow-x hidden
+  position relative
+
+// 链接样式
+a
+  color $accent-cyan
+  text-decoration none
+  transition all $transition
+  
+  &:hover
+    color $accent-blue
+    text-shadow 0 0 8px rgba(0, 217, 255, 0.5)
+
+// 标题样式
+h1, h2, h3, h4, h5, h6
+  color $text-primary
+  font-weight 600
+  line-height 1.2
+  margin-bottom $spacing-unit
+
+h1
+  font-size 2.5rem
+  background linear-gradient(135deg, $accent-cyan, $accent-purple)
+  -webkit-background-clip text
+  -webkit-text-fill-color transparent
+  background-clip text
+
+h2
+  font-size 2rem
+  border-left 3px solid $accent-cyan
+  padding-left $spacing-unit
+  margin-top ($spacing-unit * 2)
+
+h3
+  font-size 1.5rem
+
+// 代码样式
+code
+  font-family $font-mono
+  font-size 0.9em
+  background rgba(0, 217, 255, 0.1)
+  color $accent-cyan
+  padding 2px 6px
+  border-radius 3px
+  border 1px solid rgba(0, 217, 255, 0.2)
+
+pre
+  background $bg-secondary
+  border 1px solid $border-color
+  border-radius 8px
+  padding $spacing-unit
+  overflow-x auto
+  box-shadow 0 0 20px rgba(0, 217, 255, 0.1)
+  
+  code
+    background transparent
+    border none
+    padding 0
+    color $text-primary
+
+// 列表样式
+ul, ol
+  margin-left ($spacing-unit * 1.5)
+  margin-bottom $spacing-unit
+
+li
+  margin-bottom ($spacing-unit / 2)
+
+// 引用样式
+blockquote
+  border-left 4px solid $accent-cyan
+  padding-left $spacing-unit
+  margin $spacing-unit 0
+  color $text-secondary
+  background rgba(0, 217, 255, 0.05)
+  padding $spacing-unit
+  border-radius 4px
+
+// 表格样式
+table
+  width 100%
+  border-collapse collapse
+  margin $spacing-unit 0
+  border 1px solid $border-color
+
+th, td
+  padding ($spacing-unit / 2)
+  border 1px solid $border-color
+  text-align left
+
+th
+  background rgba(0, 217, 255, 0.1)
+  color $accent-cyan
+  font-weight 600
+
+// 图片样式
+img
+  max-width 100%
+  height auto
+  border-radius 8px
+  box-shadow 0 0 20px rgba(0, 217, 255, 0.2)
+
+// 水平线
+hr
+  border none
+  height 1px
+  background linear-gradient(90deg, transparent, $accent-cyan, transparent)
+  margin ($spacing-unit * 2) 0
+

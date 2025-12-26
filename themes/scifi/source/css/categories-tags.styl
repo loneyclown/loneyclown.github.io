@@ -1,0 +1,70 @@
+@import 'variables'
+
+// 分类和标签索引页样式
+.categories-container, .tags-container
+  max-width $content-width
+  margin 0 auto
+  padding $spacing-unit
+
+.categories-header, .tags-header
+  margin-bottom ($spacing-unit * 2)
+  text-align center
+
+.categories-title, .tags-title
+  font-size 2.5rem
+  background linear-gradient(135deg, $accent-cyan, $accent-purple)
+  -webkit-background-clip text
+  -webkit-text-fill-color transparent
+  background-clip text
+  margin-bottom $spacing-unit
+
+.categories-list, .tags-list
+  display grid
+  grid-template-columns repeat(auto-fill, minmax(250px, 1fr))
+  gap $spacing-unit
+
+  a
+    display block
+    padding $spacing-unit
+    background $bg-card
+    border 1px solid $border-color
+    border-radius 12px
+    transition all $transition
+    backdrop-filter blur(10px)
+    position relative
+    overflow hidden
+    
+    &::before
+      content ''
+      position absolute
+      top 0
+      left -100%
+      width 100%
+      height 100%
+      background linear-gradient(90deg, transparent, rgba(0, 217, 255, 0.2), transparent)
+      transition left 0.5s ease
+    
+    &:hover
+      border-color $accent-cyan
+      box-shadow 0 0 30px rgba(0, 217, 255, 0.3)
+      transform translateY(-4px)
+      
+      &::before
+        left 100%
+    
+    // 分类/标签名称
+    &:first-child
+      font-size 1.2rem
+      font-weight 600
+      color $accent-cyan
+      margin-bottom ($spacing-unit / 2)
+    
+    // 计数
+    span
+      float right
+      color $text-secondary
+      font-size 0.9rem
+      background rgba(0, 217, 255, 0.1)
+      padding 2px 8px
+      border-radius 12px
+

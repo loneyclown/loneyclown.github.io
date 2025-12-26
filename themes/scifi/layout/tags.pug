@@ -1,0 +1,15 @@
+extends includes/layout.pug
+
+block content
+  .tags-container
+    header.tags-header
+      h1.tags-title= __('tag.title')
+    
+    .tags-list
+      - const tagsList = list_tags({show_count: true})
+      if tagsList
+        != tagsList
+      else
+        .empty-state
+          p 暂无标签
+
