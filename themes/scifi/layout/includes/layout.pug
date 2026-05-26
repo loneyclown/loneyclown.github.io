@@ -40,7 +40,7 @@ html(lang=config.language)
       main#main.min-h-screen
         block content
       
-      footer#footer.bg-scifi-bg-secondary.border-t.border-scifi-cyan/30.mt-12.py-8
+      footer#footer(class="bg-scifi-bg-secondary border-t border-scifi-cyan/30 mt-12 py-8")
         .footer-content.max-w-7xl.mx-auto.px-5.text-center.text-gray-400.text-sm
           p
             | © #{new Date().getFullYear()} 
@@ -57,4 +57,3 @@ html(lang=config.language)
     if theme.custom_js
       each js in theme.custom_js
         script(src=url_for(js))
-
