@@ -1,0 +1,52 @@
+# Neo-Ancient 赛博古风主题
+# 赛博朋克 × 中国古风 融合设计
+
+# 站点信息
+site:
+  logo: ""
+  favicon: ""
+
+# 导航菜单
+menu:
+  首页: /
+  归档: /archives/
+  分类: /categories/
+  标签: /tags/
+
+# 社交链接
+social:
+  GitHub: https://github.com/loneyclown || fab fa-github
+
+# 文章配置
+post:
+  date: true
+  updated: false
+  wordcount: false
+  reading_time: false
+  excerpt: true
+  excerpt_length: 200
+
+# 目录
+toc:
+  enable: true
+  max_depth: 3
+
+# 搜索
+search:
+  enable: true
+  path: search.json
+
+# 评论
+comments:
+  enable: false
+
+# 动画效果
+animation:
+  enable: true
+  particles: true     # 粒子背景
+  neon_flicker: true  # 霓虹闪烁
+  scroll_reveal: true # 滚动渐入
+
+# 自定义样式和脚本
+custom_css: []
+custom_js: []

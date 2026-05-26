@@ -1,0 +1,80 @@
+<div class="index-container max-w-4xl mx-auto px-4 py-8">
+  <!-- 首页装饰标题 -->
+  <div class="hero-section text-center mb-12">
+    <div class="hero-decoration mb-6">
+      <span class="hero-line"></span>
+      <span class="hero-diamond">◆</span>
+      <span class="hero-line"></span>
+    </div>
+    <h2 class="hero-subtitle text-cyber-cyan/60 text-sm tracking-[0.3em] uppercase font-mono">
+      霓虹照古卷 · 代码写春秋
+    </h2>
+  </div>
+
+  <!-- 文章列表 -->
+  <% if (page.posts && page.posts.length > 0) { %>
+    <div class="post-list space-y-8">
+      <% page.posts.each(function(post) { %>
+      <article class="cyber-card group">
+        <div class="card-glow"></div>
+
+        <!-- 文章日期 - 书法风格 -->
+        <% if (theme.post && theme.post.date) { %>
+        <div class="post-meta flex items-center gap-3 mb-3 text-xs font-mono">
+          <time datetime="<%= date(post.date, 'YYYY-MM-DDTHH:mm:ssZ') %>"
+                class="text-cyber-cyan/60">
+            <span class="text-cyber-gold">//</span>
+            <%= date(post.date, 'YYYY-MM-DD') %>
+          </time>
+          <% if (post.categories && post.categories.length > 0) { %>
+          <span class="text-cyber-gray/40">·</span>
+          <span class="flex gap-2">
+            <% post.categories.each(function(cat) { %>
+            <a href="<%= url_for(cat.path) %>" class="cyber-tag text-xs"><%= cat.name %></a>
+            <% }) %>
+          </span>
+          <% } %>
+        </div>
+        <% } %>
+
+        <!-- 文章标题 -->
+        <h2 class="post-title text-2xl font-bold mb-3">
+          <a href="<%= url_for(post.path) %>" class="cyber-link-title"><%= post.title %></a>
+        </h2>
+
+        <!-- 摘要 -->
+        <% if (post.excerpt) { %>
+        <div class="post-excerpt text-cyber-gray leading-relaxed mb-4 line-clamp-3">
+          <%- post.excerpt %>
+        </div>
+        <% } %>
+
+        <!-- 标签 -->
+        <% if (post.tags && post.tags.length > 0) { %>
+        <div class="post-tags flex flex-wrap gap-2 mb-3">
+          <% post.tags.each(function(tag) { %>
+          <a href="<%= url_for(tag.path) %>" class="cyber-tag text-xs">#<%= tag.name %></a>
+          <% }) %>
+        </div>
+        <% } %>
+
+        <!-- 阅读更多 -->
+        <a href="<%= url_for(post.path) %>" class="cyber-link inline-flex items-center gap-1 text-sm">
+          <span>阅读全文</span>
+          <span class="arrow">→</span>
+        </a>
+      </article>
+      <% }) %>
+    </div>
+
+    <!-- 分页 -->
+    <%- partial('_partial/pagination') %>
+
+  <% } else { %>
+    <div class="empty-state text-center py-20">
+      <div class="text-6xl mb-4">📜</div>
+      <p class="text-cyber-gray text-lg">卷轴待展，墨迹未干</p>
+      <p class="text-cyber-gray/60 text-sm mt-2">还没有文章，静候佳篇</p>
+    </div>
+  <% } %>
+</div>

@@ -1,0 +1,44 @@
+<footer id="footer" class="cyber-footer mt-auto">
+  <!-- 波浪分隔线 -->
+  <div class="footer-wave">
+    <svg viewBox="0 0 1200 60" preserveAspectRatio="none" class="w-full h-16 block">
+      <path d="M0,30 C150,0 300,60 450,30 C600,0 750,60 900,30 C1050,0 1200,60 1200,30 L1200,60 L0,60 Z"
+            class="fill-cyber-bg-secondary stroke-cyber-cyan/20" stroke-width="1"/>
+      <path d="M0,40 C200,15 400,55 600,35 C800,15 1000,55 1200,40 L1200,60 L0,60 Z"
+            class="fill-cyber-bg-tertiary stroke-cyber-gold/20" stroke-width="0.5"/>
+    </svg>
+  </div>
+
+  <div class="footer-content bg-cyber-bg-secondary border-t border-cyber-cyan/10 py-8">
+    <div class="max-w-6xl mx-auto px-4 text-center">
+      <!-- 社交链接 -->
+      <% if (theme.social) { %>
+      <div class="social-links flex justify-center gap-4 mb-4">
+        <% for (var name in theme.social) { %>
+          <% var social = theme.social[name].split(' || '); %>
+          <a href="<%= social[0] %>" target="_blank" rel="noopener" class="cyber-social-link"
+             title="<%= name %>">
+            <% if (social[1]) { %><i class="<%= social[1] %>"></i><% } else { %><%= name %><% } %>
+          </a>
+        <% } %>
+      </div>
+      <% } %>
+
+      <!-- 版权信息 -->
+      <p class="text-cyber-gray text-sm mb-2">
+        © <%= new Date().getFullYear() %>
+        <%= config.author || config.title %>
+        <span class="mx-2 text-cyber-cyan/40">◆</span>
+        Powered by
+        <a href="https://hexo.io" target="_blank" rel="noopener" class="cyber-link">Hexo</a>
+        &
+        <span class="cyber-gradient-text">Neo-Ancient</span>
+      </p>
+
+      <!-- 赛博诗 -->
+      <p class="text-cyber-gray/40 text-xs italic tracking-widest">
+        霓虹照古卷 · 代码写春秋
+      </p>
+    </div>
+  </div>
+</footer>

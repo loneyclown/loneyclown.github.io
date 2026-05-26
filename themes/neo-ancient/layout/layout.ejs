@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="<%= config.language %>">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="generator" content="Hexo">
+
+  <title><%= page.title ? page.title + ' | ' : '' %><%= config.title %></title>
+
+  <% if (config.description) { %><meta name="description" content="<%= config.description %>"><% } %>
+  <% if (config.keywords) { %><meta name="keywords" content="<%= config.keywords %>"><% } %>
+  <% if (config.author) { %><meta name="author" content="<%= config.author %>"><% } %>
+
+  <!-- Favicon -->
+  <% if (theme.site && theme.site.favicon) { %><link rel="icon" href="<%= url_for(theme.site.favicon) %>"><% } %>
+
+  <!-- Google Fonts: 思源宋体 + JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700;900&family=JetBrains+Mono:wght@400;700&family=Ma+Shan+Zheng&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="<%= url_for('/css/neo-ancient.css') %>">
+  <% if (theme.custom_css) { theme.custom_css.forEach(function(css) { %>
+  <link rel="stylesheet" href="<%= url_for(css) %>">
+  <% }) } %>
+</head>
+<body class="cyber-body">
+  <!-- 扫描线效果 -->
+  <div class="scanlines"></div>
+
+  <!-- 水墨粒子背景 -->
+  <canvas id="particles-canvas" class="fixed inset-0 z-0"></canvas>
+
+  <!-- 网格背景 -->
+  <div class="cyber-grid fixed inset-0 z-0"></div>
+
+  <div id="app" class="relative z-10 min-h-screen flex flex-col">
+    <%- partial('_partial/header') %>
+
+    <main id="main" class="flex-1">
+      <%- body %>
+    </main>
+
+    <%- partial('_partial/footer') %>
+  </div>
+
+  <!-- Scripts -->
+  <script src="<%= url_for('/js/neo-ancient.js') %>"></script>
+  <% if (theme.custom_js) { theme.custom_js.forEach(function(js) { %>
+  <script src="<%= url_for(js) %>"></script>
+  <% }) } %>
+</body>
+</html>

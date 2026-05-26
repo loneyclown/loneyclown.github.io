@@ -1,0 +1,29 @@
+<% if (page.total > 1) { %>
+<div class="pagination flex justify-center items-center gap-2 mt-10">
+  <% if (page.prev) { %>
+  <a href="<%= url_for(page.prev_link) %>" class="cyber-btn px-4 py-2 text-sm">
+    ← 上一页
+  </a>
+  <% } %>
+
+  <!-- 页码 -->
+  <% var current = page.current; %>
+  <% var total = page.total; %>
+  <% for (var i = 1; i <= total; i++) { %>
+    <% if (i === current) { %>
+    <span class="cyber-btn active px-4 py-2 text-sm"><%= i %></span>
+    <% } else if (Math.abs(i - current) <= 2 || i === 1 || i === total) { %>
+    <a href="<%= url_for(i === 1 ? page.first_link : page.next_link.replace(/\d+$/, i.toString())) %>"
+       class="cyber-btn px-4 py-2 text-sm"><%= i %></a>
+    <% } else if (i === current - 3 || i === current + 3) { %>
+    <span class="text-cyber-gray/40 px-2">…</span>
+    <% } %>
+  <% } %>
+
+  <% if (page.next) { %>
+  <a href="<%= url_for(page.next_link) %>" class="cyber-btn px-4 py-2 text-sm">
+    下一页 →
+  </a>
+  <% } %>
+</div>
+<% } %>

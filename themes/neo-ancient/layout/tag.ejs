@@ -1,0 +1,47 @@
+<div class="tag-container max-w-4xl mx-auto px-4 py-8">
+  <header class="mb-8">
+    <h1 class="text-3xl font-bold cyber-gradient-text mb-2">
+      <span class="text-cyber-gold">//</span> 标签
+    </h1>
+    <p class="text-cyber-gray text-sm">共 <%= site.tags.length %> 个标签</p>
+  </header>
+
+  <% if (page.tag) { %>
+    <!-- 当前标签文章 -->
+    <div class="mb-8">
+      <h2 class="text-2xl font-bold mb-4 flex items-center gap-2">
+        <span class="cyber-dot"></span>
+        #<%= page.tag %>
+        <span class="text-cyber-gray text-sm font-normal">
+          (<%= page.posts.length %> 篇)
+        </span>
+      </h2>
+
+      <div class="space-y-4">
+        <% page.posts.each(function(post) { %>
+        <div class="cyber-card p-4 flex flex-col sm:flex-row sm:items-center gap-3">
+          <time datetime="<%= date(post.date, 'YYYY-MM-DDTHH:mm:ssZ') %>"
+                class="text-cyber-cyan/60 font-mono text-sm whitespace-nowrap">
+            <%= date(post.date, 'YYYY-MM-DD') %>
+          </time>
+          <a href="<%= url_for(post.path) %>" class="cyber-link-title flex-1"><%= post.title %></a>
+        </div>
+        <% }) %>
+      </div>
+    </div>
+
+    <%- partial('_partial/pagination') %>
+
+  <% } else { %>
+    <!-- 标签云 -->
+    <div class="tag-cloud flex flex-wrap gap-3">
+      <% site.tags.each(function(tag) { %>
+      <a href="<%= url_for(tag.path) %>" class="cyber-card px-4 py-2 text-sm group">
+        <span class="cyber-gradient-text font-mono">#</span>
+        <%= tag.name %>
+        <span class="text-cyber-gray/60 ml-1">(<%= tag.posts.length %>)</span>
+      </a>
+      <% }) %>
+    </div>
+  <% } %>
+</div>

@@ -1,0 +1,53 @@
+<header id="header" class="cyber-header">
+  <div class="header-inner max-w-6xl mx-auto px-4 py-3 flex items-center justify-between gap-4">
+    <!-- Logo / Title -->
+    <a href="<%= url_for('/') %>" class="site-brand flex items-center gap-3 no-underline shrink-0">
+      <% if (theme.site && theme.site.logo) { %>
+        <img src="<%= url_for(theme.site.logo) %>" alt="<%= config.title %>" class="h-10 w-10 rounded-full border-cyber-cyan/30" style="border: 1px solid rgba(0,240,255,0.3);">
+      <% } %>
+      <div>
+        <h1 class="site-title text-xl font-bold cyber-gradient-text m-0 leading-tight"><%= config.title %></h1>
+        <% if (config.subtitle) { %>
+        <p class="site-subtitle text-cyber-gray text-xs m-0"><%= config.subtitle %></p>
+        <% } %>
+      </div>
+    </a>
+
+    <!-- Navigation + Search -->
+    <div class="flex items-center gap-3 flex-1 justify-end">
+      <nav id="nav" class="cyber-nav">
+        <ul class="nav-list flex gap-1 list-none m-0 p-0">
+          <% if (theme.menu) { %>
+            <% for (var label in theme.menu) { %>
+              <li class="nav-item">
+                <a href="<%= url_for(theme.menu[label]) %>"
+                   class="nav-link cyber-btn px-3 py-2 rounded text-sm <%= is_current(theme.menu[label]) ? 'active' : '' %>">
+                  <%= label %>
+                </a>
+              </li>
+            <% } %>
+          <% } %>
+        </ul>
+      </nav>
+
+      <% if (theme.search && theme.search.enable) { %>
+      <div class="search-box relative hidden sm:block">
+        <input id="search-input"
+               type="text"
+               placeholder="搜索..."
+               class="cyber-btn px-3 py-2 rounded text-sm w-32 focus:w-48"
+               style="transition: all 0.3s; outline: none;">
+        <div id="search-result"
+             class="search-results-dropdown absolute top-full right-0 mt-2 w-72 z-50"
+             style="display: none; max-height: 400px; overflow-y: auto;">
+        </div>
+      </div>
+      <% } %>
+
+      <!-- Mobile menu toggle -->
+      <button id="menu-toggle" class="cyber-btn sm:hidden px-3 py-2" aria-label="菜单">
+        <span class="menu-icon">☰</span>
+      </button>
+    </div>
+  </div>
+</header>

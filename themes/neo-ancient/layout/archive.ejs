@@ -1,0 +1,45 @@
+<div class="archive-container max-w-4xl mx-auto px-4 py-8">
+  <header class="mb-8">
+    <h1 class="text-3xl font-bold cyber-gradient-text mb-2">
+      <span class="text-cyber-gold">//</span> 归档
+    </h1>
+    <p class="text-cyber-gray text-sm">共 <%= site.posts.length %> 篇文章</p>
+  </header>
+
+  <div class="archive-list space-y-6">
+    <% var year = 0; %>
+    <% page.posts.each(function(post) { %>
+      <% var postYear = date(post.date, 'YYYY'); %>
+      <% if (postYear !== year) { %>
+        <% year = postYear; %>
+        <div class="archive-year cyber-section-title">
+          <h2 class="text-2xl font-bold cyber-gradient-text flex items-center gap-3">
+            <span class="text-cyber-gold text-lg">◇</span>
+            <%= year %>
+            <span class="text-cyber-gray/40 text-base font-normal">年</span>
+          </h2>
+          <div class="year-line mt-2"></div>
+        </div>
+      <% } %>
+
+      <div class="archive-item cyber-card p-4 flex flex-col sm:flex-row sm:items-center gap-3 group">
+        <time datetime="<%= date(post.date, 'YYYY-MM-DDTHH:mm:ssZ') %>"
+              class="text-cyber-cyan/60 font-mono text-sm whitespace-nowrap">
+          <%= date(post.date, 'MM-DD') %>
+        </time>
+        <a href="<%= url_for(post.path) %>" class="cyber-link-title flex-1 text-lg">
+          <%= post.title %>
+        </a>
+        <% if (post.categories && post.categories.length > 0) { %>
+        <span class="flex gap-2">
+          <% post.categories.each(function(cat) { %>
+          <a href="<%= url_for(cat.path) %>" class="cyber-tag text-xs"><%= cat.name %></a>
+          <% }) %>
+        </span>
+        <% } %>
+      </div>
+    <% }) %>
+  </div>
+
+  <%- partial('_partial/pagination') %>
+</div>

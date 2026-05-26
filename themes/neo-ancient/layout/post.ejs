@@ -1,0 +1,103 @@
+<article id="post" class="post-container max-w-3xl mx-auto px-4 py-8">
+  <!-- 文章头部 - 古风卷轴 -->
+  <header class="post-header mb-8">
+    <!-- 分类 -->
+    <% if (page.categories && page.categories.length > 0) { %>
+    <div class="flex flex-wrap gap-2 mb-3">
+      <% page.categories.each(function(cat) { %>
+      <a href="<%= url_for(cat.path) %>" class="cyber-tag"><%= cat.name %></a>
+      <% }) %>
+    </div>
+    <% } %>
+
+    <!-- 标题 -->
+    <h1 class="post-title text-3xl md:text-4xl font-bold mb-4 cyber-gradient-text leading-tight">
+      <%= page.title %>
+    </h1>
+
+    <!-- 元信息 -->
+    <div class="post-meta flex flex-wrap items-center gap-4 text-sm text-cyber-gray border-b border-cyber-cyan/10 pb-4">
+      <% if (page.date) { %>
+      <time datetime="<%= date(page.date, 'YYYY-MM-DDTHH:mm:ssZ') %>" class="flex items-center gap-1">
+        <span class="text-cyber-cyan/60">📅</span>
+        <%= date(page.date, 'YYYY-MM-DD') %>
+      </time>
+      <% } %>
+      <% if (page.updated && page.updated !== page.date) { %>
+      <span class="flex items-center gap-1">
+        <span class="text-cyber-gold/60">🔄</span>
+        <%= date(page.updated, 'YYYY-MM-DD') %>
+      </span>
+      <% } %>
+      <% if (theme.post && theme.post.wordcount) { %>
+      <span class="flex items-center gap-1">
+        <span class="text-cyber-cyan/60">📝</span>
+        <%= wordcount(page.content) %> 字
+      </span>
+      <% } %>
+    </div>
+  </header>
+
+  <!-- TOC -->
+  <% if (theme.toc && theme.toc.enable && page.toc) { %>
+  <aside class="toc cyber-card p-4 mb-8 text-sm">
+    <h3 class="toc-title text-cyber-cyan font-bold mb-3 flex items-center gap-2">
+      <span>📑</span> 目录
+    </h3>
+    <%- toc(page.content, { list_number: theme.toc.list_number, max_depth: theme.toc.max_depth }) %>
+  </aside>
+  <% } %>
+
+  <!-- 文章内容 -->
+  <div class="post-content cyber-prose">
+    <%- page.content %>
+  </div>
+
+  <!-- 文章底部 -->
+  <footer class="post-footer mt-8 pt-6 border-t border-cyber-cyan/10">
+    <!-- 标签 -->
+    <% if (page.tags && page.tags.length > 0) { %>
+    <div class="post-tags flex flex-wrap gap-2 mb-4">
+      <% page.tags.each(function(tag) { %>
+      <a href="<%= url_for(tag.path) %>" class="cyber-tag">#<%= tag.name %></a>
+      <% }) %>
+    </div>
+    <% } %>
+
+    <!-- 版权声明 -->
+    <div class="copyright cyber-card p-4 text-xs text-cyber-gray/70">
+      <p>
+        <span class="text-cyber-cyan/60">◆</span>
+        本文由 <strong class="text-cyber-gold"><%= config.author %></strong> 创作，
+        采用
+        <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener" class="cyber-link">CC BY-NC-SA 4.0</a>
+        许可协议
+      </p>
+    </div>
+  </footer>
+</article>
+
+<!-- 上一篇 / 下一篇 -->
+<% if (page.prev || page.next) { %>
+<nav class="post-nav max-w-3xl mx-auto px-4 pb-8">
+  <div class="flex flex-col sm:flex-row justify-between gap-4">
+    <% if (page.prev) { %>
+    <a href="<%= url_for(page.prev.path) %>" class="cyber-card flex-1 p-4 text-left group">
+      <span class="text-xs text-cyber-gray/60 block mb-1">← 上一篇</span>
+      <span class="cyber-link-title text-sm"><%= page.prev.title %></span>
+    </a>
+    <% } else { %>
+    <div class="flex-1"></div>
+    <% } %>
+
+    <% if (page.next) { %>
+    <a href="<%= url_for(page.next.path) %>" class="cyber-card flex-1 p-4 text-right group">
+      <span class="text-xs text-cyber-gray/60 block mb-1">下一篇 →</span>
+      <span class="cyber-link-title text-sm"><%= page.next.title %></span>
+    </a>
+    <% } else { %>
+    <div class="flex-1"></div>
+    <% } %>
+  </div>
+</nav>
+<% } %>
