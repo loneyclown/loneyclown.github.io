@@ -58,7 +58,7 @@ comments:
 # 动画效果
 animation:
   enable: true
-  particles: false  # 粒子背景（可选）
+  particles: true  # 粒子背景（可选）
 
 # 自定义样式和脚本
 custom_css: []

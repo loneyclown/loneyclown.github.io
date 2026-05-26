@@ -13,7 +13,7 @@ timezone: ""
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: https://loneyclown.github.io/
+url: https://blog.loneyclown.vip/
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 pretty_urls:
@@ -100,11 +100,6 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: arknights
+theme: scifi
 
-# Deployment
-## Docs: https://hexo.io/docs/one-command-deployment
-deploy:
-  type: git
-  repo: git@github.com:loneyclown/loneyclown.github.io.git
-  branch: master
+# Deployment — now handled by Cloudflare Pages, hexo-deployer-git no longer needed

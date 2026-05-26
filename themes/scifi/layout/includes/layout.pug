@@ -16,75 +16,43 @@ html(lang=config.language)
       meta(name='author', content=config.author)
     
     //- Favicon
-    if theme.site && theme.site.logo
+    if theme.site.logo
       link(rel='icon', href=url_for(theme.site.logo))
     
-    //- TailwindCSS
-    script(src='https://cdn.tailwindcss.com')
-    script.
-      tailwind.config = {
-        darkMode: 'class',
-        theme: {
-          extend: {
-            colors: {
-              'cyber-cyan': '#00d9ff',
-              'cyber-blue': '#0099ff',
-              'cyber-purple': '#9d4edd',
-              'cyber-green': '#00ff88',
-              'bg-primary': '#0a0e27',
-              'bg-secondary': '#0d1117',
-            },
-            animation: {
-              'glow': 'glow 2s ease-in-out infinite',
-              'float': 'float 6s ease-in-out infinite',
-              'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-            },
-            keyframes: {
-              glow: {
-                '0%, 100%': { opacity: '1', filter: 'brightness(1)' },
-                '50%': { opacity: '0.7', filter: 'brightness(1.2)' },
-              },
-              float: {
-                '0%, 100%': { transform: 'translateY(0px)' },
-                '50%': { transform: 'translateY(-20px)' },
-              },
-            },
-          },
-        },
-      }
-    
     //- Stylesheets
+    link(rel='stylesheet', href=url_for('/css/tailwind-compiled.css'))
     link(rel='stylesheet', href=url_for('/css/scifi.css'))
     if theme.custom_css
       each css in theme.custom_css
         link(rel='stylesheet', href=url_for(css))
   
-  body.dark
-    //- 科幻背景层
-    #scifi-background
-      .grid-overlay
-      .particles-container
-      .gradient-orb.orb-1
-      .gradient-orb.orb-2
-      .gradient-orb.orb-3
+  body.bg-scifi-bg.text-gray-200.scifi-scrollbar
+    //- 粒子背景画布
+    if theme.animation && theme.animation.particles
+      canvas#particles-canvas
+    
+    //- 网格背景
+    .fixed.inset-0.scifi-grid-bg.pointer-events-none.z-0
     
     #app.relative.z-10
       include header.pug
       
-      main#main
+      main#main.min-h-screen
         block content
       
-      footer#footer
-        .footer-content
+      footer#footer.bg-scifi-bg-secondary.border-t.border-scifi-cyan/30.mt-12.py-8
+        .footer-content.max-w-7xl.mx-auto.px-5.text-center.text-gray-400.text-sm
           p
             | © #{new Date().getFullYear()} 
             = config.author || config.title
             | . Powered by 
-            a(href='https://hexo.io', target='_blank', rel='noopener') Hexo
+            a.scifi-link(href='https://hexo.io', target='_blank', rel='noopener') Hexo
             |  & 
-            a(href='#', target='_blank', rel='noopener') Scifi Theme
+            a.scifi-link(href='#', target='_blank', rel='noopener') Scifi Theme
     
     //- Scripts
+    if theme.animation && theme.animation.particles
+      script(src=url_for('/js/particles.js'))
     script(src=url_for('/js/main.js'))
     if theme.custom_js
       each js in theme.custom_js

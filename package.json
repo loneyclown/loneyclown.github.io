@@ -3,10 +3,12 @@
   "version": "2.0.0",
   "private": true,
   "scripts": {
-    "build": "hexo generate",
+    "build": "npm run build:css && hexo generate",
+    "build:css": "tailwindcss -i ./themes/scifi/source/css/tailwind.css -o ./themes/scifi/source/css/tailwind-compiled.css --minify",
     "clean": "hexo clean",
     "deploy": "hexo deploy",
-    "server": "hexo server"
+    "server": "npm run build:css && hexo server",
+    "watch:css": "tailwindcss -i ./themes/scifi/source/css/tailwind.css -o ./themes/scifi/source/css/tailwind-compiled.css --watch"
   },
   "hexo": {
     "version": "8.1.1"
@@ -31,6 +33,9 @@
     "hexo-wordcount": "^6.0.1"
   },
   "devDependencies": {
-    "hexo-renderer-ts": "^1.3.0"
+    "autoprefixer": "^10.4.23",
+    "hexo-renderer-ts": "^1.3.0",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^3.4.19"
   }
 }

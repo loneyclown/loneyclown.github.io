@@ -1,15 +1,17 @@
 extends includes/layout.pug
 
 block content
-  .tags-container
-    header.tags-header
-      h1.tags-title= __('tag.title')
-    
-    .tags-list
+  .tags-container.max-w-5xl.mx-auto.px-5.py-8
+    header.tags-header.mb-8
+      h1.tags-title.scifi-title.text-4xl.font-bold.mb-4= __('tag.title')
       - const tagsList = list_tags({show_count: true})
       if tagsList
-        != tagsList
+        p.tags-count.text-gray-400 共 #{site.tags.length} 个标签
+    
+    .tags-list
+      if tagsList
+        .flex.flex-wrap.gap-3
+          != tagsList
       else
-        .empty-state
+        .empty-state.text-center.py-12.text-gray-400
           p 暂无标签
-

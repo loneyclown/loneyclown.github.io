@@ -1,21 +1,22 @@
-header#header
-  .header-container
+header#header.sticky.top-0.z-50.bg-scifi-bg-secondary/90.backdrop-blur-lg.border-b.border-scifi-cyan/30.shadow-lg.shadow-scifi-cyan/10
+  .header-container.max-w-7xl.mx-auto.px-5.py-4.flex.flex-wrap.items-center.justify-between.gap-4
     .logo
-      a(href=url_for('/'))
+      a.scifi-link.text-2xl.font-bold.scifi-glow-text(href=url_for('/'))
         if theme.site && theme.site.logo
-          img(src=url_for(theme.site.logo), alt=config.title)
+          img.h-10(src=url_for(theme.site.logo), alt=config.title)
         else
           = config.title
     
     nav.nav
-      ul.nav-list
+      ul.nav-list.flex.flex-wrap.gap-4.list-none.m-0
         if theme.menu
           each url, label in theme.menu
             li.nav-item
-              a.nav-link(href=url_for(url), class={active: is_current(url)})
+              a.nav-link.scifi-link.px-4.py-2.rounded-lg.transition-all.duration-300(href=url_for(url), class={'bg-scifi-cyan/10 border border-scifi-cyan/30': is_current(url)})
                 = label
     
     if theme.search && theme.search.enable
-      .search-box
-        input#search-input(type='text', placeholder=__('search.placeholder') || '搜索...')
-        #search-result
+      .search-box.relative
+        input#search-input.bg-scifi-bg-secondary.border.border-scifi-cyan/30.rounded-lg.px-4.py-2.text-gray-200.placeholder-gray-500.w-48.focus:outline-none.focus:border-scifi-cyan.focus:shadow-glow.transition-all(type='text', placeholder=__('search.placeholder') || '搜索...')
+        #search-result.absolute.top-full.left-0.right-0.mt-2.bg-scifi-bg-secondary.border.border-scifi-cyan/30.rounded-lg.max-h-96.overflow-y-auto.hidden.z-50.shadow-xl
+

@@ -1,15 +1,17 @@
 extends includes/layout.pug
 
 block content
-  .categories-container
-    header.categories-header
-      h1.categories-title= __('category.title')
-    
-    .categories-list
+  .categories-container.max-w-5xl.mx-auto.px-5.py-8
+    header.categories-header.mb-8
+      h1.categories-title.scifi-title.text-4xl.font-bold.mb-4= __('category.title')
       - const categoriesList = list_categories({show_count: true})
       if categoriesList
-        != categoriesList
+        p.categories-count.text-gray-400 共 #{site.categories.length} 个分类
+    
+    .categories-list
+      if categoriesList
+        .grid.grid-cols-1.md:grid-cols-2.lg:grid-cols-3.gap-4
+          != categoriesList
       else
-        .empty-state
+        .empty-state.text-center.py-12.text-gray-400
           p 暂无分类
-
