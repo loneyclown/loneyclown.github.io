@@ -60,13 +60,13 @@ _Avoid_：需求、任务
 
 ---
 
-## 部署工作流（hexo-8 分支）
+## 部署工作流（dev-hexo8 分支）
 
-在 `hexo-8` 分支上工作时，遵循以下部署工作流：
+在 `dev-hexo8` 分支上工作时，遵循以下部署工作流：
 
 1. 博客基于 **Hexo 8** 构建。
-2. **Cloudflare Pages** 已配置为在推送到 `hexo-8` 分支时自动部署。
-3. 添加或编辑文章后，直接向 `hexo-8` 分支执行 **commit 并 push**。请勿在本地运行 `hexo deploy` 或 `hexo generate` —— Cloudflare 会自动处理构建。
+2. **Cloudflare Pages** 已配置为在推送到 `dev-hexo8` 分支时自动部署到生产环境。
+3. 添加或编辑文章后，直接向 `dev-hexo8` 分支执行 **commit 并 push**。请勿在本地运行 `hexo deploy` 或 `hexo generate` —— Cloudflare 会自动处理构建。
 4. 如需本地使用 `hexo server` 进行开发，请确保已运行 `npm install`，但不要将 `node_modules` 提交到仓库。
 
 ---
