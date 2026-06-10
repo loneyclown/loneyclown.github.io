@@ -14,16 +14,8 @@ timezone: ""
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
 url: https://blog.loneyclown.vip/
-permalink: p/:abbrlink/
+permalink: p/:hash/
 permalink_defaults:
-
-# Abbrlink — short hash-based URLs
-abbrlink:
-  alg: crc32      # hash algorithm: crc32 / md5
-  rep: hex        # representation: hex / dec
-  drafts: false   # generate abbrlink for drafts
-  # Optional: force a specific length
-  # length: 8
 
 pretty_urls:
   trailing_index: true # Set to false to remove trailing 'index.html' from permalinks

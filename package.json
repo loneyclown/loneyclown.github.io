@@ -11,7 +11,7 @@
     "watch:css": "tailwindcss -i ./themes/scifi/source/css/tailwind.css -o ./themes/scifi/source/css/tailwind-compiled.css --watch"
   },
   "hexo": {
-    "version": "8.1.2"
+    "version": "8.1.1"
   },
   "dependencies": {
     "hexo": "^8.0.0",
