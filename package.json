@@ -3,7 +3,7 @@
   "version": "2.0.0",
   "private": true,
   "scripts": {
-    "build": "npm run build:css && hexo generate",
+    "build": "hexo generate",
     "build:css": "tailwindcss -i ./themes/scifi/source/css/tailwind.css -o ./themes/scifi/source/css/tailwind-compiled.css --minify",
     "clean": "hexo clean",
     "deploy": "hexo deploy",
