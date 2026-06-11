@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="content-layout">
+    <div class="main-column">
+      <div class="archive-header">
+        <h1 class="archive-title">
+          <i class="fas fa-folder-open"></i>
+          文章分类
+        </h1>
+        <span class="archive-count">共 <%= site.categories.length %> 个分类</span>
+      </div>
+      
+      <div class="categories-grid">
+        <% site.categories.each(function(category) { %>
+          <a href="<%- url_for(category.path) %>" class="category-card">
+            <div class="category-card-icon">
+              <i class="fas fa-folder"></i>
+            </div>
+            <div class="category-card-info">
+              <h3 class="category-card-name"><%= category.name %></h3>
+              <span class="category-card-count"><%= category.posts.length %> 篇文章</span>
+            </div>
+          </a>
+        <% }) %>
+      </div>
+    </div>
+    
+    <% if (theme.sidebar && theme.sidebar.enable) { %>
+      <aside class="sidebar">
+        <%- partial('partials/sidebar') %>
+      </aside>
+    <% } %>
+  </div>
+</div>

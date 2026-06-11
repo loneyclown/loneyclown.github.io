@@ -1,0 +1,257 @@
+// ====================
+// Cloudy Cabin - Post Card
+// ====================
+
+.post-list {
+  display: flex;
+  flex-direction: column;
+  gap: $section-gap;
+}
+
+.post-card {
+  background: $card-bg;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-radius: $radius-lg;
+  box-shadow: $shadow-card;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  overflow: hidden;
+  transition: $transition-base;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: $shadow-card-hover;
+  }
+}
+
+.post-card-inner {
+  display: flex;
+  padding: 20px;
+  gap: 20px;
+}
+
+// Thumbnail
+.post-thumbnail {
+  flex-shrink: 0;
+  width: 180px;
+  height: 120px;
+  border-radius: $radius-sm;
+  overflow: hidden;
+  position: relative;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: $transition-slow;
+  }
+
+  &:hover img {
+    transform: scale(1.05);
+  }
+}
+
+.post-thumbnail-placeholder {
+  background: linear-gradient(135deg, $secondary-light, $primary-lighter);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .placeholder-bg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    color: $primary;
+    font-size: 32px;
+    opacity: 0.5;
+  }
+}
+
+// Body
+.post-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.post-header-row {
+  margin-bottom: 8px;
+}
+
+.post-categories-inline {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.category-badge {
+  display: inline-block;
+  padding: 3px 10px;
+  background: $primary-lighter;
+  color: $primary;
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: $radius-xs;
+  text-decoration: none;
+  transition: $transition-fast;
+
+  &:hover {
+    background: $primary;
+    color: #fff;
+  }
+}
+
+.post-card-title {
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0 0 10px;
+  line-height: 1.4;
+
+  a {
+    color: $text-primary;
+    text-decoration: none;
+    transition: $transition-fast;
+
+    &:hover {
+      color: $primary;
+    }
+  }
+}
+
+.post-excerpt {
+  font-size: 14px;
+  color: $text-secondary;
+  line-height: 1.7;
+  margin: 0 0 14px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.post-meta-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px;
+  margin-top: auto;
+  padding-top: 12px;
+  border-top: 1px solid $border-light;
+}
+
+.meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: $text-tertiary;
+
+  i {
+    font-size: 12px;
+  }
+}
+
+.meta-reading-time {
+  margin-left: auto;
+}
+
+// Section header
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+
+  .section-icon {
+    color: $primary;
+    font-size: 16px;
+  }
+
+  .section-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: $text-primary;
+    margin: 0;
+  }
+}
+
+// Pagination
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 32px;
+  padding: 16px;
+}
+
+.pagination-prev,
+.pagination-next {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background: $card-bg;
+  border-radius: $radius-md;
+  color: $text-primary;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  box-shadow: $shadow-card;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  transition: $transition-base;
+
+  &:hover {
+    background: linear-gradient(135deg, $primary-light, $secondary);
+    color: #fff;
+    transform: translateY(-2px);
+  }
+
+  &.disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+
+    &:hover {
+      background: $card-bg;
+      color: $text-primary;
+      transform: none;
+    }
+  }
+}
+
+.pagination-info {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  color: $text-secondary;
+  font-weight: 600;
+
+  .page-current {
+    color: $primary;
+    font-size: 18px;
+  }
+
+  .page-divider {
+    color: $text-tertiary;
+  }
+}
+
+// Responsive
+@media (max-width: 640px) {
+  .post-card-inner {
+    flex-direction: column;
+  }
+
+  .post-thumbnail {
+    width: 100%;
+    height: 160px;
+  }
+
+  .meta-reading-time {
+    margin-left: 0;
+  }
+}

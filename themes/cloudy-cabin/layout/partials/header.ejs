@@ -1,0 +1,49 @@
+<header class="site-header">
+  <div class="header-inner">
+    <div class="header-left">
+      <a href="<%- url_for('/') %>" class="site-brand">
+        <div class="brand-logo">
+          <i class="fas fa-cloud"></i>
+        </div>
+        <div class="brand-text">
+          <span class="brand-name">Cloudy Cabin</span>
+          <span class="brand-slogan">Keep Coding. Keep Writing.</span>
+        </div>
+      </a>
+    </div>
+    
+    <nav class="header-nav">
+      <% for (var label in theme.menu) { %>
+        <a href="<%- url_for(theme.menu[label]) %>" class="nav-link <%= is_current(theme.menu[label]) ? 'active' : '' %>">
+          <% if (label === '首页') { %><i class="fas fa-home"></i><% } %>
+          <% if (label === '归档') { %><i class="fas fa-archive"></i><% } %>
+          <% if (label === '分类') { %><i class="fas fa-folder-open"></i><% } %>
+          <% if (label === '标签') { %><i class="fas fa-tags"></i><% } %>
+          <% if (label === '关于我') { %><i class="fas fa-user"></i><% } %>
+          <span><%= label %></span>
+        </a>
+      <% } %>
+    </nav>
+    
+    <div class="header-right">
+      <% if (theme.search && theme.search.enable) { %>
+        <div class="search-box">
+          <input type="text" class="search-input" placeholder="搜索点什么..." id="searchInput">
+          <button class="search-btn" id="searchBtn">
+            <i class="fas fa-search"></i>
+          </button>
+        </div>
+      <% } %>
+      
+      <button class="theme-toggle" id="themeToggle" title="切换主题">
+        <i class="fas fa-moon"></i>
+      </button>
+      
+      <% if (theme.author && theme.author.avatar) { %>
+        <div class="header-avatar">
+          <img src="<%- url_for(theme.author.avatar) %>" alt="<%= theme.author.name %>">
+        </div>
+      <% } %>
+    </div>
+  </div>
+</header>

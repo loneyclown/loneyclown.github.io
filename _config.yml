@@ -3,7 +3,7 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: 晓梦未央-林雨霞
+title: "Cloudy Cabin"
 subtitle: ""
 description: "总有人间一缕风，填我十万秋水长。"
 keywords:
@@ -101,6 +101,6 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: neo-ancient
+theme: cloudy-cabin
 
 # Deployment — now handled by Cloudflare Pages, hexo-deployer-git no longer needed

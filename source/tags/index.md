@@ -1,5 +1,4 @@
 ---
 title: 标签
-layout: tags
-type: tags
+layout: tags-index
 ---

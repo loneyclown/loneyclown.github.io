@@ -1,0 +1,32 @@
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <i class="fas fa-cloud"></i>
+        <span>Cloudy Cabin</span>
+      </div>
+      <p class="footer-desc">一间漂浮在云上的私人小屋</p>
+    </div>
+    
+    <div class="footer-links">
+      <% if (theme.social) { %>
+        <% for (var name in theme.social) { %>
+          <% var parts = theme.social[name].split(' || '); %>
+          <a href="<%= parts[0] %>" target="_blank" rel="noopener" class="footer-social" title="<%= name %>">
+            <i class="<%= parts[1] || 'fas fa-link' %>"></i>
+          </a>
+        <% } %>
+      <% } %>
+    </div>
+    
+    <div class="footer-bottom">
+      <p>
+        &copy; <%= date(new Date(), 'YYYY') %> <%= config.author || theme.author.name %>
+        <span class="divider">|</span>
+        Powered by <a href="https://hexo.io" target="_blank">Hexo</a>
+        <span class="divider">|</span>
+        Theme <a href="#">Cloudy Cabin</a>
+      </p>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,43 @@
+<div class="sidebar-card sidebar-author">
+  <div class="author-header">
+    <div class="author-avatar">
+      <% if (theme.author && theme.author.avatar) { %>
+        <img src="<%- url_for(theme.author.avatar) %>" alt="<%= theme.author.name %>">
+      <% } else { %>
+        <div class="avatar-placeholder">
+          <i class="fas fa-user"></i>
+        </div>
+      <% } %>
+    </div>
+    <div class="author-info">
+      <h3 class="author-name"><%= theme.author.name || config.author %></h3>
+      <p class="author-bio"><%= theme.author.bio || '' %></p>
+    </div>
+  </div>
+  
+  <div class="author-stats">
+    <div class="stat-item">
+      <span class="stat-num"><%= site.posts.length %></span>
+      <span class="stat-label">文章</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-num"><%= site.categories.length %></span>
+      <span class="stat-label">分类</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-num"><%= site.tags.length %></span>
+      <span class="stat-label">标签</span>
+    </div>
+  </div>
+  
+  <% if (theme.social) { %>
+    <div class="author-social">
+      <% for (var name in theme.social) { %>
+        <% var parts = theme.social[name].split(' || '); %>
+        <a href="<%= parts[0] %>" target="_blank" rel="noopener" class="social-link" title="<%= name %>">
+          <i class="<%= parts[1] || 'fas fa-link' %>"></i>
+        </a>
+      <% } %>
+    </div>
+  <% } %>
+</div>

@@ -1,0 +1,41 @@
+<div class="container">
+  <div class="content-layout">
+    <div class="main-column">
+      <div class="archive-header">
+        <h1 class="archive-title">
+          <i class="fas fa-archive"></i>
+          <% if (page.year) { %>
+            <%= page.year %> 年 <%= page.month ? page.month + ' 月' : '' %> 归档
+          <% } else { %>
+            文章归档
+          <% } %>
+        </h1>
+        <span class="archive-count">共 <%= page.posts.length %> 篇</span>
+      </div>
+      
+      <div class="archive-timeline">
+        <% var lastYear = ''; %>
+        <% page.posts.each(function(post) { %>
+          <% var year = date(post.date, 'YYYY'); %>
+          <% if (year !== lastYear) { %>
+            <% lastYear = year; %>
+            <div class="timeline-year"><%= year %></div>
+          <% } %>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-date"><%= date(post.date, 'MM-DD') %></div>
+            <a href="<%- url_for(post.path) %>" class="timeline-title"><%= post.title %></a>
+          </div>
+        <% }) %>
+      </div>
+      
+      <%- partial('partials/pagination') %>
+    </div>
+    
+    <% if (theme.sidebar && theme.sidebar.enable) { %>
+      <aside class="sidebar">
+        <%- partial('partials/sidebar') %>
+      </aside>
+    <% } %>
+  </div>
+</div>

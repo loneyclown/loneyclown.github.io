@@ -1,0 +1,312 @@
+// ====================
+// Cloudy Cabin - Sidebar
+// ====================
+
+.sidebar {
+  width: $sidebar-width;
+  flex-shrink: 0;
+}
+
+.sidebar-inner {
+  display: flex;
+  flex-direction: column;
+  gap: $section-gap;
+}
+
+// Sidebar card base
+.sidebar-card {
+  background: $card-bg;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-radius: $radius-lg;
+  box-shadow: $shadow-card;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  overflow: hidden;
+  transition: $transition-base;
+
+  &:hover {
+    box-shadow: $shadow-card-hover;
+  }
+}
+
+.sidebar-card-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 20px;
+  border-bottom: 1px solid $border-light;
+  font-size: 15px;
+  font-weight: 700;
+  color: $text-primary;
+
+  i {
+    color: $primary;
+    font-size: 14px;
+  }
+}
+
+.sidebar-card-body {
+  padding: 16px 20px;
+}
+
+// Author card
+.sidebar-author {
+  .author-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 20px;
+  }
+
+  .author-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid $primary-light;
+    box-shadow: 0 4px 12px rgba(255, 157, 187, 0.3);
+    flex-shrink: 0;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .avatar-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, $primary-lighter, $secondary-light);
+    color: $primary;
+    font-size: 24px;
+  }
+
+  .author-info {
+    min-width: 0;
+  }
+
+  .author-name {
+    font-size: 16px;
+    font-weight: 700;
+    color: $text-primary;
+    margin: 0 0 4px;
+  }
+
+  .author-bio {
+    font-size: 13px;
+    color: $text-secondary;
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  .author-stats {
+    display: flex;
+    justify-content: space-around;
+    padding: 12px 20px;
+    border-top: 1px solid $border-light;
+    border-bottom: 1px solid $border-light;
+  }
+
+  .stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .stat-num {
+    font-size: 18px;
+    font-weight: 800;
+    color: $primary;
+    font-family: $font-en;
+  }
+
+  .stat-label {
+    font-size: 12px;
+    color: $text-tertiary;
+  }
+
+  .author-social {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    padding: 14px 20px;
+  }
+
+  .social-link {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: $border-light;
+    color: $text-secondary;
+    text-decoration: none;
+    font-size: 14px;
+    transition: $transition-fast;
+
+    &:hover {
+      background: linear-gradient(135deg, $primary-light, $secondary);
+      color: #fff;
+      transform: translateY(-2px);
+    }
+  }
+}
+
+// Announcement
+.sidebar-announcement {
+  .sidebar-card-body {
+    p {
+      margin: 0;
+      font-size: 14px;
+      color: $text-secondary;
+      line-height: 1.7;
+      white-space: pre-line;
+    }
+  }
+}
+
+// Categories
+.category-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.category-item {
+  & + .category-item {
+    margin-top: 4px;
+  }
+}
+
+.category-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px;
+  border-radius: $radius-xs;
+  color: $text-secondary;
+  text-decoration: none;
+  font-size: 14px;
+  transition: $transition-fast;
+
+  i {
+    margin-right: 8px;
+    color: $secondary;
+    font-size: 12px;
+  }
+
+  &:hover {
+    background: $primary-lighter;
+    color: $primary;
+
+    .category-count {
+      background: $primary;
+      color: #fff;
+    }
+  }
+}
+
+.category-name {
+  display: flex;
+  align-items: center;
+}
+
+.category-count {
+  font-size: 12px;
+  font-weight: 600;
+  padding: 2px 8px;
+  background: $border-light;
+  border-radius: 10px;
+  color: $text-tertiary;
+  transition: $transition-fast;
+}
+
+// Tag cloud
+.tag-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tag-cloud-item {
+  display: inline-block;
+  padding: 5px 12px;
+  background: $border-light;
+  color: $text-secondary;
+  text-decoration: none;
+  border-radius: $radius-xs;
+  font-size: 13px;
+  font-weight: 600;
+  transition: $transition-fast;
+
+  &:hover {
+    background: linear-gradient(135deg, $primary-light, $secondary);
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 157, 187, 0.3);
+  }
+}
+
+// Archives
+.archive-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.archive-item {
+  & + .archive-item {
+    margin-top: 4px;
+  }
+}
+
+.archive-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px;
+  border-radius: $radius-xs;
+  color: $text-secondary;
+  text-decoration: none;
+  font-size: 14px;
+  transition: $transition-fast;
+
+  i {
+    font-size: 10px;
+    color: $text-tertiary;
+    margin-left: 8px;
+    transition: $transition-fast;
+  }
+
+  &:hover {
+    background: $primary-lighter;
+    color: $primary;
+
+    i {
+      color: $primary;
+      transform: translateX(4px);
+    }
+  }
+}
+
+.archive-name {
+  flex: 1;
+}
+
+.archive-count {
+  color: $text-tertiary;
+  font-size: 13px;
+}
+
+// Responsive
+@media (max-width: 1024px) {
+  .sidebar {
+    display: none;
+  }
+}

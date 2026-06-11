@@ -1,0 +1,50 @@
+<section class="hero-section">
+  <div class="hero-card">
+    <div class="hero-content">
+      <h1 class="hero-title">
+        <%= theme.hero.title %>
+        <span class="hero-emoji">🌸</span>
+      </h1>
+      <p class="hero-subtitle"><%= theme.hero.subtitle %></p>
+      
+      <div class="hero-tags">
+        <% theme.hero.tags.forEach(function(tag) { %>
+          <span class="hero-tag">
+            <% if (tag === '技术宅') { %><i class="fas fa-laptop-code"></i><% } %>
+            <% if (tag === '游戏玩家') { %><i class="fas fa-gamepad"></i><% } %>
+            <% if (tag === '终身学习者') { %><i class="fas fa-book"></i><% } %>
+            <% if (tag === '咖啡爱好者') { %><i class="fas fa-coffee"></i><% } %>
+            <%= tag %>
+          </span>
+        <% }) %>
+      </div>
+    </div>
+    
+    <div class="hero-visual">
+      <div class="hero-clouds">
+        <div class="hero-cloud cloud-a"></div>
+        <div class="hero-cloud cloud-b"></div>
+        <div class="hero-cloud cloud-c"></div>
+      </div>
+      <div class="hero-bunny">
+        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+          <!-- 兔子简笔画 -->
+          <ellipse cx="100" cy="140" rx="50" ry="45" fill="#FF9DBB" opacity="0.3"/>
+          <ellipse cx="100" cy="135" rx="45" ry="40" fill="#FFF0F5"/>
+          <ellipse cx="75" cy="80" rx="12" ry="35" fill="#FFF0F5" transform="rotate(-10 75 80)"/>
+          <ellipse cx="125" cy="80" rx="12" ry="35" fill="#FFF0F5" transform="rotate(10 125 80)"/>
+          <ellipse cx="75" cy="75" rx="8" ry="25" fill="#FFB7C5" transform="rotate(-10 75 75)"/>
+          <ellipse cx="125" cy="75" rx="8" ry="25" fill="#FFB7C5" transform="rotate(10 125 75)"/>
+          <circle cx="85" cy="130" r="5" fill="#24304F"/>
+          <circle cx="115" cy="130" r="5" fill="#24304F"/>
+          <circle cx="87" cy="128" r="2" fill="#FFF"/>
+          <circle cx="117" cy="128" r="2" fill="#FFF"/>
+          <ellipse cx="100" cy="142" rx="6" ry="4" fill="#FF9DBB"/>
+          <path d="M 95 148 Q 100 152 105 148" stroke="#FF9DBB" stroke-width="2" fill="none"/>
+          <ellipse cx="70" cy="145" rx="10" ry="6" fill="#FFB7C5" opacity="0.5"/>
+          <ellipse cx="130" cy="145" rx="10" ry="6" fill="#FFB7C5" opacity="0.5"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>

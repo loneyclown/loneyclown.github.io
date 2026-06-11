@@ -1,0 +1,99 @@
+// ====================
+// Cloudy Cabin - Footer
+// ====================
+
+.site-footer {
+  margin-top: 48px;
+  padding: 40px 20px 24px;
+}
+
+.footer-inner {
+  max-width: $container-max;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.footer-content {
+  text-align: center;
+}
+
+.footer-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 20px;
+  font-weight: 800;
+  color: $text-primary;
+  font-family: $font-en;
+  margin-bottom: 8px;
+
+  i {
+    color: $primary;
+    font-size: 22px;
+  }
+}
+
+.footer-desc {
+  font-size: 14px;
+  color: $text-secondary;
+  margin: 0;
+}
+
+.footer-links {
+  display: flex;
+  gap: 16px;
+}
+
+.footer-social {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: $card-bg;
+  color: $text-secondary;
+  text-decoration: none;
+  font-size: 16px;
+  box-shadow: $shadow-card;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  transition: $transition-base;
+
+  &:hover {
+    background: linear-gradient(135deg, $primary-light, $secondary);
+    color: #fff;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(255, 157, 187, 0.3);
+  }
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 20px;
+  border-top: 1px solid $border;
+  width: 100%;
+
+  p {
+    margin: 0;
+    font-size: 13px;
+    color: $text-tertiary;
+  }
+
+  a {
+    color: $text-secondary;
+    text-decoration: none;
+    transition: $transition-fast;
+
+    &:hover {
+      color: $primary;
+    }
+  }
+
+  .divider {
+    margin: 0 8px;
+    color: $border;
+  }
+}

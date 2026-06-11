@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="content-layout">
+    <article class="main-column post-article">
+      <div class="post-header">
+        <h1 class="post-title"><%= page.title %></h1>
+        <% if (page.date) { %>
+          <div class="post-meta">
+            <span class="meta-item">
+              <i class="far fa-calendar"></i>
+              <%= date(page.date, 'YYYY-MM-DD') %>
+            </span>
+          </div>
+        <% } %>
+      </div>
+      
+      <div class="post-content">
+        <%- page.content %>
+      </div>
+    </article>
+    
+    <% if (theme.sidebar && theme.sidebar.enable) { %>
+      <aside class="sidebar">
+        <%- partial('partials/sidebar') %>
+      </aside>
+    <% } %>
+  </div>
+</div>

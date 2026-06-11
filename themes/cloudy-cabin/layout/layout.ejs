@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="<%= config.language || 'zh-CN' %>">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="<%= config.description || theme.site.description || '' %>">
+  <title><% if (page.title) { %><%= page.title %> | <% } %><%= config.title %></title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+  
+  <!-- Theme CSS -->
+  <%- css('css/style') %>
+  
+  <!-- Favicon -->
+  <% if (theme.site.favicon) { %>
+    <link rel="icon" href="<%- url_for(theme.site.favicon) %>">
+  <% } %>
+</head>
+<body class="cloudy-body">
+  <!-- 云朵背景 -->
+  <div class="clouds-background" id="cloudsBg">
+    <div class="cloud cloud-1"></div>
+    <div class="cloud cloud-2"></div>
+    <div class="cloud cloud-3"></div>
+    <div class="cloud cloud-4"></div>
+    <div class="cloud cloud-5"></div>
+  </div>
+
+  <div class="page-wrapper">
+    <%- partial('partials/header') %>
+    
+    <main class="main-content">
+      <%- body %>
+    </main>
+    
+    <%- partial('partials/footer') %>
+  </div>
+
+  <!-- Theme JS -->
+  <%- js('js/main') %>
+  <% if (theme.animation && theme.animation.clouds) { %>
+    <%- js('js/clouds') %>
+  <% } %>
+</body>
+</html>

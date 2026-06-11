@@ -1,0 +1,15 @@
+<div class="sidebar-card sidebar-tags">
+  <div class="sidebar-card-header">
+    <i class="fas fa-tags"></i>
+    <span>标签云</span>
+  </div>
+  <div class="sidebar-card-body">
+    <div class="tag-cloud">
+      <% site.tags.each(function(tag) { %>
+        <a href="<%- url_for(tag.path) %>" class="tag-cloud-item" style="font-size: <%= Math.max(12, Math.min(18, 12 + tag.posts.length * 2)) %>px;">
+          <%= tag.name %>
+        </a>
+      <% }) %>
+    </div>
+  </div>
+</div>

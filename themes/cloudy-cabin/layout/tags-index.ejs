@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="content-layout">
+    <div class="main-column">
+      <div class="archive-header">
+        <h1 class="archive-title">
+          <i class="fas fa-tags"></i>
+          文章标签
+        </h1>
+        <span class="archive-count">共 <%= site.tags.length %> 个标签</span>
+      </div>
+      
+      <div class="tags-grid">
+        <% site.tags.each(function(tag) { %>
+          <a href="<%- url_for(tag.path) %>" class="tag-card" style="font-size: <%= Math.max(14, Math.min(22, 14 + tag.posts.length * 1.5)) %>px;">
+            <span class="tag-card-name">#<%= tag.name %></span>
+            <span class="tag-card-count"><%= tag.posts.length %></span>
+          </a>
+        <% }) %>
+      </div>
+    </div>
+    
+    <% if (theme.sidebar && theme.sidebar.enable) { %>
+      <aside class="sidebar">
+        <%- partial('partials/sidebar') %>
+      </aside>
+    <% } %>
+  </div>
+</div>

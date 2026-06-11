@@ -1,0 +1,29 @@
+<div class="sidebar-card sidebar-archives">
+  <div class="sidebar-card-header">
+    <i class="fas fa-archive"></i>
+    <span>归档</span>
+  </div>
+  <div class="sidebar-card-body">
+    <ul class="archive-list">
+      <% var archives = []; %>
+      <% site.posts.each(function(post) { %>
+        <% var ym = date(post.date, 'YYYY 年 M 月'); %>
+        <% var path = '/archives/' + date(post.date, 'YYYY/MM'); %>
+        <% var found = false; %>
+        <% for (var i = 0; i < archives.length; i++) { %>
+          <% if (archives[i].name === ym) { archives[i].count++; found = true; break; } %>
+        <% } %>
+        <% if (!found) { archives.push({ name: ym, path: path, count: 1 }); } %>
+      <% }) %>
+      <% archives.slice(0, 6).forEach(function(archive) { %>
+        <li class="archive-item">
+          <a href="<%- url_for(archive.path) %>" class="archive-link">
+            <span class="archive-name"><%= archive.name %></span>
+            <span class="archive-count">(<%= archive.count %>)</span>
+            <i class="fas fa-chevron-right"></i>
+          </a>
+        </li>
+      <% }) %>
+    </ul>
+  </div>
+</div>

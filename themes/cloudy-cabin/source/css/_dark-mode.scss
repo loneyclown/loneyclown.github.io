@@ -1,0 +1,464 @@
+// ====================
+// Cloudy Cabin - Dark Mode
+// ====================
+
+body.dark-mode {
+  background: linear-gradient(135deg, $dark-bg, $dark-bg-secondary);
+  color: $dark-text;
+
+  // Clouds background - darker
+  .clouds-background {
+    opacity: 0.15;
+  }
+
+  // Header
+  .site-header .header-inner {
+    background: $dark-card;
+    border-color: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 2px 16px $dark-shadow;
+  }
+
+  .brand-name {
+    color: $dark-text;
+  }
+
+  .nav-link {
+    color: $dark-text-secondary;
+
+    &:hover {
+      color: $primary;
+      background: rgba(255, 157, 187, 0.1);
+    }
+
+    &.active {
+      color: $primary;
+      background: linear-gradient(135deg, rgba(255, 157, 187, 0.15), rgba(175, 203, 255, 0.15));
+    }
+  }
+
+  .search-box {
+    background: rgba(255, 255, 255, 0.05);
+
+    &:focus-within {
+      background: rgba(255, 255, 255, 0.08);
+    }
+  }
+
+  .search-input {
+    color: $dark-text;
+
+    &::placeholder {
+      color: $dark-text-secondary;
+    }
+  }
+
+  .theme-toggle {
+    background: rgba(255, 255, 255, 0.05);
+    color: $dark-text-secondary;
+
+    &:hover {
+      background: rgba(255, 157, 187, 0.15);
+      color: $primary;
+    }
+  }
+
+  // Hero
+  .hero-card {
+    background: linear-gradient(135deg, rgba(27, 33, 64, 0.9), rgba(21, 27, 58, 0.9));
+    border-color: rgba(255, 255, 255, 0.08);
+  }
+
+  .hero-title {
+    color: $dark-text;
+  }
+
+  .hero-subtitle {
+    color: $dark-text-secondary;
+  }
+
+  .hero-tag {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.1);
+    color: $dark-text-secondary;
+
+    &:hover {
+      background: rgba(255, 157, 187, 0.15);
+      border-color: $primary-light;
+    }
+  }
+
+  // Cards
+  .post-card,
+  .sidebar-card {
+    background: $dark-card;
+    border-color: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 4px 20px $dark-shadow;
+
+    &:hover {
+      box-shadow: 0 8px 30px $dark-shadow;
+    }
+  }
+
+  .post-card-title a {
+    color: $dark-text;
+
+    &:hover {
+      color: $primary;
+    }
+  }
+
+  .post-excerpt {
+    color: $dark-text-secondary;
+  }
+
+  .post-meta-row {
+    border-color: rgba(255, 255, 255, 0.06);
+  }
+
+  .meta-item {
+    color: $dark-text-secondary;
+  }
+
+  .category-badge {
+    background: rgba(255, 157, 187, 0.15);
+    color: $primary-light;
+
+    &:hover {
+      background: $primary;
+      color: #fff;
+    }
+  }
+
+  // Sidebar
+  .sidebar-card-header {
+    border-color: rgba(255, 255, 255, 0.06);
+    color: $dark-text;
+  }
+
+  .author-name {
+    color: $dark-text;
+  }
+
+  .author-bio {
+    color: $dark-text-secondary;
+  }
+
+  .author-stats {
+    border-color: rgba(255, 255, 255, 0.06);
+  }
+
+  .stat-label {
+    color: $dark-text-secondary;
+  }
+
+  .social-link {
+    background: rgba(255, 255, 255, 0.05);
+    color: $dark-text-secondary;
+
+    &:hover {
+      color: #fff;
+    }
+  }
+
+  .category-link,
+  .archive-link {
+    color: $dark-text-secondary;
+
+    &:hover {
+      background: rgba(255, 157, 187, 0.1);
+      color: $primary;
+    }
+  }
+
+  .category-count {
+    background: rgba(255, 255, 255, 0.05);
+    color: $dark-text-secondary;
+  }
+
+  .tag-cloud-item {
+    background: rgba(255, 255, 255, 0.05);
+    color: $dark-text-secondary;
+
+    &:hover {
+      color: #fff;
+    }
+  }
+
+  // Footer
+  .footer-brand {
+    color: $dark-text;
+  }
+
+  .footer-desc {
+    color: $dark-text-secondary;
+  }
+
+  .footer-social {
+    background: $dark-card;
+    border-color: rgba(255, 255, 255, 0.08);
+    color: $dark-text-secondary;
+  }
+
+  .footer-bottom {
+    border-color: rgba(255, 255, 255, 0.06);
+
+    p {
+      color: $dark-text-secondary;
+    }
+
+    a {
+      color: $dark-text-secondary;
+
+      &:hover {
+        color: $primary;
+      }
+    }
+  }
+
+  // Pagination
+  .pagination-prev,
+  .pagination-next {
+    background: $dark-card;
+    border-color: rgba(255, 255, 255, 0.08);
+    color: $dark-text;
+
+    &:hover {
+      color: #fff;
+    }
+
+    &.disabled:hover {
+      background: $dark-card;
+      color: $dark-text;
+    }
+  }
+
+  .pagination-info {
+    color: $dark-text-secondary;
+  }
+
+  // Article page
+  .post-article {
+    .post-title {
+      color: $dark-text;
+    }
+
+    .post-content {
+      color: $dark-text;
+
+      h1, h2, h3, h4, h5, h6 {
+        color: $dark-text;
+      }
+
+      p {
+        color: $dark-text-secondary;
+      }
+
+      code {
+        background: rgba(255, 255, 255, 0.08);
+        color: $primary-light;
+      }
+
+      pre {
+        background: rgba(0, 0, 0, 0.3);
+        border-color: rgba(255, 255, 255, 0.06);
+      }
+
+      figure.highlight {
+        background: rgba(0, 0, 0, 0.3);
+        border-color: rgba(255, 255, 255, 0.06);
+
+        .gutter {
+          background: rgba(255, 255, 255, 0.05);
+          border-right-color: rgba(255, 255, 255, 0.06);
+
+          pre .line {
+            color: $dark-text-secondary;
+          }
+        }
+
+        .code {
+          pre .line {
+            color: $dark-text;
+          }
+        }
+
+        // Highlight.js syntax colors - Dark Mode (Starlight theme)
+        .hljs-comment,
+        .hljs-quote {
+          color: #6B7280;
+          font-style: italic;
+        }
+
+        .hljs-keyword,
+        .hljs-selector-tag,
+        .hljs-subst {
+          color: #D8B4FE;
+          font-weight: 600;
+        }
+
+        .hljs-string,
+        .hljs-title,
+        .hljs-section,
+        .hljs-attribute,
+        .hljs-literal,
+        .hljs-template-tag,
+        .hljs-template-variable,
+        .hljs-addition {
+          color: #FDA4AF;
+        }
+
+        .hljs-number,
+        .hljs-meta,
+        .hljs-built_in,
+        .hljs-builtin-name,
+        .hljs-type {
+          color: #FF9DBB;
+          font-weight: 600;
+        }
+
+        .hljs-variable,
+        .hljs-params,
+        .hljs-class .hljs-title {
+          color: #EEF2FF;
+        }
+
+        .hljs-regexp,
+        .hljs-link {
+          color: #AFCBFF;
+        }
+
+        .hljs-symbol,
+        .hljs-bullet {
+          color: #FFB7C5;
+        }
+
+        .hljs-name,
+        .hljs-tag {
+          color: #D8B4FE;
+        }
+
+        .hljs-attr {
+          color: #FF9DBB;
+        }
+
+        .hljs-deletion,
+        .hljs-selector-attr,
+        .hljs-selector-pseudo,
+        .hljs-doctag {
+          color: #FCA5A5;
+        }
+
+        .hljs-emphasis {
+          font-style: italic;
+        }
+
+        .hljs-strong {
+          font-weight: 700;
+        }
+      }
+
+      blockquote {
+        border-color: $primary;
+        background: rgba(255, 157, 187, 0.05);
+      }
+
+      table {
+        th {
+          background: rgba(255, 255, 255, 0.05);
+        }
+
+        td, th {
+          border-color: rgba(255, 255, 255, 0.06);
+        }
+      }
+    }
+
+    .post-tags {
+      border-color: rgba(255, 255, 255, 0.06);
+
+      .tag-item {
+        background: rgba(255, 255, 255, 0.05);
+        color: $dark-text-secondary;
+
+        &:hover {
+          background: $primary;
+          color: #fff;
+        }
+      }
+    }
+  }
+
+  // Categories & Tags index pages
+  .categories-grid {
+    .category-card {
+      background: $dark-card;
+      border-color: rgba(255, 255, 255, 0.08);
+
+      &:hover {
+        border-color: $primary-light;
+      }
+
+      .category-card-icon {
+        background: rgba(255, 157, 187, 0.15);
+        color: $primary-light;
+      }
+
+      .category-card-name {
+        color: $dark-text;
+      }
+
+      .category-card-count {
+        color: $dark-text-secondary;
+      }
+    }
+  }
+
+  .tags-grid {
+    .tag-card {
+      background: $dark-card;
+      border-color: rgba(255, 255, 255, 0.08);
+
+      &:hover {
+        background: linear-gradient(135deg, rgba(255, 157, 187, 0.15), rgba(175, 203, 255, 0.15));
+      }
+
+      .tag-card-name {
+        color: $dark-text;
+      }
+    }
+  }
+
+  // Archive page
+  .archive-header {
+    .archive-title {
+      color: $dark-text;
+    }
+
+    .archive-count {
+      color: $dark-text-secondary;
+    }
+  }
+
+  .timeline-year {
+    color: $primary;
+  }
+
+  .timeline-item {
+    .timeline-dot {
+      background: $primary;
+      border-color: $dark-bg;
+    }
+
+    .timeline-date {
+      color: $dark-text-secondary;
+    }
+
+    .timeline-title {
+      color: $dark-text;
+
+      &:hover {
+        color: $primary;
+      }
+    }
+  }
+}

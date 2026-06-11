@@ -1,0 +1,21 @@
+<div class="sidebar-card sidebar-categories">
+  <div class="sidebar-card-header">
+    <i class="fas fa-folder-open"></i>
+    <span>分类</span>
+  </div>
+  <div class="sidebar-card-body">
+    <ul class="category-list">
+      <% site.categories.each(function(category) { %>
+        <li class="category-item">
+          <a href="<%- url_for(category.path) %>" class="category-link">
+            <span class="category-name">
+              <i class="far fa-folder"></i>
+              <%= category.name %>
+            </span>
+            <span class="category-count"><%= category.posts.length %></span>
+          </a>
+        </li>
+      <% }) %>
+    </ul>
+  </div>
+</div>

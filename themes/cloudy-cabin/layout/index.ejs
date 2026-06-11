@@ -1,0 +1,28 @@
+<% if (theme.hero && theme.hero.enable && is_home() && !page.prev) { %>
+  <%- partial('partials/hero') %>
+<% } %>
+
+<div class="container">
+  <div class="content-layout">
+    <div class="main-column">
+      <div class="section-header">
+        <i class="fas fa-fire section-icon"></i>
+        <h2 class="section-title">最新文章</h2>
+      </div>
+      
+      <div class="post-list">
+        <% page.posts.each(function(post) { %>
+          <%- partial('partials/post-card', { post: post }) %>
+        <% }) %>
+      </div>
+      
+      <%- partial('partials/pagination') %>
+    </div>
+    
+    <% if (theme.sidebar && theme.sidebar.enable) { %>
+      <aside class="sidebar">
+        <%- partial('partials/sidebar') %>
+      </aside>
+    <% } %>
+  </div>
+</div>

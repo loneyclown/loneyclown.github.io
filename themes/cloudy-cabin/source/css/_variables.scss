@@ -1,0 +1,66 @@
+// ====================
+// Cloudy Cabin - Variables
+// ====================
+
+// Colors - Light Mode
+$bg-primary: #F7FAFF;
+$bg-secondary: #FFF7FA;
+$card-bg: rgba(255, 255, 255, 0.85);
+$card-bg-solid: #FFFFFF;
+$primary: #FF9DBB;
+$primary-light: #FFB7C5;
+$primary-lighter: #FFF0F5;
+$secondary: #AFCBFF;
+$secondary-light: #D6E4FF;
+$text-primary: #24304F;
+$text-secondary: #7B8499;
+$text-tertiary: #A0A8B8;
+$border: #E8ECF5;
+$border-light: #F0F3F9;
+$shadow-color: rgba(175, 203, 255, 0.15);
+$shadow-hover: rgba(175, 203, 255, 0.25);
+
+// Colors - Dark Mode
+$dark-bg: #10142A;
+$dark-bg-secondary: #151B3A;
+$dark-card: rgba(27, 33, 64, 0.85);
+$dark-card-solid: #1B2140;
+$dark-text: #EEF2FF;
+$dark-text-secondary: #8B93A7;
+$dark-border: #2A3050;
+$dark-shadow: rgba(0, 0, 0, 0.3);
+
+// Typography
+$font-cn: "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", sans-serif;
+$font-en: "Nunito", "Quicksand", -apple-system, sans-serif;
+$font-mono: "JetBrains Mono", "Fira Code", monospace;
+
+// Spacing
+$container-max: 1200px;
+$sidebar-width: 300px;
+$gap: 40px;
+$section-gap: 24px;
+
+// Border Radius
+$radius-xl: 24px;
+$radius-lg: 20px;
+$radius-md: 16px;
+$radius-sm: 12px;
+$radius-xs: 8px;
+
+// Shadows
+$shadow-card: 0 4px 20px $shadow-color;
+$shadow-card-hover: 0 8px 30px $shadow-hover;
+$shadow-nav: 0 2px 16px $shadow-color;
+$shadow-inset: inset 0 2px 8px rgba(255, 255, 255, 0.5);
+
+// Transitions
+$transition-fast: all 0.2s ease;
+$transition-base: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+$transition-slow: all 0.4s ease;
+
+// Z-index
+$z-bg: -1;
+$z-content: 1;
+$z-header: 100;
+$z-modal: 200;

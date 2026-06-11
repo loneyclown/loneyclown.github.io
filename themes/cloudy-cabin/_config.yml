@@ -1,0 +1,90 @@
+# Cloudy Cabin 主题配置
+# 一间漂浮在云上的私人小屋
+
+# 站点信息
+site:
+  logo: /images/logo.png
+  favicon: /images/favicon.png
+
+# 导航菜单
+menu:
+  首页: /
+  归档: /archives/
+  分类: /categories/
+  标签: /tags/
+  关于我: /about/
+
+# 作者信息
+author:
+  name: loneyclown
+  avatar: /images/avatar.jpg
+  bio: 热爱编程，喜欢折腾，享受创造的过程。
+  location: 云上小屋
+
+# 社交链接
+social:
+  GitHub: https://github.com/loneyclown || fab fa-github
+  Twitter: https://twitter.com || fab fa-twitter
+  Email: mailto:hello@example.com || fas fa-envelope
+
+# Hero 区
+hero:
+  enable: true
+  title: Hi，我是 loneyclown
+  subtitle: 这里是我的小角落，记录技术、生活与灵感
+  tags:
+    - 技术宅
+    - 游戏玩家
+    - 终身学习者
+    - 可乐爱好者
+
+# 文章配置
+post:
+  date: true
+  updated: false
+  wordcount: true
+  reading_time: true
+  excerpt: true
+  excerpt_length: 200
+
+# 目录
+toc:
+  enable: true
+  max_depth: 3
+
+# 搜索
+search:
+  enable: true
+  path: search.json
+
+# 评论
+comments:
+  enable: false
+
+# 侧边栏
+sidebar:
+  enable: true
+  position: right
+  author: true
+  announcement: true
+  categories: true
+  tags: true
+  archives: true
+
+# 公告
+announcement:
+  title: 公告
+  content: |
+    生活明朗，万物可爱。
+    最近在研究 AI Agent，欢迎交流~
+
+# 动画效果
+animation:
+  enable: true
+  clouds: true       # 云朵漂浮背景
+  card_hover: true   # 卡片悬停上浮
+  scroll_reveal: true # 滚动渐入
+
+# 自定义样式和脚本
+custom_css: []
+custom_js: []

@@ -1,0 +1,21 @@
+<div class="sidebar-inner">
+  <% if (theme.sidebar.author) { %>
+    <%- partial('sidebar-author') %>
+  <% } %>
+  
+  <% if (theme.sidebar.announcement && theme.announcement) { %>
+    <%- partial('sidebar-announcement') %>
+  <% } %>
+  
+  <% if (theme.sidebar.categories) { %>
+    <%- partial('sidebar-categories') %>
+  <% } %>
+  
+  <% if (theme.sidebar.tags) { %>
+    <%- partial('sidebar-tags') %>
+  <% } %>
+  
+  <% if (theme.sidebar.archives) { %>
+    <%- partial('sidebar-archives') %>
+  <% } %>
+</div>

@@ -1,0 +1,59 @@
+<article class="post-card">
+  <div class="post-card-inner">
+    <% if (post.photos && post.photos.length) { %>
+      <a href="<%- url_for(post.path) %>" class="post-thumbnail">
+        <img src="<%- url_for(post.photos[0]) %>" alt="<%= post.title %>">
+      </a>
+    <% } else { %>
+      <a href="<%- url_for(post.path) %>" class="post-thumbnail post-thumbnail-placeholder">
+        <div class="placeholder-bg">
+          <i class="fas fa-image"></i>
+        </div>
+      </a>
+    <% } %>
+    
+    <div class="post-body">
+      <div class="post-header-row">
+        <% if (post.categories && post.categories.length) { %>
+          <div class="post-categories-inline">
+            <% post.categories.each(function(category) { %>
+              <a href="<%- url_for(category.path) %>" class="category-badge"><%= category.name %></a>
+            <% }) %>
+          </div>
+        <% } %>
+      </div>
+      
+      <h2 class="post-card-title">
+        <a href="<%- url_for(post.path) %>"><%= post.title %></a>
+      </h2>
+      
+      <p class="post-excerpt">
+        <% var excerptLen = (theme.post && theme.post.excerpt_length) || 200; %>
+        <% if (post.excerpt) { %>
+          <%= strip_html(post.excerpt).substring(0, excerptLen) %>...
+        <% } else { %>
+          <%= strip_html(post.content).substring(0, excerptLen) %>...
+        <% } %>
+      </p>
+      
+      <div class="post-meta-row">
+        <span class="meta-item">
+          <i class="far fa-calendar"></i>
+          <%= date(post.date, 'YYYY-MM-DD') %>
+        </span>
+        <span class="meta-item">
+          <i class="far fa-eye"></i>
+          阅读 <%= post.read_count || '1.2k' %>
+        </span>
+        <span class="meta-item">
+          <i class="far fa-comment"></i>
+          评论 <%= post.comment_count || '36' %>
+        </span>
+        <span class="meta-item meta-reading-time">
+          <i class="far fa-clock"></i>
+          <%= min2read(post.content) %> 分钟阅读
+        </span>
+      </div>
+    </div>
+  </div>
+</article>

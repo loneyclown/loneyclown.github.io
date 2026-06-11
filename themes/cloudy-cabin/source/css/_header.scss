@@ -1,0 +1,230 @@
+// ====================
+// Cloudy Cabin - Header
+// ====================
+
+.site-header {
+  position: sticky;
+  top: 16px;
+  z-index: $z-header;
+  margin: 16px auto 0;
+  max-width: $container-max;
+  padding: 0 20px;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 24px;
+  background: $card-bg;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: $radius-xl;
+  box-shadow: $shadow-nav;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  transition: $transition-base;
+}
+
+// Brand
+.site-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: $text-primary;
+  transition: $transition-fast;
+
+  &:hover {
+    transform: scale(1.02);
+  }
+}
+
+.brand-logo {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, $primary-light, $secondary);
+  border-radius: $radius-md;
+  color: #fff;
+  font-size: 18px;
+  box-shadow: 0 4px 12px rgba(255, 157, 187, 0.3);
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.brand-name {
+  font-family: $font-en;
+  font-size: 18px;
+  font-weight: 800;
+  color: $text-primary;
+  line-height: 1.2;
+}
+
+.brand-slogan {
+  font-size: 11px;
+  color: $text-tertiary;
+  font-weight: 400;
+  margin-top: 2px;
+}
+
+// Navigation
+.header-nav {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border-radius: $radius-sm;
+  color: $text-secondary;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  transition: $transition-fast;
+
+  i {
+    font-size: 13px;
+  }
+
+  &:hover {
+    color: $primary;
+    background: $primary-lighter;
+  }
+
+  &.active {
+    color: $primary;
+    background: linear-gradient(135deg, $primary-lighter, $secondary-light);
+  }
+}
+
+// Right section
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+// Search
+.search-box {
+  display: flex;
+  align-items: center;
+  background: $border-light;
+  border-radius: $radius-md;
+  padding: 4px;
+  transition: $transition-fast;
+
+  &:focus-within {
+    background: #fff;
+    box-shadow: 0 0 0 3px rgba(255, 157, 187, 0.3);
+  }
+}
+
+.search-input {
+  border: none;
+  background: transparent;
+  padding: 6px 12px;
+  font-size: 13px;
+  color: $text-primary;
+  width: 140px;
+  outline: none;
+  font-family: $font-cn;
+
+  &::placeholder {
+    color: $text-tertiary;
+  }
+}
+
+.search-btn {
+  border: none;
+  background: linear-gradient(135deg, $primary-light, $secondary);
+  color: #fff;
+  width: 32px;
+  height: 32px;
+  border-radius: $radius-sm;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: $transition-fast;
+
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(255, 157, 187, 0.4);
+  }
+}
+
+// Theme toggle
+.theme-toggle {
+  border: none;
+  background: $border-light;
+  color: $text-secondary;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: $transition-fast;
+  font-size: 14px;
+
+  &:hover {
+    background: $primary-lighter;
+    color: $primary;
+    transform: rotate(15deg);
+  }
+}
+
+// Header avatar
+.header-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid $primary-light;
+  box-shadow: 0 2px 8px rgba(255, 157, 187, 0.3);
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+// Mobile menu toggle (hidden on desktop)
+.mobile-menu-toggle {
+  display: none;
+  border: none;
+  background: none;
+  color: $text-primary;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+// Responsive
+@media (max-width: 900px) {
+  .header-nav {
+    display: none;
+  }
+
+  .search-box {
+    display: none;
+  }
+
+  .mobile-menu-toggle {
+    display: block;
+  }
+
+  .brand-slogan {
+    display: none;
+  }
+}

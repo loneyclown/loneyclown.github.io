@@ -1,0 +1,215 @@
+// ====================
+// Cloudy Cabin - Hero Section
+// ====================
+
+.hero-section {
+  max-width: $container-max;
+  margin: 24px auto 0;
+  padding: 0 20px;
+}
+
+.hero-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 40px 48px;
+  background: linear-gradient(135deg, rgba(255, 240, 245, 0.9), rgba(214, 228, 255, 0.9));
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: $radius-lg;
+  box-shadow: $shadow-card;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  position: relative;
+  overflow: hidden;
+  min-height: 220px;
+}
+
+.hero-content {
+  flex: 1;
+  z-index: 1;
+}
+
+.hero-title {
+  font-family: $font-cn;
+  font-size: 32px;
+  font-weight: 700;
+  color: $text-primary;
+  margin: 0 0 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.hero-emoji {
+  font-size: 28px;
+  animation: bunny-bounce 2s ease-in-out infinite;
+}
+
+.hero-subtitle {
+  font-size: 16px;
+  color: $text-secondary;
+  margin: 0 0 20px;
+  line-height: 1.6;
+}
+
+.hero-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.hero-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: $radius-sm;
+  font-size: 13px;
+  color: $text-secondary;
+  font-weight: 600;
+  border: 1px solid $border;
+  transition: $transition-fast;
+
+  i {
+    color: $primary;
+    font-size: 12px;
+  }
+
+  &:hover {
+    background: #fff;
+    border-color: $primary-light;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 157, 187, 0.2);
+  }
+}
+
+// Visual area
+.hero-visual {
+  position: relative;
+  width: 280px;
+  height: 180px;
+  flex-shrink: 0;
+}
+
+.hero-clouds {
+  position: absolute;
+  inset: 0;
+}
+
+.hero-cloud {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 50px;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+  }
+}
+
+.cloud-a {
+  width: 100px;
+  height: 40px;
+  top: 20px;
+  right: 40px;
+  animation: float 6s ease-in-out infinite;
+
+  &::before {
+    width: 50px;
+    height: 50px;
+    top: -25px;
+    left: 15px;
+  }
+
+  &::after {
+    width: 40px;
+    height: 40px;
+    top: -15px;
+    right: 15px;
+  }
+}
+
+.cloud-b {
+  width: 80px;
+  height: 35px;
+  top: 80px;
+  right: 100px;
+  animation: float-slow 8s ease-in-out infinite;
+
+  &::before {
+    width: 40px;
+    height: 40px;
+    top: -20px;
+    left: 10px;
+  }
+
+  &::after {
+    width: 35px;
+    height: 35px;
+    top: -12px;
+    right: 10px;
+  }
+}
+
+.cloud-c {
+  width: 60px;
+  height: 30px;
+  top: 130px;
+  right: 20px;
+  animation: float 7s ease-in-out infinite reverse;
+
+  &::before {
+    width: 35px;
+    height: 35px;
+    top: -18px;
+    left: 8px;
+  }
+
+  &::after {
+    width: 30px;
+    height: 30px;
+    top: -10px;
+    right: 8px;
+  }
+}
+
+.hero-bunny {
+  position: absolute;
+  bottom: 0;
+  right: 60px;
+  width: 120px;
+  height: 120px;
+  animation: bunny-bounce 3s ease-in-out infinite;
+
+  svg {
+    width: 100%;
+    height: 100%;
+    filter: drop-shadow(0 4px 12px rgba(255, 157, 187, 0.3));
+  }
+}
+
+// Responsive
+@media (max-width: 768px) {
+  .hero-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 32px 24px;
+  }
+
+  .hero-title {
+    font-size: 24px;
+    justify-content: center;
+  }
+
+  .hero-visual {
+    display: none;
+  }
+
+  .hero-tags {
+    justify-content: center;
+  }
+}

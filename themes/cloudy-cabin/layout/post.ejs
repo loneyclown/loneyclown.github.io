@@ -1,0 +1,82 @@
+<div class="container">
+  <div class="content-layout">
+    <article class="main-column post-article">
+      <div class="post-header">
+        <% if (page.categories && page.categories.length) { %>
+          <div class="post-categories">
+            <% page.categories.each(function(category) { %>
+              <a href="<%- url_for(category.path) %>" class="category-tag"><%= category.name %></a>
+            <% }) %>
+          </div>
+        <% } %>
+        
+        <h1 class="post-title"><%= page.title %></h1>
+        
+        <div class="post-meta">
+          <span class="meta-item">
+            <i class="far fa-calendar"></i>
+            <%= date(page.date, 'YYYY-MM-DD') %>
+          </span>
+          <% if (theme.post.updated && page.updated) { %>
+            <span class="meta-item">
+              <i class="far fa-calendar-check"></i>
+              <%= date(page.updated, 'YYYY-MM-DD') %>
+            </span>
+          <% } %>
+          <% if (theme.post.wordcount) { %>
+            <span class="meta-item">
+              <i class="far fa-file-word"></i>
+              <%= wordcount(page.content) %> 字
+            </span>
+          <% } %>
+          <% if (theme.post.reading_time) { %>
+            <span class="meta-item">
+              <i class="far fa-clock"></i>
+              <%= min2read(page.content) %> 分钟阅读
+            </span>
+          <% } %>
+        </div>
+      </div>
+      
+      <% if (page.photos && page.photos.length) { %>
+        <div class="post-cover">
+          <img src="<%- url_for(page.photos[0]) %>" alt="<%= page.title %>">
+        </div>
+      <% } %>
+      
+      <div class="post-content">
+        <%- page.content %>
+      </div>
+      
+      <% if (page.tags && page.tags.length) { %>
+        <div class="post-tags">
+          <i class="fas fa-tags"></i>
+          <% page.tags.each(function(tag) { %>
+            <a href="<%- url_for(tag.path) %>" class="tag-item">#<%= tag.name %></a>
+          <% }) %>
+        </div>
+      <% } %>
+      
+      <div class="post-nav">
+        <% if (page.prev) { %>
+          <a href="<%- url_for(page.prev.path) %>" class="post-nav-prev">
+            <span class="nav-label"><i class="fas fa-chevron-left"></i> 上一篇</span>
+            <span class="nav-title"><%= page.prev.title %></span>
+          </a>
+        <% } %>
+        <% if (page.next) { %>
+          <a href="<%- url_for(page.next.path) %>" class="post-nav-next">
+            <span class="nav-label">下一篇 <i class="fas fa-chevron-right"></i></span>
+            <span class="nav-title"><%= page.next.title %></span>
+          </a>
+        <% } %>
+      </div>
+    </article>
+    
+    <% if (theme.sidebar && theme.sidebar.enable) { %>
+      <aside class="sidebar">
+        <%- partial('partials/sidebar') %>
+      </aside>
+    <% } %>
+  </div>
+</div>
